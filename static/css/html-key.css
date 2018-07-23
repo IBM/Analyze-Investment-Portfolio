@@ -1,0 +1,21 @@
+
+.key-col {
+  border-left: 1px solid #bdb9b9;
+  padding: 20px;
+  text-align: left;
+}
+
+.key-value {
+    margin: 0 !important;
+}
+
+.key-dot {
+    display: inline-block;
+    height: 10px;
+    margin-right: .5em;
+    width: 10px;
+}
+
+.legend {
+  text-align: left;
+}

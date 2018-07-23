@@ -1,0 +1,67 @@
+
+
+.overlay {
+  fill: #3d70b2;
+  opacity: .1;
+  display: none;
+  pointer-events: none;
+}
+
+.line {
+  stroke-width: 2;
+  stroke: #FF00FF;
+  fill: none;
+  pointer-events: none;
+}
+
+.axis path {
+  stroke: #5A6872;
+}
+
+.tick line {
+  stroke: #5A6872;
+}
+
+.tick text {
+  fill: #5A6872;
+}
+
+.graph-container-bar {
+  position: relative;
+}
+
+.tooltip-bar {
+  font-weight: 700;
+  padding-left: 1rem 2rem;
+  background-color: #fff;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  border: 1px solid #DFE3E6;
+  padding: .25rem .5rem;
+  pointer-events: none;
+  display: none;
+}
+.tooltip-bar:after {
+  content: '';
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+}
+
+.y path {
+  display: none;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  fill: #5A6872;
+  text-anchor: middle;
+}

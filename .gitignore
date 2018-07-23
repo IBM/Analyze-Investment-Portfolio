@@ -1,0 +1,9 @@
+# Mac files.
+**/.DS_Store
+.DS_Store
+
+.git
+.env
+
+*.pyc
+__pycache__

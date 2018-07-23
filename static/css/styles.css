@@ -1,0 +1,218 @@
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  position: relative; }
+
+body {
+  margin: 0;
+  height: 100%;
+  color: black;
+  background-color: white;
+  font-family: "Helvetica Neue for IBM", Helvetica Neue, Helvetica, sans-serif;
+  line-height: 1.5rem; }
+
+.container {
+      padding-top: 48px;
+}
+
+.header-bar {
+    height: 48px;
+    width: 100vw;
+    box-sizing: border-box;
+    background-color: #444444;
+    color: white;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0 calc((100vw - 900px) / 2);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 1000;
+}
+
+.header-bar__home {
+    background-color: #444444;
+    width: 100%;
+    padding-right: 264px;
+}
+
+.header-bar__home__button {
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    background-color: #444444;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 0px 0px 0px 0px;
+}
+
+.header-bar__new {
+    width: 216px;
+    float: right;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 48px;
+    line-height: 48px;
+}
+
+.new-analysis {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 32px;
+    margin: 8px 0;
+    line-height: 32px;
+    box-sizing: border-box;
+    padding: 0px 16px;
+    border: 1px solid white;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #444444;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.analysis-input {
+  display: block;
+  background-color: black;
+  color: white;
+  padding: 0 calc((100vw - 900px) / 2);
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.heading-input {
+  font-size: 28px;
+  padding: 24px 0;
+}
+
+.enter-portfolio select {
+  color: white;
+  box-shadow: inset 0 -1px 0 0 white;
+  -webkit-appearance: none;
+  border-radius: 0;
+  max-width: 28.25rem;
+  height: 2rem;
+  padding: .25rem 0;
+  border: none;
+  background-color: transparent;
+  font: inherit;
+  width: 70%;
+}
+
+.get-started {
+  justify-content: center;
+  flex-basis: 216px;
+  flex-grow: 0;
+  text-align: left;
+  padding-top: 48px;
+  padding-bottom: 24px;
+  display: flex;
+}
+
+#run-button {
+  height: 40px;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 2px solid #464646;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0 1rem;
+  font: inherit;
+  background-color: black;
+}
+
+.loader {
+  padding: 32px;
+  /*visibility: hidden;
+    display: -ms-flexbox;
+    display: flex; */
+    display: none;
+    width: 100%;
+    height: auto;
+    top: 0px;
+    left: 0px;
+    background-color: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    z-index: 100;
+}
+
+.loader img {
+    width: 44px;
+}
+
+#filmstrip {
+  width: 100%
+}
+
+.tab-content {
+  display: none;
+}
+
+.content {
+  height: 350px;
+}
+
+#composition {
+    display: block;
+    text-align: center;
+}
+
+#esg-categories {
+    display: none;
+    text-align: center;
+}
+
+#search {
+    display: none;
+    text-align: center;
+}
+
+#benchmarks {
+    display: none;
+    text-align: center;
+}
+
+#non-esg {
+    display: none;
+    text-align: center;
+}
+
+#improve {
+    display: none;
+    text-align: center;
+}
+
+#by-asset {
+  display: block;
+}
+
+#by-industry {
+  display: none;
+}
+
+#by-geography {
+  display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
