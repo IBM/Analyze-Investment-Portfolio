@@ -1,25 +1,24 @@
 
 
-function assetAllocationChartData(portfolioData) {
+function assetAllocationChartData(portfolioData,NAV) {
 
   //pieData = [['US Equity', 23], ['Domestic Equity', 12], ['Fixed Income', 19], ['International Equity', 15], ['Alternatives', 5], ['Other', 5]];
   var pieData = [];
   var count = 0;
 
   for (var key in portfolioData) {
-      var entry = [key, portfolioData[key]]
+      var entry = [key, portfolioData[key]/NAV] 
       pieData.push(entry);
   }
-
   console.log(pieData);
 
   return pieData
 }
 
 
-function assetAllocationChart(portfolioData) {
+function assetAllocationChart(portfolioData,NAV) {
 
-  var data = assetAllocationChartData(portfolioData)
+  var data = assetAllocationChartData(portfolioData,NAV)
 
   //pie chart carbon design
 
@@ -53,10 +52,10 @@ function assetAllocationChart(portfolioData) {
 
     var tooltip = d3.select('.tooltip').style('display', 'inherit');
 
-    var amount = d3.select('.amount');
+    var amount = d3.select('.amount')
     var item = d3.select('.item');
 
-    amount.text('' + d.data[1]);
+    amount.text('' + (d.data[1] * 100).toFixed(2) + '%');
 
     item.text('' + d.data[0]);
   }).on('mouseout', function (d) {

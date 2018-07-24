@@ -1,7 +1,10 @@
 
-function industryChartData(portfolioData) {
+function industryChartData(portfolioData,NAV) {
 
   var chartData = [];
+  var industryData = [];
+  var other = 0;
+  var other_pct = 0;
   var total = 0;
 
   for (var key in portfolioData) {
@@ -10,26 +13,30 @@ function industryChartData(portfolioData) {
         industry: key
       }
       chartData.push(obj);
-      total += portfolioData[key];
   }
 
   for (var j =0; j<chartData.length; j++) {
-    chartData[j]["percent"] = chartData[j]["value"] / total;
+    pct = chartData[j]["value"] / NAV;
+    if(pct<.01){
+      other += chartData[j]["value"];
+      other_pct += pct;
+    }else{
+      industryData.push({value:chartData[j]["value"],industry:chartData[j]["industry"],percent:pct})
+    }
   }
+  industryData.push({value:other,industry:"Other",percent:other_pct})
 
-  console.log(chartData);
-
-  return chartData
+  console.log(industryData);
+  return industryData
 }
 
+function industryChart(portfolioData,NAV) {
 
-function industryChart(portfolioData) {
-
-  var data = industryChartData(portfolioData);
+  var data = industryChartData(portfolioData,NAV);
 
   // what are these and are they things that someone should edit
   var margin = { top: 30, right: 20, bottom: 60, left: 65 };
-  var width = 800 - (margin.left + margin.right);
+  var width = 1200 - (margin.left + margin.right);
   var height = 300 - (margin.top + margin.bottom);
   var labelOffset = 50;
   var axisOffset = 16;
@@ -37,6 +44,7 @@ function industryChart(portfolioData) {
   // Set Time Format (JAN, FEB, etc..)
   var timeFormat = d3.timeFormat('%b');
   var formatPercent = d3.format(".0%");
+  var formatPercent_four = d3.format(",.4%");
 
   // Set the scales
   var x = d3.scaleBand().rangeRound([0, width]).domain(data.map(function (d) {
@@ -50,10 +58,10 @@ function industryChart(portfolioData) {
 
   // // Set the axes
   //var xAxis = d3.axisBottom().scale(x).tickSize(0).tickFormat(timeFormat);
-  var xAxis = d3.axisBottom().scale(x).tickSize(0)
+  var xAxis = d3.axisBottom().scale(x).tickSize(0);
 
 
-  var yAxis = d3.axisLeft().ticks(4).scale(y.nice()).tickFormat(formatPercent);;
+  var yAxis = d3.axisLeft().ticks(4).scale(y.nice()).tickFormat(formatPercent);
 
 
   // // Set up SVG with initial transform to avoid repeat positioning
@@ -71,25 +79,35 @@ function industryChart(portfolioData) {
   // // Add X axis label
   //var xLabel = svg.select('.x').append('text').text('MONTH').attr('class', 'label').attr('transform', 'translate(' + width / 2 + ', ' + labelOffset + ')').attr('font-family', 'ibm-plex-sans');
 
-  svg.append('g').attr('class', 'bar-container').selectAll('rect').data(data).enter().append('rect').attr('class', 'bar').attr('x', function (d) {
+  svg.append('g')
+  .attr('class', 'bar-container')
+  .selectAll('rect')
+  .data(data)
+  .enter()
+  .append('rect')
+  .attr('class', 'bar')
+  .attr('x', function (d) {
       return x(d.industry);
-  }).attr('y', function (d) {
+  })
+  .attr('y', function (d) {
       return height;
-  }).attr('height', 0).attr('width', x.bandwidth()).attr('fill', '#00A78F').transition().duration(500).delay(function (d, i) {
-      return i * 50;
-  }).attr('height', function (d) {
-      return height - y(d.percent);
-  }).attr('y', function (d) {
-      return y(d.percent);
-  });
+  })
+  .attr('height', 0)
+  .attr('width', x.bandwidth())
+  .attr('fill', '#93C4FB')
+  .transition()
+  .duration(500)
+  .delay((d, i) => i * 50)
+  .attr('height', (d) => height - y(d.percent))
+  .attr('y', (d) => y(d.percent));
 
   // Select Tooltip
   var tooltip = d3.select('.tooltip-bar');
 
   var bars = svg.selectAll('.bar').on('mouseover', function (d) {
-      var color = d3.color('#00A78F').darker();
+      var color = d3.color('#93C4FB').darker();
       d3.select(this).attr('fill', color);
-      tooltip.style('display', 'inherit').text((d.percent * 100) + '%').style('top', y(d.percent) - axisOffset + 'px');
+      tooltip.style('display', 'inherit').text((d.percent * 100).toFixed(2) + '%').style('top', y(d.percent) - axisOffset + 'px');
 
       var bandwidth = x.bandwidth();
       var tooltipWidth = tooltip.nodes()[0].getBoundingClientRect().width;
@@ -97,52 +115,9 @@ function industryChart(portfolioData) {
 
       tooltip.style('left', x(d.industry) + margin.left - offset + 'px');
   }).on('mouseout', function (d) {
-      d3.select(this).transition().duration(250).attr('fill', '#00A78F');
+      d3.select(this).transition().duration(250).attr('fill', '#93C4FB');
       tooltip.style('display', 'none');
   });
 
 
 }
-
-/*
-function industryChartData(portfolioData) {
-
-  var chartData = [];
-  var totalCount = 0;
-
-  for (var i = 0; i < portfolioData.length; i++) {
-
-    //console.log(portfolioData[i]["Asset Class"])
-    var sector = portfolioData[i]["sector"];
-    var existSector = false;
-
-    for (var j =0; j<chartData.length; j++) {
-
-      if (chartData[j]["industry"] == sector) {
-        var existSector = true;
-
-        chartData[j]["count"] = chartData[j]["count"] + 1;
-      }
-    }
-
-    if (existSector == false) {
-      var obj = {
-        count: 1,
-        industry: sector
-      }
-      chartData.push(obj);
-    }
-
-    totalCount += 1;
-  }
-
-  for (var j =0; j<chartData.length; j++) {
-    chartData[j]["percent"] = chartData[j]["count"] / totalCount;
-  }
-
-
-  console.log(chartData);
-
-  return chartData
-}
-*/

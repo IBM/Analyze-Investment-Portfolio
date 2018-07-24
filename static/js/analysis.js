@@ -75,8 +75,8 @@ $('.run-analysis').click(function() {
         document.getElementById('loader').style.display = "none";
         document.getElementById('analysis').style.display = "block";
 
-        assetAllocationChart(data.composition["Asset Class"]);
-        industryChart(data.composition.sector);
+        assetAllocationChart(data.composition["Asset Class"],data.NAV);
+        industryChart(data.composition.sector,data.NAV);
         geographyChart(data.composition.geography);
     }
   });
