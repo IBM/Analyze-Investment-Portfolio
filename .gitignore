@@ -4,6 +4,6 @@
 
 .git
 .env
-
+PortfolioAnalyze_Portfolios
 *.pyc
 __pycache__

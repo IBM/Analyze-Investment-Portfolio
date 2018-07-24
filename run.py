@@ -229,10 +229,57 @@ def portfolio_composition():
             values[u] = sum([item['portfolio_value'] for item in universe if item[a]==u])
         exposures[a] = values
 
-    #create world investment json
-    create_world_json(exposures["geography"])
-
     return Response(json.dumps(exposures), mimetype='application/json')
+
+@app.route('/api/portfolio-analyze/<portfolio>',methods=['GET','POST'])
+def portfolio_analyze(portfolio):
+    '''
+    Returns data compatible with the Portfolio.Analyze() v1.0 front-end GUI
+    '''
+    if request.method == 'POST':
+        req = request.get_json(silent=True)
+        portfolio = req['portfolio']
+    
+    portfolio = investmentportfolio.Get_Portfolio_Holdings(portfolio,False)['holdings'] # client portfolio
+    portfolio = [item['holdings'] for item in portfolio] #since we loaded the data in chunks originally
+    portfolio = [item for sublist in portfolio for item in sublist] #flatten the list'
+    
+    aggregations = ["geography","Asset Class","sector","has_Tobacco","has_Alcohol","has_Gambling","has_Military","has_Fossil Fuels","esg_Controversy","esg_Environmental","esg_Governance","esg_Social","esg_Sustainability"]
+
+    NAV = sum(float(item['quantity'])*float(item['PRICE']) for item in portfolio)
+    universe = get_expanded_universe(portfolio)
+    response = {
+        "NAV":NAV,
+        'sin':{},
+        'esg':{},
+        'search':[item['name'] + ' (' + item['TICKER'] + ')' for item in universe], # search universe
+        'composition':{}
+    }
+    for a in aggregations:
+        #sin stocks - just need true
+        if 'has_' in a:
+            print('has')
+            #we omit the parent funds in the portfolio (has_lookthrough=true) to avoid double counting the exposure
+            response['sin'][a] = sum([item['portfolio_value'] for item in universe if item[a]=='TRUE' if item['HAS_LOOKTHROUGH']=='FALSE'])
+        #esg
+        elif 'esg_' in a:
+            print('esg')
+            #compute average ESG for the portfolio
+            response['esg'][a] = sum([(item['portfolio_value']/NAV)*float(item[a]) for item in universe if item['HAS_LOOKTHROUGH']=='FALSE'])
+        #regular aggregations
+        else:
+            print('agg')
+            values = {}
+            #get unique entries for the given aggregation (keep an eye out for python3 quirks)
+            unique_a = {item[a]:item[a] for item in universe}.values()
+            for u in unique_a:
+                values[u] = sum([item['portfolio_value'] for item in universe if item[a]==u if item['HAS_LOOKTHROUGH']=='FALSE'])
+            response['composition'][a] = values
+
+    #create world investment json for the D3 element
+    create_world_json(response['composition']["geography"])
+
+    return Response(json.dumps(response), mimetype='application/json')
 
 
 #Returns list of 'look through' portfolios (returns results)

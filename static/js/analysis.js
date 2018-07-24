@@ -44,11 +44,11 @@ $('.run-analysis').click(function() {
   var Portfolio = JSON.stringify(Portfolio);
 
 
-  input_parameters = {};
-  input_parameters["portfolio"] = Portfolio.replace(/"/g, "");
-  input_parameters["aggregations"] = ["geography", "Asset Class", "sector", "has_Tobacco", "has_Alcohol", "has_Gambling", "has_Military", "has_Fossil Fuels", "esg_Controversy", "esg_Environmental", "esg_Governance", "esg_Social", "esg_Sustainability"];
-  input_parameters = JSON.stringify(input_parameters);
-  console.log(Portfolio)
+  //input_parameters = {};
+  //input_parameters["portfolio"] = Portfolio.replace(/"/g, "");
+  //input_parameters["aggregations"] = ["geography", "Asset Class", "sector", "has_Tobacco", "has_Alcohol", "has_Gambling", "has_Military", "has_Fossil Fuels", "esg_Controversy", "esg_Environmental", "esg_Governance", "esg_Social", "esg_Sustainability"];
+  //input_parameters = JSON.stringify(input_parameters);
+  //console.log(Portfolio)
   //verify input otherwise display an informative message
 
   if (Portfolio.includes('Loading...')) {
@@ -63,9 +63,8 @@ $('.run-analysis').click(function() {
 
 
   $.ajax({
-    type: 'POST',
-    url: apiUrl + 'portfolio-composition',
-    data: input_parameters,
+    type: 'GET',
+    url: apiUrl + 'portfolio-analyze/' + String(Portfolio.replace(/"/g, "")),
     dataType: 'json',
     contentType: 'application/json',
     success: function(data, input_parameters) {
@@ -76,9 +75,9 @@ $('.run-analysis').click(function() {
         document.getElementById('loader').style.display = "none";
         document.getElementById('analysis').style.display = "block";
 
-        assetAllocationChart(data["Asset Class"]);
-        industryChart(data.sector);
-        geographyChart(data.geography);
+        assetAllocationChart(data.composition["Asset Class"]);
+        industryChart(data.composition.sector);
+        geographyChart(data.composition.geography);
     }
   });
 });
