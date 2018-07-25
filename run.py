@@ -240,6 +240,7 @@ def portfolio_analyze(portfolio):
         req = request.get_json(silent=True)
         portfolio = req['portfolio']
     
+    portfolio_name = portfolio #persist name
     portfolio = investmentportfolio.Get_Portfolio_Holdings(portfolio,False)['holdings'] # client portfolio
     portfolio = [item['holdings'] for item in portfolio] #since we loaded the data in chunks originally
     portfolio = [item for sublist in portfolio for item in sublist] #flatten the list'
@@ -251,25 +252,28 @@ def portfolio_analyze(portfolio):
     response = {
         "NAV":NAV,
         'sin':{},
-        'esg':{},
+        'esg':{portfolio_name:{}},
         'search':[item['name'] + ' (' + item['TICKER'] + ')' for item in universe], # search universe
         'portfolio':[{'name':item['name'],'value ($USD)':item['portfolio_value'],'Portfolio Contribution (%)':item['portfolio_value']/NAV,'Industry Sector':item['sector'],'Asset Class':item['Asset Class'],'Geography':item['geography']} for item in universe],
         'composition':{}
     }
+    #hard-coded benchmarks for now, but it's possible a user would want to make benchmark choices static...
+    benchmarks = ['IVV','HYG','LQD']
+    for b in benchmarks:
+        response['esg'][b] = {}
+    
+    #Calculate data for response
     for a in aggregations:
         #sin stocks - just need true
         if 'has_' in a:
-            print('has')
             #we omit the parent funds in the portfolio (has_lookthrough=true) to avoid double counting the exposure
             response['sin'][a] = sum([item['portfolio_value'] for item in universe if item[a]=='TRUE' if item['HAS_LOOKTHROUGH']=='FALSE'])
         #esg
         elif 'esg_' in a:
-            print('esg')
-            #compute average ESG for the portfolio
-            response['esg'][a] = sum([(item['portfolio_value']/NAV)*float(item[a]) for item in universe if item['HAS_LOOKTHROUGH']=='FALSE'])
+            #compute average ESG for the portfolio (and benchmarks!)
+            response['esg'][portfolio_name][a] = sum([(item['portfolio_value']/NAV)*float(item[a]) for item in universe if item['HAS_LOOKTHROUGH']=='FALSE'])
         #regular aggregations
         else:
-            print('agg')
             values = {}
             #get unique entries for the given aggregation (keep an eye out for python3 quirks)
             unique_a = {item[a]:item[a] for item in universe}.values()
@@ -277,6 +281,17 @@ def portfolio_analyze(portfolio):
                 values[u] = sum([item['portfolio_value'] for item in universe if item[a]==u if item['HAS_LOOKTHROUGH']=='FALSE'])
             response['composition'][a] = values
 
+    #get ESG data for benchmarks
+    for b in benchmarks:
+        portfolio = investmentportfolio.Get_Portfolio_Holdings(b,False)['holdings']
+        portfolio = [item['holdings'] for item in portfolio] #since we loaded the data in chunks originally
+        portfolio = [item for sublist in portfolio for item in sublist] #flatten the list'
+        b_universe = get_expanded_universe(portfolio)
+        b_NAV = sum(float(item['quantity'])*float(item['PRICE']) for item in portfolio)
+        for a in aggregations:
+            if 'esg_' in a:
+                #compute average ESG for the portfolio (and benchmarks!)
+                response['esg'][b][a] = sum([(item['portfolio_value']/b_NAV)*float(item[a]) for item in b_universe if item['HAS_LOOKTHROUGH']=='FALSE'])
     #create world investment json for the D3 element
     create_world_json(response['composition']["geography"])
 

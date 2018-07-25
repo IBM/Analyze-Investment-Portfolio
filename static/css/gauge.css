@@ -1,0 +1,33 @@
+
+.esg-gauge {
+  position: relative;
+  width: 220px;
+}
+
+.esg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: right;
+}
+
+.esg-amount {
+  opacity: 0;
+  font-size: 30px;
+  font-weight: 300;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+.esg-total {
+  opacity: 0;
+  font-size: 14px;
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+
+.esg-amount, .esg-total {
+  margin: 0;
+}

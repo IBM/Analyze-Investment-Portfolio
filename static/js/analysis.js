@@ -38,18 +38,17 @@ $("#portfolio_file").change(function(e) {
   }
   return false;
 });
+
+
+//declare global constants
+var esgData = {};
+var esgPortfolio = "";
+
 //check user input and process, generate result in tables
 $('.run-analysis').click(function() {
-  var Portfolio = $('.enter-portfolio select').find(":selected").text();
-  var Portfolio = JSON.stringify(Portfolio);
+  var portfolioSelected = $('.enter-portfolio select').find(":selected").text();
+  var Portfolio = JSON.stringify(portfolioSelected);
 
-
-  //input_parameters = {};
-  //input_parameters["portfolio"] = Portfolio.replace(/"/g, "");
-  //input_parameters["aggregations"] = ["geography", "Asset Class", "sector", "has_Tobacco", "has_Alcohol", "has_Gambling", "has_Military", "has_Fossil Fuels", "esg_Controversy", "esg_Environmental", "esg_Governance", "esg_Social", "esg_Sustainability"];
-  //input_parameters = JSON.stringify(input_parameters);
-  //console.log(Portfolio)
-  //verify input otherwise display an informative message
 
   if (Portfolio.includes('Loading...')) {
     alert("Load a portfolio first using Investment Portfolio service");
@@ -78,6 +77,55 @@ $('.run-analysis').click(function() {
         assetAllocationChart(data.composition["Asset Class"],data.NAV);
         industryChart(data.composition.sector,data.NAV);
         geographyChart(data.composition.geography);
+
+        compositionTable(data.portfolio);
+
+        //capture esg data
+        esgData = data.esg;
+        esgPortfolio = portfolioSelected;
+
+
     }
   });
 });
+
+
+
+function compositionTable(portfolio) {
+    console.log("Table :");
+    console.log(portfolio);
+    $('#results > tr').remove();
+    //$('#results').append('<caption> An optimal portfolio was constructed with a volatility that differs from the benchmark by only '+ formatNumber(results.Metadata.ObjectiveValue,10)+'. The following are the trades required to arrive at this optimized portfolio and the resulting allocation.<caption>');
+    if(portfolio.length>0){
+      var rowData="<tr>";
+      var tableCols=[];
+      $.each(portfolio[0], function(key, value) {
+            //console.log(key, value);
+            if(capitalize(key).trim()!="Asset"){
+              rowData+="<td><b>"+capitalize(key)+"</b></td>";
+              tableCols.push(key);
+            }
+      });
+      $("#results > thead").append(rowData+"</tr>");
+      for (var i = 0; i < portfolio.length; i++) {
+        rowData="<tr>";
+        for(var j=0;j<tableCols.length;j++){
+
+          var value = portfolio[i][tableCols[j]];
+          if(typeof value == 'number'){
+          	if (value % 1 != 0) {
+              value = value.toFixed(2);
+            }
+          }
+          //value = isNaN(value)?value:formatNumber(value,5);
+          rowData+="<td>"+value+"</td>";
+        }
+        $("#results > tbody").append(rowData+"</tr>");
+      }
+    }
+
+}
+
+function capitalize(s) {
+    return s[0].toUpperCase() + s.substr(1);
+}

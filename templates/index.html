@@ -11,6 +11,7 @@
   <link href="{{ url_for('static', filename='css/html-key.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/barchart.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/map.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/gauge.css') }}" rel="stylesheet"></link>
   </link>
 </head>
 
@@ -84,12 +85,52 @@
     <div class="content">
 
       <div id="composition">
+
+        <div class="list-view-icon" onclick="displayCompositionTable()">
+          <svg  width="23px" height="18px" viewBox="0 0 23 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+              <desc>Created with Sketch.</desc>
+              <defs></defs>
+              <g id="OZ1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Portfolio-Composition-1" transform="translate(-1344.000000, -158.000000)" fill="#767676">
+                      <g id="ListView-Icon" transform="translate(1344.000000, 158.000000)">
+                          <g id="Shape">
+                              <path d="M0,0 L0,18 L22.5,18 L22.5,0 L0,0 Z M21,16.5 L1.5,16.5 L1.5,13.5 L21,13.5 L21,16.5 Z M21,12 L1.5,12 L1.5,9 L21,9 L21,12 Z M21,7.5 L1.5,7.5 L1.5,4.5 L21,4.5 L21,7.5 Z" fill-rule="nonzero"></path>
+                          </g>
+                      </g>
+                  </g>
+              </g>
+          </svg>
+        </div>
+
+      <div class="list-view-icon" onclick="displayCompositionChart()">
+
+        <svg width="22px" height="18px" viewBox="0 0 22 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+            <desc>Created with Sketch.</desc>
+            <defs></defs>
+            <g id="OZ1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="Portfolio-Composition-1" transform="translate(-1306.000000, -158.000000)" fill="#0F6FFF">
+                    <g id="bar-chart-Icon" transform="translate(1306.000000, 158.000000)">
+                        <g id="Shape" >
+                            <polygon class="pointer" fill-rule="nonzero" points="2 16 2 0 0 0 0 18 22 18 22 16"></polygon>
+                            <path d="M4,7 L8,7 L8,14 L4,14 L4,7 Z M10,1 L14,1 L14,14 L10,14 L10,1 Z M16,5 L20,5 L20,14 L16,14 L16,5 Z" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+      </div>
+
+      <div id="composition-chart" class="tab-white">
+
         <h2 class="bx--graph-header">Portfolio Composition by
           <select class="dropdown">
              <option value="industry">Industry</option>
              <option value="allocation">Asset Allocation</option>
              <option value="geography">Geography</option>
             </select>
+
         </h2>
 
         <div id="by-asset">
@@ -127,13 +168,107 @@
           </div>
         </div>
 
+
+
       </div>
+
+
+
+
+      <div id="portfolio-table" class="tab-white">
+        <center><h2 class="bx--graph-header">Portfolio Composition Table</h3></center>
+        <div class="composition-table">
+          <table id="results">
+            <thead>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
 
 
       <div id="esg-categories">
         <h2 class="bx--graph-header">Portfolio Composition by ESG Category</h2>
 
-      </div>
+        <table align="center">
+          <tr>
+            <td>
+
+              <div class="esg-sustainability-gauge esg-gauge">
+                <svg id="esg-sustainability-chart"></svg>
+                <div class="esg-sustainability-text esg-text">
+                    <p class="esg-sustainability-amount esg-amount"></p>
+                    <p class="esg-sustainability-total esg-total"></p>
+                </div>
+              </div>
+
+            </td>
+
+            <td>
+              <div class="esg-controversy-gauge esg-gauge">
+                <svg id="esg-controversy-chart"></svg>
+                <div class="esg-controversy-text esg-text">
+                    <p class="esg-controversy-amount esg-amount"></p>
+                    <p class="esg-controversy-total esg-total"></p>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="esg-environmental-gauge esg-gauge">
+                <svg id="esg-environmental-chart"></svg>
+                <div class="esg-environmental-text esg-text">
+                    <p class="esg-environmental-amount esg-amount"></p>
+                    <p class="esg-environmental-total esg-total"></p>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="esg-social-gauge esg-gauge">
+                <svg id="esg-social-chart"></svg>
+                <div class="esg-social-text esg-text">
+                    <p class="esg-social-amount esg-amount"></p>
+                    <p class="esg-social-total esg-total"></p>
+                </div>
+              </div>
+            </td>
+
+            <td>
+              <div class="esg-governance-gauge esg-gauge">
+                <svg id="esg-governance-chart"></svg>
+                <div class="esg-governance-text esg-text">
+                    <p class="esg-governance-amount esg-amount"></p>
+                    <p class="esg-governance-total esg-total"></p>
+                </div>
+              </div>
+            </td>
+
+          </tr>
+
+          <tr>
+            <td>
+              <p>Sustainability</p>
+            </td>
+            <td>
+              <p>Controversy</p>
+            </td>
+            <td>
+              <p>Environmental</p>
+            </td>
+            <td>
+              <p>Social</p>
+            </td>
+            <td>
+              <p>Governance</p>
+            </td>
+          </tr>
+        </table>
+
+    </div>
 
 
       <div id="search">
@@ -363,3 +498,5 @@
 <script src="{{ url_for('static', filename='js/industry.js') }}"></script>
 <script src="{{ url_for('static', filename='js/geography/d3-tip.js') }}"></script>
 <script src="{{ url_for('static', filename='js/geography/geography.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/esg-gauge.js') }}"></script>

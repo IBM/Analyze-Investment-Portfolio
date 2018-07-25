@@ -23,6 +23,18 @@ $( ".dropdown" )
   })
   .change();
 
+function displayCompositionTable() {
+  console.log('displayCompositionTable')
+    document.getElementById('portfolio-table').style.display = "block";
+    document.getElementById('composition-chart').style.display = "none";
+}
+
+function displayCompositionChart() {
+    console.log('displayCompositionChart')
+    document.getElementById('portfolio-table').style.display = "none";
+    document.getElementById('composition-chart').style.display = "block";
+}
+
 
 function displayComposition() {
   document.getElementById('composition').style.display = "block";
@@ -34,6 +46,7 @@ function displayComposition() {
 }
 
 
+
 function displayEsgCategories() {
   document.getElementById('composition').style.display = "none";
   document.getElementById('esg-categories').style.display = "block";
@@ -41,6 +54,7 @@ function displayEsgCategories() {
   document.getElementById('benchmarks').style.display = "none";
   document.getElementById('non-esg').style.display = "none";
   document.getElementById('improve').style.display = "none";
+  esgGaugeCharts();
 }
 
 function displaySearch() {

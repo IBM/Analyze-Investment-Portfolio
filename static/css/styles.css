@@ -1,10 +1,4 @@
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-  position: relative; }
-
 body {
   margin: 0;
   height: 100%;
@@ -61,6 +55,7 @@ body {
     top: 0px;
     height: 48px;
     line-height: 48px;
+    margin-right: calc((100vw - 900px) / 2);
 }
 
 .new-analysis {
@@ -213,6 +208,28 @@ h2 {
   display: none;
 }
 
+#portfolio-table {
+  display: none;
+}
+
 .pointer {
   cursor: pointer;
+}
+
+
+.list-view-icon {
+  float: right;
+  padding-right: 15px;
+  cursor: pointer;
+  position: initial;
+}
+
+.chart-view-icon {
+  float: right;
+  padding-right: 15px;
+}
+
+.composition-table {
+  overflow:scroll;
+  height:300px;
 }
