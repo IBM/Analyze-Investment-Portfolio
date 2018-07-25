@@ -7,21 +7,11 @@ function esgGaugeCharts() {
 
   var portfolioEsg = esgData[esgPortfolio];
 
-
-  console.log('portfolio');
-  console.log(esgPortfolio);
-  console.log('portfolio_esg');
-  console.log(portfolioEsg);
-
-  for (var key in portfolioEsg) {
-      total += portfolioEsg[key];
-  }
-
-  esgChart(portfolioEsg.esg_Sustainability, total, "sustainability", '#3b1a40');
-  esgChart(portfolioEsg.esg_Controversy, total, "controversy", '#473793');
-  esgChart(portfolioEsg.esg_Environmental, total, "environmental", '#3c6df0');
-  esgChart(portfolioEsg.esg_Social, total, "social", '#00a68f');
-  esgChart(portfolioEsg.esg_Governance, total, "governance", '#56D2BB');
+  esgChart(portfolioEsg.esg_Sustainability, 10, "sustainability", '#3b1a40');
+  esgChart(portfolioEsg.esg_Controversy, 10, "controversy", '#473793');
+  esgChart(portfolioEsg.esg_Environmental, 10, "environmental", '#3c6df0');
+  esgChart(portfolioEsg.esg_Social, 10, "social", '#00a68f');
+  esgChart(portfolioEsg.esg_Governance, 10, "governance", '#56D2BB');
 
 }
 
@@ -33,7 +23,7 @@ function esgChart(amount, total, esgType, color) {
   var padding = 30;
   var boxSize = (radius + padding) * 2;
   var ratio = amount / total;
-  var percent = Math.round(ratio * 100);
+  //var percent = Math.round(ratio * 100); 
 
   var arc = d3.arc().innerRadius(radius).outerRadius(radius - 10).startAngle(0);
 
@@ -49,8 +39,16 @@ function esgChart(amount, total, esgType, color) {
 
   // Text Labels
   var amountText = d3.select('.esg-' + esgType + '-amount');
-  amountText.style('opacity', 0).transition().duration(1000).delay(1500).style('opacity', 1).text(percent + '%');
-
+  amountText.style('opacity', 0).transition().duration(1000).delay(1500).style('opacity', 1).text(amount.toFixed(2));
+  const totalText = d3.select('.esg-' + esgType + '-total');
+  totalText
+    .style('opacity', 0)
+    .transition()
+    .duration(1000)
+    .delay(1700)
+    .style('opacity', 1)
+    .text(`/${10}`);
+    
   // Animation function
   function arcTween(newAngle) {
       return function (d) {
