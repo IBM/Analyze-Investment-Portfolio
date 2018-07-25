@@ -61,23 +61,29 @@ function industryChart(portfolioData,NAV) {
   var xAxis = d3.axisBottom().scale(x).tickSize(0);
 
 
-  var yAxis = d3.axisLeft().ticks(4).scale(y.nice()).tickFormat(formatPercent);
+  var yAxis = d3.axisLeft().ticks(4).tickSize(-width).scale(y.nice()).tickFormat(formatPercent);
 
 
   // // Set up SVG with initial transform to avoid repeat positioning
   var svg = d3.select('#industry-chart').attr('class', 'graph').attr('width', width + (margin.left + margin.right)).attr('height', height + (margin.top + margin.bottom)).append('g').attr('class', 'group-container').attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')').attr('font-family', 'ibm-plex-sans');
 
   // // Add Y axis
-  svg.append('g').attr('class', 'axis y').attr('stroke-dasharray', '4').call(yAxis).selectAll('text').attr("x", -axisOffset).attr('font-family', 'ibm-plex-sans');
-
-  // // Add Y axis label
-  //var yLabel = svg.select('.y').append('text').text('USAGE ($)').attr('class', 'label').attr('transform', 'translate(' + -labelOffset + ', ' + height / 2 + ') rotate(-90)').attr('font-family', 'ibm-plex-sans');
+  svg.append('g')
+  .attr('class', 'axis y')
+  .attr('stroke-dasharray', '4')
+  .call(yAxis)
+  .selectAll('text')
+  .attr("x", -axisOffset)
+  .attr('font-family', 'ibm-plex-sans');
 
   // // Add X axis
-  svg.append('g').attr('class', 'axis x').attr('transform', 'translate(0, ' + height + ')').call(xAxis).selectAll('text').attr("y", axisOffset).attr('font-family', 'ibm-plex-sans');
-
-  // // Add X axis label
-  //var xLabel = svg.select('.x').append('text').text('MONTH').attr('class', 'label').attr('transform', 'translate(' + width / 2 + ', ' + labelOffset + ')').attr('font-family', 'ibm-plex-sans');
+  svg.append('g')
+  .attr('class', 'axis x')
+  .attr('transform', 'translate(0, ' + height + ')')
+  .call(xAxis)
+  .selectAll('text')
+  .attr("y", axisOffset)
+  .attr('font-family', 'ibm-plex-sans');
 
   svg.append('g')
   .attr('class', 'bar-container')
