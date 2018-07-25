@@ -253,6 +253,7 @@ def portfolio_analyze(portfolio):
         'sin':{},
         'esg':{},
         'search':[item['name'] + ' (' + item['TICKER'] + ')' for item in universe], # search universe
+        'portfolio':[{'name':item['name'],'value ($USD)':item['portfolio_value'],'Portfolio Contribution (%)':item['portfolio_value']/NAV,'Industry Sector':item['sector'],'Asset Class':item['Asset Class'],'Geography':item['geography']} for item in universe],
         'composition':{}
     }
     for a in aggregations:
