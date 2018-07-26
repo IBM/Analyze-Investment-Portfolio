@@ -253,7 +253,7 @@ def portfolio_analyze(portfolio):
         'sin':{},
         'esg':{portfolio_name:{}},
         'search':[], # search universe
-        'portfolio':[{'name':item['name'],'value ($USD)':(float(item['quantity'])*float(item['PRICE'])),'Portfolio Contribution (%)':(float(item['quantity'])*float(item['PRICE']))/NAV,'Industry Sector':item['sector'],'Asset Class':item['Asset Class'],'Geography':item['geography']} for item in portfolio],
+        'portfolio':[{'name':item['name'],'value ($USD)':(float(item['quantity'])*float(item['PRICE'])),'Portfolio Contribution (%)':((float(item['quantity'])*float(item['PRICE']))/NAV)*100,'Industry Sector':item['sector'],'Asset Class':item['Asset Class'],'Geography':item['geography']} for item in portfolio],
         'composition':{}
     }
     universe = get_expanded_universe(portfolio)
