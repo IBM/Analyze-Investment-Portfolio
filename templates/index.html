@@ -7,6 +7,7 @@
   </title>
   <link href="{{ url_for('static', filename='images/WatsonLogo.png') }}" rel="icon" type="image/png">
   <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/datatable.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/piechart.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/html-key.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/barchart.css') }}" rel="stylesheet"></link>
@@ -172,21 +173,19 @@
 
       </div>
 
-
-
-
-      <div id="portfolio-table" class="tab-white">
-        <center><h2 class="bx--graph-header">Portfolio Composition Table</h3></center>
-        <div class="composition-table">
+      <div id="portfolio-table" class="bx--data-table-v2 bx--data-table-v2--compact">
+        <center><h2 class="bx--data-table-v2-header">Portfolio Composition Table</h3>
+        <div class="bx--data-table-v2 bx--data-table-v2--zebra">
           <table id="results">
             <thead>
             </thead>
             <tbody>
             </tbody>
           </table>
+          
         </div>
       </div>
-
+    </center>
     </div>
 
 
@@ -496,7 +495,7 @@
 <script src="{{ url_for('static', filename='js/display.js') }}"></script>
 <script src="{{ url_for('static', filename='js/asset.js') }}"></script>
 <script src="{{ url_for('static', filename='js/industry.js') }}"></script>
+<script src="{{ url_for('static', filename='js/datatable.js') }}"></script>
 <script src="{{ url_for('static', filename='js/geography/d3-tip.js') }}"></script>
 <script src="{{ url_for('static', filename='js/geography/geography.js') }}"></script>
-
 <script src="{{ url_for('static', filename='js/esg-gauge.js') }}"></script>
