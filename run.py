@@ -244,20 +244,21 @@ def portfolio_analyze(portfolio):
     portfolio = investmentportfolio.Get_Portfolio_Holdings(portfolio,False)['holdings'] # client portfolio
     portfolio = [item['holdings'] for item in portfolio] #since we loaded the data in chunks originally
     portfolio = [item for sublist in portfolio for item in sublist] #flatten the list'
-    
+    print([item['name'] for item in portfolio])
     aggregations = ["geography","Asset Class","sector","has_Tobacco","has_Alcohol","has_Gambling","has_Military","has_Fossil Fuels","esg_Controversy","esg_Environmental","esg_Governance","esg_Social","esg_Sustainability"]
-
+    
     NAV = sum(float(item['quantity'])*float(item['PRICE']) for item in portfolio)
-    universe = get_expanded_universe(portfolio)
     response = {
         "NAV":NAV,
         'sin':{},
         'esg':{portfolio_name:{}},
-        'search':[item['name'] + ' (' + item['TICKER'] + ')' for item in universe], # search universe
-        'portfolio':[{'name':item['name'],'value ($USD)':item['portfolio_value'],'Portfolio Contribution (%)':item['portfolio_value']/NAV,'Industry Sector':item['sector'],'Asset Class':item['Asset Class'],'Geography':item['geography']} for item in universe],
+        'search':[], # search universe
+        'portfolio':[{'name':item['name'],'value ($USD)':(float(item['quantity'])*float(item['PRICE'])),'Portfolio Contribution (%)':(float(item['quantity'])*float(item['PRICE']))/NAV,'Industry Sector':item['sector'],'Asset Class':item['Asset Class'],'Geography':item['geography']} for item in portfolio],
         'composition':{}
     }
-    #hard-coded benchmarks for now, but it's possible a user would want to make benchmark choices static...
+    universe = get_expanded_universe(portfolio)
+    response['search'] = [item['name'] + ' (' + item['TICKER'] + ')' for item in universe]
+    #hard-coded benchmarks for now, as it's possible a user would want to make benchmark choices static...
     benchmarks = ['IVV','HYG','LQD']
     for b in benchmarks:
         response['esg'][b] = {}
@@ -294,7 +295,7 @@ def portfolio_analyze(portfolio):
                 response['esg'][b][a] = sum([(item['portfolio_value']/b_NAV)*float(item[a]) for item in b_universe if item['HAS_LOOKTHROUGH']=='FALSE'])
     #create world investment json for the D3 element
     create_world_json(response['composition']["geography"])
-
+    
     return Response(json.dumps(response), mimetype='application/json')
 
 
