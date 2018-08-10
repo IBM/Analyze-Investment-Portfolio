@@ -239,14 +239,14 @@ def portfolio_analyze(portfolio):
     if request.method == 'POST':
         req = request.get_json(silent=True)
         portfolio = req['portfolio']
-    
+
     portfolio_name = portfolio #persist name
     portfolio = investmentportfolio.Get_Portfolio_Holdings(portfolio,False)['holdings'] # client portfolio
     portfolio = [item['holdings'] for item in portfolio] #since we loaded the data in chunks originally
     portfolio = [item for sublist in portfolio for item in sublist] #flatten the list'
-    print([item['name'] for item in portfolio])
+    #print([item['name'] for item in portfolio])
     aggregations = ["geography","Asset Class","sector","has_Tobacco","has_Alcohol","has_Gambling","has_Military","has_Fossil Fuels","esg_Controversy","esg_Environmental","esg_Governance","esg_Social","esg_Sustainability"]
-    
+
     NAV = sum(float(item['quantity'])*float(item['PRICE']) for item in portfolio)
     response = {
         "NAV":NAV,
@@ -262,7 +262,7 @@ def portfolio_analyze(portfolio):
     benchmarks = ['IVV','HYG','LQD']
     for b in benchmarks:
         response['esg'][b] = {}
-    
+
     #Calculate data for response
     for a in aggregations:
         #sin stocks - just need true
@@ -295,7 +295,7 @@ def portfolio_analyze(portfolio):
                 response['esg'][b][a] = sum([(item['portfolio_value']/b_NAV)*float(item[a]) for item in b_universe if item['HAS_LOOKTHROUGH']=='FALSE'])
     #create world investment json for the D3 element
     create_world_json(response['composition']["geography"])
-    
+
     return Response(json.dumps(response), mimetype='application/json')
 
 
@@ -337,15 +337,15 @@ def search(portfolio,security):
 
 
 def create_world_json(data):
-    print("create world json")
-    print(data)
+    #print("create world json")
+    #print(data)
 
     with open('static/js/geography/world_investment_default.json','r') as inFile:
-          print("open file")
+          #print("open file")
           jsonData = json.load(inFile)
           inFile.close()
 
-    print("world investment json")
+    #print("world investment json")
     #print(jsonData)
 
     dataLength = len(jsonData)

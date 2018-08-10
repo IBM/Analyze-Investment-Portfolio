@@ -19,3 +19,9 @@
 .legend {
   text-align: left;
 }
+
+.benchmarks-key-col {
+  border-left: 1px solid #bdb9b9;
+  padding: 20px;
+  text-align: left;
+}

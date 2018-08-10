@@ -3,7 +3,6 @@ function esgGaugeCharts() {
 
   console.log('esg data');
   console.log(esgData);
-  var total = 0;
 
   var portfolioEsg = esgData[esgPortfolio];
 
@@ -23,7 +22,7 @@ function esgChart(amount, total, esgType, color) {
   var padding = 30;
   var boxSize = (radius + padding) * 2;
   var ratio = amount / total;
-  //var percent = Math.round(ratio * 100); 
+  //var percent = Math.round(ratio * 100);
 
   var arc = d3.arc().innerRadius(radius).outerRadius(radius - 10).startAngle(0);
 
@@ -48,7 +47,7 @@ function esgChart(amount, total, esgType, color) {
     .delay(1700)
     .style('opacity', 1)
     .text(`/${10}`);
-    
+
   // Animation function
   function arcTween(newAngle) {
       return function (d) {

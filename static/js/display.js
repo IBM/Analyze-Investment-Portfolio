@@ -24,13 +24,11 @@ $( ".dropdown" )
   .change();
 
 function displayCompositionTable() {
-  console.log('displayCompositionTable')
     document.getElementById('portfolio-table').style.display = "block";
     document.getElementById('composition-chart').style.display = "none";
 }
 
 function displayCompositionChart() {
-    console.log('displayCompositionChart')
     document.getElementById('portfolio-table').style.display = "none";
     document.getElementById('composition-chart').style.display = "block";
 }
@@ -73,6 +71,7 @@ function displayBenchmarks() {
   document.getElementById('benchmarks').style.display = "block";
   document.getElementById('non-esg').style.display = "none";
   document.getElementById('improve').style.display = "none";
+  benchmarksChart();
 }
 
 function displayNonEsg() {

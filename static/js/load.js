@@ -11,7 +11,7 @@ $('.new-analysis').click(function() {
 //update interface with portfolios and risk factors
 function updateText() {
 
-    console.log("apiUrl: " + apiUrl)
+    //console.log("apiUrl: " + apiUrl)
     //update portfolio lists
     var portfolioLists;
     $.get(apiUrl + 'look_through_portfolios', function(data) {
@@ -21,18 +21,10 @@ function updateText() {
                 return "Please load a portfolio below.";
             }else{
             var str = '<option value="" disabled="" selected="">   Select your portfolio</option>';
-            //var parsed = JSON.parse(data)
-            /*
-            console.log("data in get portfolionames" + data);
-            for (var i = 0; i < parsed.length; i++) {
-                str = str + '<option>' + parsed[i] + '</option>';
-            }
-            portfolioLists = parsed;
-            */
             for (var i = 0; i < data.length; i++) {
                 str = str + '<option>' + data[i] + '</option>';
             }
-            console.log("str: " + str)
+            //console.log("str: " + str)
             return str;
         }
         });

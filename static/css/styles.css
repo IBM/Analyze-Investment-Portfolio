@@ -155,7 +155,9 @@ h2 {
 }
 
 #filmstrip {
-  width: 100%
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .tab-content {
@@ -210,6 +212,7 @@ h2 {
 
 #portfolio-table {
   display: none;
+  margin-bottom: 5rem;
 }
 
 .pointer {
@@ -232,4 +235,25 @@ h2 {
 .composition-table {
   overflow:scroll;
   height:300px;
+}
+
+/*
+.bx--responsive-table tbody{
+  display:block;
+  overflow:auto;
+  height:200px;
+  width:100%;
+}
+
+.bx--responsive-table thead tr{
+  display:block;
+}
+*/
+
+th svg {
+  opacity: 0;
+}
+
+th[data-active] svg {
+  opacity: 1;
 }

@@ -6,13 +6,14 @@
     Portfolio Analyze
   </title>
   <link href="{{ url_for('static', filename='images/WatsonLogo.png') }}" rel="icon" type="image/png">
+  <link href="{{ url_for('static', filename='css/carbon-components.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"></link>
-  <link href="{{ url_for('static', filename='css/datatable.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/piechart.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/html-key.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/barchart.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/map.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/gauge.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/grouped-barchart.css') }}" rel="stylesheet"></link>
   </link>
 </head>
 
@@ -125,6 +126,7 @@
 
       <div id="composition-chart" class="tab-white">
 
+        <br>
         <h2 class="bx--graph-header">Portfolio Composition by
           <select class="dropdown">
              <option value="industry">Industry</option>
@@ -169,27 +171,29 @@
           </div>
         </div>
 
-
-
       </div>
 
-      <div id="portfolio-table" class="bx--data-table-v2 bx--data-table-v2--compact">
+
+      <div id="portfolio-table">
+        <br>
         <center><h2 class="bx--data-table-v2-header">Portfolio Composition Table</h3>
-        <div class="bx--data-table-v2 bx--data-table-v2--zebra">
-          <table id="results">
-            <thead>
+        <div class="bx--responsive-table-container" data-responsive-table>
+          <table id="results"  class="bx--responsive-table bx--responsive-table--static-size" data-table>
+            <thead class="bx--table-head">
             </thead>
-            <tbody>
+            <tbody class="bx--table-body">
             </tbody>
           </table>
-          
         </div>
       </div>
-    </center>
+      </center>
+      <br><br><br><br>
+
     </div>
 
 
       <div id="esg-categories">
+        <br>
         <h2 class="bx--graph-header">Portfolio Composition by ESG Category</h2>
 
         <table align="center">
@@ -271,18 +275,41 @@
 
 
       <div id="search">
+        <br>
         <h2 class="bx--graph-header">Search</h2>
       </div>
 
       <div id="benchmarks">
+        <br>
         <h2 class="bx--graph-header">Benchmarks</h2>
+        <p>How does your portfolio compare to the benchmarks for ESG categories?</p>
+
+
+        <table align="center">
+          <tr>
+            <td>
+              <div class="graph-container-groupedbar">
+                  <svg id="benchmarks-chart"></svg>
+                  <div class="tooltip-groupedbar"></div>
+              </div>
+            </td>
+
+            <td class="benchmarks-key-col">
+                 <p>Key</p>
+                 <div class="benchmarks-key"></div>
+            </td>
+          </tr>
+        </table>
+
       </div>
 
       <div id="non-esg">
-        <h2 class="bx--graph-header">Non-ESG</h2>
+        <br>
+        <h2 class="bx--graph-header">"Sin" Investments In Your Portfolio</h2>
       </div>
 
       <div id="improve">
+        <br>
         <h2 class="bx--graph-header">Improve</h2>
       </div>
 
@@ -495,7 +522,11 @@
 <script src="{{ url_for('static', filename='js/display.js') }}"></script>
 <script src="{{ url_for('static', filename='js/asset.js') }}"></script>
 <script src="{{ url_for('static', filename='js/industry.js') }}"></script>
-<script src="{{ url_for('static', filename='js/datatable.js') }}"></script>
 <script src="{{ url_for('static', filename='js/geography/d3-tip.js') }}"></script>
 <script src="{{ url_for('static', filename='js/geography/geography.js') }}"></script>
 <script src="{{ url_for('static', filename='js/esg-gauge.js') }}"></script>
+<script src="{{ url_for('static', filename='js/datatable.js') }}"></script>
+<script src="{{ url_for('static', filename='js/carbon-components.js') }}"></script>
+<script src="{{ url_for('static', filename='js/benchmarks.js') }}"></script>
+
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

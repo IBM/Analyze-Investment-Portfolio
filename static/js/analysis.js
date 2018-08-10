@@ -40,7 +40,7 @@ $("#portfolio_file").change(function(e) {
 });
 
 
-//declare global constants
+//declare global variables
 var esgData = {};
 var esgPortfolio = "";
 
