@@ -62,6 +62,7 @@ function displaySearch() {
   document.getElementById('benchmarks').style.display = "none";
   document.getElementById('non-esg').style.display = "none";
   document.getElementById('improve').style.display = "none";
+  document.getElementById('search-description').style.display = "block";
 }
 
 function displayBenchmarks() {

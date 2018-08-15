@@ -60,7 +60,6 @@ $('.run-analysis').click(function() {
 
   document.getElementById('loader').style.display = "flex";
 
-
   $.ajax({
     type: 'GET',
     url: apiUrl + 'portfolio-analyze/' + String(Portfolio.replace(/"/g, "")),
@@ -79,12 +78,14 @@ $('.run-analysis').click(function() {
         geographyChart(data.composition.geography);
 
         compositionTable(data.portfolio);
+        sinCharts(data.sin,data.NAV);
+
+        portfolioName = String(Portfolio.replace(/"/g, ""));
+        searchField(data.search, portfolioName);
 
         //capture esg data
         esgData = data.esg;
         esgPortfolio = portfolioSelected;
-
-
     }
   });
 });

@@ -8,12 +8,14 @@
   <link href="{{ url_for('static', filename='images/WatsonLogo.png') }}" rel="icon" type="image/png">
   <link href="{{ url_for('static', filename='css/carbon-components.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"></link>
-  <link href="{{ url_for('static', filename='css/piechart.css') }}" rel="stylesheet"></link>
-  <link href="{{ url_for('static', filename='css/html-key.css') }}" rel="stylesheet"></link>
-  <link href="{{ url_for('static', filename='css/barchart.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/assets.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/chart-key.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/industry.css') }}" rel="stylesheet"></link>
   <link href="{{ url_for('static', filename='css/map.css') }}" rel="stylesheet"></link>
-  <link href="{{ url_for('static', filename='css/gauge.css') }}" rel="stylesheet"></link>
-  <link href="{{ url_for('static', filename='css/grouped-barchart.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/esg-categories.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/benchmarks.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/sin.css') }}" rel="stylesheet"></link>
+  <link href="{{ url_for('static', filename='css/search.css') }}" rel="stylesheet"></link>
   </link>
 </head>
 
@@ -32,13 +34,13 @@
       </div>
     </div>
 
-  <div id="analysis-input" class="analysis-input">
-    <div class="heading-input">
-      Do you know what's in your portfolio
-    </div>
+    <div id="analysis-input" class="analysis-input">
+      <div class="heading-input">
+        Do you know what's in your portfolio
+      </div>
 
-    <div style="height: 200px;">
-      <div style="width: 50%; float:left">
+      <div style="height: 200px;">
+        <div style="width: 50%; float:left">
           <div>
             <br>
             <p>Use our sample portfolios to see how we analyze portfolios and preview the features.</p>
@@ -53,24 +55,24 @@
             </select>
           </div>
           <br>
-      </div>
+        </div>
 
-      <div style="width: 50%; float:right">
-        <div class="radio">
-          <br>
-          <p>Upload your portfolio to find out more about what you are holding and what the possibilities for change are.</p>
-          <label><input type="radio" name="user_portfolio" value="new"><b class="radio-text">I want to view my own portfolio</b></label>
+        <div style="width: 50%; float:right">
+          <div class="radio">
+            <br>
+            <p>Upload your portfolio to find out more about what you are holding and what the possibilities for change are.</p>
+            <label><input type="radio" name="user_portfolio" value="new"><b class="radio-text">I want to view my own portfolio</b></label>
 
-          <input type="file" id="portfolio_file" class="" aria-label="upload portfolio">
+            <input type="file" id="portfolio_file" class="" aria-label="upload portfolio">
+          </div>
         </div>
       </div>
+
     </div>
 
-  </div>
-
-  <div id="started-button" class="get-started">
-    <button class="run-analysis" id="run-button" aria-label="Run Analysis">Get started</button>
-  </div>
+    <div id="started-button" class="get-started">
+      <button class="run-analysis" id="run-button" aria-label="Run Analysis">Get started</button>
+    </div>
 
 
     <div id="loader" class="loader">
@@ -81,15 +83,15 @@
       </h2>
     </div>
 
-  <div id="analysis" class="tab-content">
-    <!--div class="tab tab-one" id="tab-one"-->
+    <div id="analysis" class="tab-content">
+      <!--div class="tab tab-one" id="tab-one"-->
 
-    <div class="content">
+      <div class="content">
 
-      <div id="composition">
+        <div id="composition">
 
-        <div class="list-view-icon" onclick="displayCompositionTable()">
-          <svg  width="23px" height="18px" viewBox="0 0 23 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <div class="list-view-icon" onclick="displayCompositionTable()">
+            <svg width="23px" height="18px" viewBox="0 0 23 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
               <desc>Created with Sketch.</desc>
               <defs></defs>
@@ -103,11 +105,11 @@
                   </g>
               </g>
           </svg>
-        </div>
+          </div>
 
-      <div class="list-view-icon" onclick="displayCompositionChart()">
+          <div class="list-view-icon" onclick="displayCompositionChart()">
 
-        <svg width="22px" height="18px" viewBox="0 0 22 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <svg width="22px" height="18px" viewBox="0 0 22 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
             <desc>Created with Sketch.</desc>
             <defs></defs>
@@ -122,12 +124,12 @@
                 </g>
             </g>
         </svg>
-      </div>
+          </div>
 
-      <div id="composition-chart" class="tab-white">
+          <div id="composition-chart" class="tab-white">
 
-        <br>
-        <h2 class="bx--graph-header">Portfolio Composition by
+            <br>
+            <h2 class="bx--graph-header">Portfolio Composition by
           <select class="dropdown">
              <option value="industry">Industry</option>
              <option value="allocation">Asset Allocation</option>
@@ -136,47 +138,48 @@
 
         </h2>
 
-        <div id="by-asset">
-          <table align="center">
-            <tr>
-              <td>
-                <div class="graph-container">
-                	<svg id="allocation-chart"></svg>
-                	<div class="tooltip">
-                    <p class="amount"></p>
-                    <p class="item"></p>
-                	</div>
-                </div>
-              </td>
+            <div id="by-asset">
+              <table align="center">
+                <tr>
+                  <td>
+                    <div class="graph-container">
+                      <svg id="allocation-chart"></svg>
+                      <div class="tooltip">
+                        <p class="amount"></p>
+                        <p class="item"></p>
+                      </div>
+                    </div>
+                  </td>
 
-              <td class="key-col">
-                   <p>Key</p>
-                   <div class="key"></div>
-              </td>
-            </tr>
-          </table>
-        </div>
+                  <td class="key-col">
+                    <p>Key</p>
+                    <div class="key"></div>
+                  </td>
+                </tr>
+              </table>
+            </div>
 
-        <div id="by-industry">
+            <div id="by-industry">
 
-            <div class="graph-container-bar">
+              <div class="graph-container-bar">
                 <svg id="industry-chart"></svg>
                 <div class="tooltip-bar"></div>
+              </div>
             </div>
-        </div>
 
-        <div id="by-geography">
-          <div class="map-container">
-            <svg id="geography-chart"></svg>
+            <div id="by-geography">
+              <div class="map-container">
+                <svg id="geography-chart"></svg>
+              </div>
+            </div>
+
           </div>
-        </div>
-
-      </div>
 
 
-      <div id="portfolio-table">
-        <br>
-        <center><h2 class="bx--data-table-v2-header">Portfolio Composition Table</h3>
+          <div id="portfolio-table">
+            <br>
+            <center>
+              <h2 class="bx--data-table-v2-header">Portfolio Composition Table</h3>
         <div class="bx--responsive-table-container" data-responsive-table>
           <table id="results"  class="bx--responsive-table bx--responsive-table--static-size" data-table>
             <thead class="bx--table-head">
@@ -196,130 +199,236 @@
         <br>
         <h2 class="bx--graph-header">Portfolio Composition by ESG Category</h2>
 
-        <table align="center">
-          <tr>
-            <td>
+              <table align="center">
+                <tr>
+                  <td>
 
-              <div class="esg-sustainability-gauge esg-gauge">
-                <svg id="esg-sustainability-chart"></svg>
-                <div class="esg-sustainability-text esg-text">
-                    <p class="esg-sustainability-amount esg-amount"></p>
-                    <p class="esg-sustainability-total esg-total"></p>
-                </div>
+                    <div class="esg-sustainability-gauge esg-gauge">
+                      <svg id="esg-sustainability-chart"></svg>
+                      <div class="esg-sustainability-text esg-text">
+                        <p class="esg-sustainability-amount esg-amount"></p>
+                        <p class="esg-sustainability-total esg-total"></p>
+                      </div>
+                    </div>
+
+                  </td>
+
+                  <td>
+                    <div class="esg-controversy-gauge esg-gauge">
+                      <svg id="esg-controversy-chart"></svg>
+                      <div class="esg-controversy-text esg-text">
+                        <p class="esg-controversy-amount esg-amount"></p>
+                        <p class="esg-controversy-total esg-total"></p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="esg-environmental-gauge esg-gauge">
+                      <svg id="esg-environmental-chart"></svg>
+                      <div class="esg-environmental-text esg-text">
+                        <p class="esg-environmental-amount esg-amount"></p>
+                        <p class="esg-environmental-total esg-total"></p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="esg-social-gauge esg-gauge">
+                      <svg id="esg-social-chart"></svg>
+                      <div class="esg-social-text esg-text">
+                        <p class="esg-social-amount esg-amount"></p>
+                        <p class="esg-social-total esg-total"></p>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="esg-governance-gauge esg-gauge">
+                      <svg id="esg-governance-chart"></svg>
+                      <div class="esg-governance-text esg-text">
+                        <p class="esg-governance-amount esg-amount"></p>
+                        <p class="esg-governance-total esg-total"></p>
+                      </div>
+                    </div>
+                  </td>
+
+                </tr>
+
+                <tr>
+                  <td>
+                    <p>Sustainability</p>
+                  </td>
+                  <td>
+                    <p>Controversy</p>
+                  </td>
+                  <td>
+                    <p>Environmental</p>
+                  </td>
+                  <td>
+                    <p>Social</p>
+                  </td>
+                  <td>
+                    <p>Governance</p>
+                  </td>
+                </tr>
+              </table>
+
+          </div>
+
+
+          <div id="search">
+            <br>
+            <h2 class="bx--graph-header">Search</h2>
+            <p id="search-description">
+              Search on single instruments to see how much you own in your portfolio.
+              <br> Enter the partial name (3 or more characters) for any ETF, Mutual Fund or Stock Symbol.
+            </p>
+            <div>
+
+              <div id="w">
+                <div id="content">
+                  <div id="searchfield">
+                    <form id="searchform"><input type="text" class="biginput" id="autocomplete"></form>
+                  </div>
+
+                  <div id="outputbox">
+
+                    <table class="search-result-table">
+
+                      <tr>
+                        <td>
+                          <h3 class="bx--graph-header"><b>ESG Score</b></h3>
+
+                          <div class="graph-container-portfolio-bar">
+                            <svg id="portfolio-esg-chart"></svg>
+                          </div>
+
+                        </td>
+                        <td>
+                          <h3 id="portfolioName" class="bx--graph-header"><b></b></h3>
+
+                          <h2 id="portfolioPrice"><h2>
+
+                      <p id="portfolioDirect"> </p>
+
+                    </td>
+                    <td>
+                      <h3 class="bx--graph-header"><b>Additional Exposure</b></h3>
+                      <br><br>
+
+                      <p id="portfolioIndirect"> </p>
+
+                    </td>
+
+                  </tr>
+
+                </table>
               </div>
 
-            </td>
+            </div>
+          </div>
 
-            <td>
-              <div class="esg-controversy-gauge esg-gauge">
-                <svg id="esg-controversy-chart"></svg>
-                <div class="esg-controversy-text esg-text">
-                    <p class="esg-controversy-amount esg-amount"></p>
-                    <p class="esg-controversy-total esg-total"></p>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="esg-environmental-gauge esg-gauge">
-                <svg id="esg-environmental-chart"></svg>
-                <div class="esg-environmental-text esg-text">
-                    <p class="esg-environmental-amount esg-amount"></p>
-                    <p class="esg-environmental-total esg-total"></p>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="esg-social-gauge esg-gauge">
-                <svg id="esg-social-chart"></svg>
-                <div class="esg-social-text esg-text">
-                    <p class="esg-social-amount esg-amount"></p>
-                    <p class="esg-social-total esg-total"></p>
-                </div>
-              </div>
-            </td>
-
-            <td>
-              <div class="esg-governance-gauge esg-gauge">
-                <svg id="esg-governance-chart"></svg>
-                <div class="esg-governance-text esg-text">
-                    <p class="esg-governance-amount esg-amount"></p>
-                    <p class="esg-governance-total esg-total"></p>
-                </div>
-              </div>
-            </td>
-
-          </tr>
-
-          <tr>
-            <td>
-              <p>Sustainability</p>
-            </td>
-            <td>
-              <p>Controversy</p>
-            </td>
-            <td>
-              <p>Environmental</p>
-            </td>
-            <td>
-              <p>Social</p>
-            </td>
-            <td>
-              <p>Governance</p>
-            </td>
-          </tr>
-        </table>
-
-    </div>
+        </div>
 
 
-      <div id="search">
-        <br>
-        <h2 class="bx--graph-header">Search</h2>
       </div>
 
       <div id="benchmarks">
         <br>
         <h2 class="bx--graph-header">Benchmarks</h2>
-        <p>How does your portfolio compare to the benchmarks for ESG categories?</p>
+                          <p>How does your portfolio compare to the benchmarks for ESG categories?</p>
+
+                          <table align="center">
+                            <tr>
+                              <td>
+                                <div class="graph-container-groupedbar">
+                                  <svg id="benchmarks-chart"></svg>
+                                  <div class="tooltip-groupedbar"></div>
+                                </div>
+                              </td>
+
+                              <td class="benchmarks-key-col">
+                                <p>Key</p>
+                                <div class="benchmarks-key"></div>
+                              </td>
+                            </tr>
+                          </table>
+
+                  </div>
+
+                  <div id="non-esg">
+                    <br>
+                    <h2 class="bx--graph-header">"Sin" Investments In Your Portfolio</h2>
+                    <table align="center">
+                      <tr>
+                        <td>
+                          <h3 class="bx--graph-header"><b>"Sin" Exposure</b></h3>
+
+                          <div class="esg-gauge">
+                            <svg id="sin-chart"></svg>
+                          </div>
+                          <div class="sin-text"></div>
+
+                        </td>
+
+                        <td>
+                          <h3 class="bx--graph-header"><b>"Sin" Investments Breakdown</b></h3>
+
+                          <table align="center">
+                            <tr>
+                              <td>
+                                <center>
+                                  <svg id="sin-treemap"></svg>
+                                  <div id="tooltip-treemap" class="hidden">
+                                    <p><strong id="heading-treemap"></strong></p>
+                                    <p><span id="percentage-treemap"></span></p>
+                                  </div>
+
+                                </center>
+
+                              </td>
+
+                              <td class="sin-key-col">
+                                <p>Key</p>
+                                <div class="sin-treemap-key"></div>
+                              </td>
+                            </tr>
+                          </table>
+
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div id="improve">
+                    <br>
+
+                    <h1 class="bx--graph-header">Is socially responsible investment important to you?</h1>
+                    <br>
+
+                    <h3>
+          You’re not alone. In the last 5 years ESG investing has grown exponentially, with available ESG funds exploding in
+          number, diversity of approach and sophistication. Today it is possible to take into consideration environmental, social
+          and governance issues alongside financial factors in the investment decision-making process.
+        </h3>
+
+                    <h2>
+          You can make a difference without hindering performance.
+        </h2>
+
+                    <p>
+                  </div>
 
 
-        <table align="center">
-          <tr>
-            <td>
-              <div class="graph-container-groupedbar">
-                  <svg id="benchmarks-chart"></svg>
-                  <div class="tooltip-groupedbar"></div>
-              </div>
-            </td>
 
-            <td class="benchmarks-key-col">
-                 <p>Key</p>
-                 <div class="benchmarks-key"></div>
-            </td>
-          </tr>
-        </table>
-
-      </div>
-
-      <div id="non-esg">
-        <br>
-        <h2 class="bx--graph-header">"Sin" Investments In Your Portfolio</h2>
-      </div>
-
-      <div id="improve">
-        <br>
-        <h2 class="bx--graph-header">Improve</h2>
-      </div>
-
-    </div>
+                </div>
 
 
-      <div id="filmstrip">
-      <!--svg width="1440px" height="202px" viewBox="0 0 1440 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"-->
+                <div id="filmstrip">
+                  <!--svg width="1440px" height="202px" viewBox="0 0 1440 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"-->
 
-      <svg viewBox="0 0 1440 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <svg viewBox="0 0 1440 202" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
           <desc>Created with Sketch.</desc>
           <defs></defs>
@@ -336,7 +445,7 @@
 
                           <rect id="Tile-5" class="pointer" onclick="displayNonEsg()" stroke="#DCDCDC" fill="#FFFFFF" x="949.5" y="19.5" width="198" height="145"></rect>
                           <text id="Non-ESG" class="pointer" onclick="displayNonEsg()" font-family="IBMPlexSans-Medium, IBM Plex Sans" font-size="20" font-weight="400" line-spacing="24" fill="#767676">
-                              <tspan x="959" y="49">Non-ESG</tspan>
+                              <tspan x="959" y="49">"Sin" Investments</tspan>
                           </text>
 
                           <rect id="Tile-4" class="pointer" onclick="displayBenchmarks()" stroke="#DCDCDC" fill="#FFFFFF" x="730.5" y="19.5" width="198" height="145"></rect>
@@ -504,10 +613,10 @@
       </svg>
 
 
-    </div>
-  </div>
+                </div>
+              </div>
 
-  </div>
+            </div>
 </body>
 
 </html>
@@ -516,17 +625,18 @@
 <script src="http://d3js.org/d3.v4.min.js"></script>
 <script src="http://d3js.org/queue.v1.min.js"></script>
 <script src="http://d3js.org/topojson.v1.min.js"></script>
-
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="{{ url_for('static', filename='js/lib/jquery.autocomplete.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/lib/carbon-components.js') }}"></script>
 <script src="{{ url_for('static', filename='js/load.js') }}"></script>
 <script src="{{ url_for('static', filename='js/analysis.js') }}"></script>
 <script src="{{ url_for('static', filename='js/display.js') }}"></script>
-<script src="{{ url_for('static', filename='js/asset.js') }}"></script>
+<script src="{{ url_for('static', filename='js/assets.js') }}"></script>
 <script src="{{ url_for('static', filename='js/industry.js') }}"></script>
 <script src="{{ url_for('static', filename='js/geography/d3-tip.js') }}"></script>
 <script src="{{ url_for('static', filename='js/geography/geography.js') }}"></script>
-<script src="{{ url_for('static', filename='js/esg-gauge.js') }}"></script>
+<script src="{{ url_for('static', filename='js/esg-categories.js') }}"></script>
 <script src="{{ url_for('static', filename='js/datatable.js') }}"></script>
-<script src="{{ url_for('static', filename='js/carbon-components.js') }}"></script>
 <script src="{{ url_for('static', filename='js/benchmarks.js') }}"></script>
-
-<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="{{ url_for('static', filename='js/sin.js') }}"></script>
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>

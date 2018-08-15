@@ -1,10 +1,12 @@
 
 body {
   margin: 0;
+  /*
   height: 100%;
   color: black;
   background-color: white;
   font-family: "Helvetica Neue for IBM", Helvetica Neue, Helvetica, sans-serif;
+  */
   line-height: 1.5rem; }
 
 .container {
@@ -143,7 +145,7 @@ h2 {
     height: auto;
     top: 0px;
     left: 0px;
-    background-color: #FFFFFF;
+/*    background-color: #FFFFFF; */
     justify-content: center;
     align-items: center;
     margin-top: 0px;
@@ -179,8 +181,15 @@ h2 {
 }
 
 #search {
+
     display: none;
     text-align: center;
+    background: white;
+    margin: 10px;
+    /* height: 95%; */
+    height: 70vh;
+    /* padding-bottom: 200px;  */
+    /* height: 95%; */
 }
 
 #benchmarks {
@@ -256,4 +265,10 @@ th svg {
 
 th[data-active] svg {
   opacity: 1;
+}
+
+.text-percent-color {
+  display: inline;
+  font-size: 1.4rem;
+  color: #473793;
 }

@@ -258,6 +258,8 @@ def portfolio_analyze(portfolio):
     }
     universe = get_expanded_universe(portfolio)
     response['search'] = [item['name'] + ' (' + item['TICKER'] + ')' for item in universe]
+
+    response
     #hard-coded benchmarks for now, as it's possible a user would want to make benchmark choices static...
     benchmarks = ['IVV','HYG','LQD']
     for b in benchmarks:
@@ -322,6 +324,7 @@ def search(portfolio,security):
     securities = [item for item in universe if item['TICKER']==security]
     #get esg data from the first instance (since they theoretically should all be the same for the same security)
     esg_data = {}
+    price = sum(float(item['PRICE']) for item in securities)
     for key,value in securities[0].items():
         if 'esg_' in key:
             esg_data[key] = value
@@ -329,6 +332,7 @@ def search(portfolio,security):
     exposures = {
         "NAV":NAV,
         "security":security,
+        "price": price,
         "direct":sum([item['portfolio_value'] for item in securities if item['user_portfolio'] == True]),
         "indirect":sum([item['portfolio_value'] for item in securities if item['user_portfolio'] == False]),
         "esg":esg_data

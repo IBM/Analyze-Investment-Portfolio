@@ -1,0 +1,90 @@
+
+.autocomplete-suggestions {
+
+  border: 1px solid #999;
+  background: #fff;
+  cursor: default;
+  overflow: auto;
+
+}
+
+.autocomplete-suggestion {
+  padding: 5px 3px;
+  font-size: 1em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.autocomplete-selected {
+  background: #f0f0f0;
+}
+
+.autocomplete-suggestions strong {
+  font-weight: normal;
+  color: #3399ff;
+}
+
+#searchfield { display: block; width: 100%; text-align: center; margin-bottom: 35px; }
+
+#searchfield form {
+  display: inline-block;
+  background: #eeefed;
+  padding: 0;
+  margin: 0;
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px 0 0 0;
+}
+#searchfield form .biginput {
+  width: 600px;
+  height: 40px;
+  padding: 0 10px 0 10px;
+  background-color: #f4f7fb;
+  border: 1px solid #155382;
+  border-radius: 3px;
+  color: #aeaeae;
+  font-weight:normal;
+  font-size: 1em;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+
+
+}
+#searchfield form .biginput:focus {
+  color: #858585;
+}
+
+/*
+#search-description {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+}*/
+
+#outputbox {
+  display: none;
+}
+
+.graph-container-portfolio-bar {
+  position: relative;
+}
+
+.price-color {
+  display: inline;
+  color: blue;
+}
+
+.direct-color {
+  display: inline;
+  font-size: 1.4rem;
+  color: blue;
+}
+
+.indirect-color {
+  display: inline;
+  font-size: 1.4rem;
+  color: purple;
+}
