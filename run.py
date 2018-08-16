@@ -257,9 +257,8 @@ def portfolio_analyze(portfolio):
         'composition':{}
     }
     universe = get_expanded_universe(portfolio)
-    response['search'] = [item['name'] + ' (' + item['TICKER'] + ')' for item in universe]
+    response['search'] = list(set([item['name'] + ' (' + item['TICKER'] + ')' for item in universe]))
 
-    response
     #hard-coded benchmarks for now, as it's possible a user would want to make benchmark choices static...
     benchmarks = ['IVV','HYG','LQD']
     for b in benchmarks:
