@@ -4277,7 +4277,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
 
 .bx--table-body > .bx--parent-row,
 .bx--table-body > .bx--parent-row {
-  background-color: #fff;
+  /* background-color: #fff;  */
 }
 
 .bx--table-body > .bx--parent-row + .bx--expandable-row,

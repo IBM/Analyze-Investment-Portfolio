@@ -1,7 +1,9 @@
 
 body {
   margin: 0;
-  line-height: 1.5rem; }
+  line-height: 1.5rem;
+
+ }
 
 .container {
       padding-top: 48px;
@@ -258,7 +260,7 @@ th[data-active] svg {
   text-align: left;
   margin-top: 30px;
   color: white;
-  background: #2866ff;
+  background: #051b75;
   padding-left: 60px;
   padding-bottom: 20px;
   padding-top: 10px;

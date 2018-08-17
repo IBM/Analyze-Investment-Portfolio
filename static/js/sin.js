@@ -143,7 +143,7 @@ function sinGaugeChart() {
   var background = g.append('path').datum({ endAngle: tau }).style('fill', '#dfe3e6').attr('d', arc);
 
   // Foreground Arc
-  var foreground = g.append('path').datum({ endAngle: 0 }).style('fill', '#473793').transition().duration(1000).delay(1000).attrTween('d', arcTween(ratio * tau));
+  var foreground = g.append('path').datum({ endAngle: 0 }).style('fill', '#473793').transition().duration(100).delay(100).attrTween('d', arcTween(ratio * tau));
 
   // Animation function
   function arcTween(newAngle) {

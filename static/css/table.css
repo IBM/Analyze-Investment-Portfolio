@@ -113,3 +113,7 @@
 .dataTables_wrapper .dataTables_paginate {
     text-align: center;
 }
+
+.odd {
+    background-color: #f4f7fb;
+}
