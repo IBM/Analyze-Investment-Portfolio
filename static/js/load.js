@@ -11,7 +11,6 @@ $('.new-analysis').click(function() {
 //update interface with portfolios and risk factors
 function updateText() {
 
-    //console.log("apiUrl: " + apiUrl)
     //update portfolio lists
     var portfolioLists;
     $.get(apiUrl + 'look_through_portfolios', function(data) {
@@ -24,7 +23,6 @@ function updateText() {
             for (var i = 0; i < data.length; i++) {
                 str = str + '<option>' + data[i] + '</option>';
             }
-            //console.log("str: " + str)
             return str;
         }
         });

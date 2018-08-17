@@ -1,5 +1,7 @@
 
-function industryChartData(portfolioData,NAV) {
+function industryChartData() {
+
+  var portfolioData = sectorData;
 
   var chartData = [];
   var industryData = [];
@@ -30,9 +32,9 @@ function industryChartData(portfolioData,NAV) {
   return industryData
 }
 
-function industryChart(portfolioData,NAV) {
+function industryChart() {
 
-  var data = industryChartData(portfolioData,NAV);
+  var data = industryChartData();
 
   // what are these and are they things that someone should edit
   var margin = { top: 30, right: 20, bottom: 60, left: 65 };
@@ -82,8 +84,9 @@ function industryChart(portfolioData,NAV) {
   .attr('transform', 'translate(0, ' + height + ')')
   .call(xAxis)
   .selectAll('text')
-  .attr("y", axisOffset)
-  .attr('font-family', 'ibm-plex-sans');
+  .call(wrap, 60);
+  //.attr("y", axisOffset)
+  //.attr('font-family', 'ibm-plex-sans');
 
   svg.append('g')
   .attr('class', 'bar-container')
@@ -124,6 +127,30 @@ function industryChart(portfolioData,NAV) {
       d3.select(this).transition().duration(250).attr('fill', '#93C4FB');
       tooltip.style('display', 'none');
   });
+
+  function wrap(text, width) {
+    text.each(function() {
+      var text = d3.select(this),
+          words = text.text().split(/\s+/).reverse(),
+          word,
+          line = [],
+          lineNumber = 0,
+          lineHeight = 1.1, // ems
+          y = text.attr("y"),
+          dy = parseFloat(text.attr("dy")) + 1,
+          tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+      while (word = words.pop()) {
+        line.push(word);
+        tspan.text(line.join(" "));
+        if (tspan.node().getComputedTextLength() > width) {
+          line.pop();
+          tspan.text(line.join(" "));
+          line = [word];
+          tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+        }
+      }
+    });
+  }
 
 
 }

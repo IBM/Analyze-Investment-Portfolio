@@ -1,46 +1,15 @@
 var apiUrl = location.protocol + '//' + location.host + location.pathname + "api/";
-var AjaxResponse = {};
-$('#show_analytics').click(function() {
-  $("#analytics").toggle();
-});
-
-//Populate Analytics Selector
-$("#analytics").hide();
-
-$("#portfolio_file").change(function(e) {
-  // The event listener for the file upload
-  var ext = $("input#portfolio_file").val().split(".").pop().toLowerCase();
-
-  document.getElementById('loader').style.display = "flex";
-  if ($.inArray(ext, ["csv"]) == -1) {
-    alert('Upload CSV');
-    return false;
-  }
-  if (e.target.files != undefined) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      var csvval = e.target.result.split("\n");
-      var json_file = JSON.stringify(csvval);
-      $.ajax({
-        type: 'POST',
-        url: apiUrl + 'upload',
-        data: json_file,
-        dataType: 'json',
-        contentType: 'application/json',
-        success: function(data) {
-          console.log(data);
-          alert("Portfolio uploaded successfully.");
-          window.location = window.location;
-        }
-      });
-    };
-    reader.readAsText(e.target.files.item(0));
-  }
-  return false;
-});
-
 
 //declare global variables
+var NAV = 0;
+var assetData = {};
+var sectorData = {};
+var geographyData = {};
+var compositionTable = {};
+var sinData = {};
+var searchData = {};
+var searchPortfolio = "";
+
 var esgData = {};
 var esgPortfolio = "";
 
@@ -73,19 +42,56 @@ $('.run-analysis').click(function() {
         document.getElementById('loader').style.display = "none";
         document.getElementById('analysis').style.display = "block";
 
-        assetAllocationChart(data.composition["Asset Class"],data.NAV);
-        industryChart(data.composition.sector,data.NAV);
-        geographyChart(data.composition.geography);
-
-        compositionTable(data.portfolio);
-        sinCharts(data.sin,data.NAV);
-
         portfolioName = String(Portfolio.replace(/"/g, ""));
-        searchField(data.search, portfolioName);
 
         //capture esg data
+        NAV = data.NAV;
+        assetData = data.composition["Asset Class"];
+        sectorData = data.composition.sector;
+        geographyData = data.composition.geography;
+        compositionData = data.portfolio;
+        sinData = data.sin;
+        searchData = data.search;
+        searchPortfolio = portfolioName;
+
         esgData = data.esg;
         esgPortfolio = portfolioSelected;
+
+        assetAllocationChart();
+
     }
   });
+});
+
+
+$("#portfolio_file").change(function(e) {
+  // The event listener for the file upload
+  var ext = $("input#portfolio_file").val().split(".").pop().toLowerCase();
+
+  document.getElementById('loader').style.display = "flex";
+  if ($.inArray(ext, ["csv"]) == -1) {
+    alert('Upload CSV');
+    return false;
+  }
+  if (e.target.files != undefined) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var csvval = e.target.result.split("\n");
+      var json_file = JSON.stringify(csvval);
+      $.ajax({
+        type: 'POST',
+        url: apiUrl + 'upload',
+        data: json_file,
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function(data) {
+          console.log(data);
+          alert("Portfolio uploaded successfully.");
+          window.location = window.location;
+        }
+      });
+    };
+    reader.readAsText(e.target.files.item(0));
+  }
+  return false;
 });

@@ -9,10 +9,12 @@
 }
 
 .autocomplete-suggestion {
-  padding: 5px 15px;
+  padding: 5px 3px;
   font-size: 1em;
   white-space: nowrap;
   overflow: hidden;
+  text-decoration: underline;
+  font-weight: bold;
 }
 
 .autocomplete-selected {
@@ -42,7 +44,8 @@
   background-color: #f4f7fb;
   border: 1px solid #155382;
   border-radius: 3px;
-  font-weight:bold;
+  color: #aeaeae;
+  font-weight:normal;
   font-size: 1em;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
@@ -54,7 +57,7 @@
 
 }
 #searchfield form .biginput:focus {
-  /* color: #858585; */
+  color: #858585;
 }
 
 
@@ -92,31 +95,54 @@
   width: 400px;
 }
 
+
 .esg-score {
-  margin-left: 30px;
-  border: thin solid #dcdbdb;
-  width: 400px;
-  margin-bottom: 150px;
+  /*
+  display: inline-block;
+  width: 420px;
+  padding: 5px;
+  border: 5px solid gray;
+  margin: 0;
+  height: 320px;
+  */
+  display: table-cell;
+	text-align: center;
+	border: thin solid #999;
 }
 
 .portfolio-name {
-  border: thin solid #dcdbdb;
-  width:400px;
-  margin-bottom: 150px;
+  /*
+  display: inline-block;
+  width: 420px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+  height: 320px;
+  */
+  display: table-cell;
+	text-align: center;
+	border: thin solid #999;
 }
 
 .additional-exposure {
-  margin-right: 30px;
-  border: thin solid #dcdbdb;
-  width:400px;
-  margin-bottom: 150px;
+  /*
+  display: inline-block;
+  width: 420px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+  height: 320px;
+  */
+  display: table-cell;
+	text-align: center;
+	border: thin solid #999;
 }
 
 
 #outputbox {
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
 }
 
 /*

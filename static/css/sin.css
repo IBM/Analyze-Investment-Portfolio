@@ -38,3 +38,35 @@
   font-size: 16px;
   line-height: 20px;
 }
+
+
+.sin-exposure {
+  margin-left: 30%;
+  border: thin solid #dcdbdb;
+  width: 315px;
+  align-self: center;
+}
+
+.sin-breakdown {
+  border: thin solid #dcdbdb;
+  width: 700px;
+  margin-right: 30%;
+}
+
+.sin-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px 2em;
+  align-content: space-evenly;
+
+}
+.sin-exposure-title {
+  margin-bottom: 0px;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.sin-breakdown-title {
+  text-align: left;
+  padding-left: 30px;
+}

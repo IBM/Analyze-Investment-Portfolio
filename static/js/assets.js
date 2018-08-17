@@ -1,13 +1,14 @@
 
 
-function assetAllocationChartData(portfolioData,NAV) {
+function assetAllocationChartData() {
 
-  //pieData = [['US Equity', 23], ['Domestic Equity', 12], ['Fixed Income', 19], ['International Equity', 15], ['Alternatives', 5], ['Other', 5]];
+  var portfolioData = assetData;
+
   var pieData = [];
   var count = 0;
 
   for (var key in portfolioData) {
-      var entry = [key, portfolioData[key]/NAV] 
+      var entry = [key, portfolioData[key]/NAV]
       pieData.push(entry);
   }
   console.log(pieData);
@@ -16,14 +17,11 @@ function assetAllocationChartData(portfolioData,NAV) {
 }
 
 
-function assetAllocationChart(portfolioData,NAV) {
+function assetAllocationChart() {
 
-  var data = assetAllocationChartData(portfolioData,NAV)
+  var data = assetAllocationChartData();
 
   //pie chart carbon design
-
-  //var data = [['Gryffindor', 23], ['Slytherin', 12], ['Ravenclaw', 19], ['Hufflepuff', 15], ['Teachers', 5]];
-
   var radius = 96;
   var width = radius * 2;
   var height = radius * 2;

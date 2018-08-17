@@ -1,14 +1,14 @@
 
-function sinCharts(sinData,NAV) {
+function sinCharts() {
 
-  sinGaugeChart(sinData,NAV);
-  var getTreeMapData = sinTreeMapData(sinData);
-  sinTreeMap(getTreeMapData,NAV);
+  sinGaugeChart();
+  var getTreeMapData = sinTreeMapData();
+  sinTreeMap(getTreeMapData);
 
 }
 
 
-function sinTreeMapData(sinData) {
+function sinTreeMapData() {
 
   var data = {
     "name": "SinInvestments",
@@ -42,7 +42,7 @@ function sinTreeMapData(sinData) {
 }
 
 
-function sinTreeMap(sinTreeMapData, NAV) {
+function sinTreeMap(sinTreeMapData) {
 
   var data = sinTreeMapData;
 
@@ -109,25 +109,6 @@ function sinTreeMap(sinTreeMapData, NAV) {
       d3.select(this).select('text').remove();
     });
 
-/*
-    nodes
-      .append('text')
-      .attr('class', 'treemap-text')
-      .attr('dx', 4)
-      .attr('dy', 14)
-      .text(function(d) {
-        return d.data.name;
-      })
-
-    nodes
-      .append('text')
-      .attr('class', 'treemap-text')
-      .attr('dx', 4)
-      .attr('dy', 34)
-      .text(function(d) {
-        return ((d.data.value/NAV) * 100).toFixed(2) + '%';
-      })*/
-
 
     /////////////////////////////////////// add  key ///////////////
     $('.sin-treemap-key').html(function() {
@@ -141,18 +122,18 @@ function sinTreeMap(sinTreeMapData, NAV) {
 }
 
 
-function sinGaugeChart(sinData,NAV) {
+function sinGaugeChart() {
 
   // Based on this great Demo: http://bl.ocks.org/mbostock/5100636
   var tau = 2 * Math.PI;
-  var radius = 80;
+  var radius = 65;
   var padding = 30;
   var boxSize = (radius + padding) * 2;
 
   var ratio = (sinData.has_Alcohol + sinData["has_Fossil Fuels"] + sinData.has_Gambling + sinData.has_Military + sinData.has_Tobacco) / NAV;
   var percent = Math.round(ratio * 100);
 
-  var arc = d3.arc().innerRadius(radius).outerRadius(radius - 10).startAngle(0);
+  var arc = d3.arc().innerRadius(radius).outerRadius(radius - 15).startAngle(0);
 
   var svg = d3.select('#sin-chart').attr('width', boxSize).attr('height', boxSize);
 

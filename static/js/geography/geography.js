@@ -1,38 +1,8 @@
 
-/*
-function updateWorldData(portfolioData) {
 
-  //var obj = {"nissan": "sentra", "color": "green"};
+function geographyChart() {
 
-  var investment_json = []
-
-  $.getJSON("world_investment_default.json", function(json){
-
-    for (var j =0; j<json.length; j++) {
-
-      var obj = json[j];
-
-      for (var key in portfolioData) {
-          if (json[j][name] == key) {
-            obj.investments = portfolioData[key];
-          }
-      }
-      investment_json.obj(entry);
-    }
-
-  });
-
-  console.log("investment json");
-  console.log(investment_json);
-
-  //localStorage.setItem('myStorage', JSON.stringify(investment_json));
-
-}
-*/
-
-function geographyChart(portfolioData) {
-
-  //updateWorldData(portfolioData)
+  var portfolioData = geographyData;
 
   var format = d3.format(",");
 
@@ -44,31 +14,16 @@ function geographyChart(portfolioData) {
               .html(function(d) {
                 return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Investments: </strong><span class='details'>" + format(d.investments) +"</span>";
               })
-  /*
-  var margin = {top: 0, right: 0, bottom: 0, left: 0},
-              width = 960 - margin.left - margin.right,
-              height = 500 - margin.top - margin.bottom;
-  */
+
   var margin = {top: 0, right: 0, bottom: 0, left: 0},
               width = 576 - margin.left - margin.right,
               height = 300 - margin.top - margin.bottom;
-
-  /*
-  var color = d3.scaleThreshold()
-      .domain([1,10,50,100,500,1000,5000,10000,5000,150000])
-      .range(["rgb(247,251,255)", "rgb(222,235,247)", "rgb(198,219,239)", "rgb(158,202,225)", "rgb(107,174,214)", "rgb(66,146,198)","rgb(33,113,181)","rgb(8,81,156)","rgb(8,48,107)","rgb(3,19,43)"]);
-  */
 
 
   var color = d3.scaleThreshold()
       .domain([0,1,5,10,50,100,500,1000])
       .range(["rgb(200,200,200)", "rgb(200,200,200)", "rgb(107,174,214)", "rgb(66,146,198)","rgb(33,113,181)","rgb(8,81,156)","rgb(8,48,107)","rgb(3,19,43)"]);
 
-  /*
-  var color = d3.scaleThreshold()
-      .domain([0,1,10,50,100,500,1000])
-      .range(["rgb(247,251,255)", "rgb(107,174,214)", "rgb(66,146,198)","rgb(33,113,181)","rgb(8,81,156)","rgb(8,48,107)","rgb(3,19,43)"]);
-  */
 
   var path = d3.geoPath();
 

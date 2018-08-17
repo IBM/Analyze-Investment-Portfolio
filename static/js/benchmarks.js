@@ -157,10 +157,12 @@ function benchmarksChart() {
   enter().append('rect').
   attr('class', 'bar').
   attr('x', function (d) {return x1(d.index);}).
-  attr('y', function (d) {return y(d.key);}).
   attr('width', x1.bandwidth()).
-  attr('height', function (d) {return height - y(d.key);}).
-  attr('fill', function (d) {return colors(d.index);});
+  attr('fill', function (d) {return colors(d.index);}).
+  //transition().
+  //duration(500).
+  attr('y', function (d) {return y(d.key);}).
+  attr('height', function (d) {return height - y(d.key);});
 
 
   /////////////////////////////////////// add  key ///////////////

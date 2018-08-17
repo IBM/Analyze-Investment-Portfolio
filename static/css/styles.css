@@ -1,12 +1,6 @@
 
 body {
   margin: 0;
-  /*
-  height: 100%;
-  color: black;
-  background-color: white;
-  font-family: "Helvetica Neue for IBM", Helvetica Neue, Helvetica, sans-serif;
-  */
   line-height: 1.5rem; }
 
 .container {
@@ -154,6 +148,7 @@ h2 {
 
 .loader img {
     width: 44px;
+    display: block;
 }
 
 #filmstrip {
@@ -204,7 +199,6 @@ h2 {
 
 #improve {
     display: none;
-    text-align: center;
 }
 
 #by-asset {
@@ -246,19 +240,6 @@ h2 {
   height:300px;
 }
 
-/*
-.bx--responsive-table tbody{
-  display:block;
-  overflow:auto;
-  height:200px;
-  width:100%;
-}
-
-.bx--responsive-table thead tr{
-  display:block;
-}
-*/
-
 th svg {
   opacity: 0;
 }
@@ -271,4 +252,41 @@ th[data-active] svg {
   display: inline;
   font-size: 1.4rem;
   color: #473793;
+}
+
+.improve-text {
+  text-align: left;
+  margin-top: 30px;
+  color: white;
+  background: #2866ff;
+  padding-left: 60px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.make-a-change {
+  justify-content: center;
+  flex-basis: 216px;
+  flex-grow: 0;
+  text-align: left;
+  padding-top: 48px;
+  padding-bottom: 24px;
+  display: flex;
+}
+
+
+.change-button {
+  height: 40px;
+  width: auto;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 2px solid #2866ff;
+  color: #2866ff;
+  user-select: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0 1rem;
+  padding-top: 5px;
+  text-decoration: none;
+  background-color: white;
 }

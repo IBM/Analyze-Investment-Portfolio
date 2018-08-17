@@ -1,6 +1,15 @@
 
-function searchField(portfolio, portfolioName) {
+function clearSearch() {
+  document.getElementById('autocomplete').value = '';
+  document.getElementById('search-description').style.display = "block";
+  document.getElementById('outputbox').style.display = "none";
+}
 
+
+function searchField() {
+
+  var portfolio = searchData;
+  var portfolioName = searchPortfolio;
   var data = [];
 
   for(var i=0; i<portfolio.length; i++) {
@@ -22,13 +31,12 @@ function searchField(portfolio, portfolioName) {
     lookup: data,
     onSelect: function (suggestion) {
       document.getElementById('search-description').style.display = "none";
+      document.getElementById('search-loader').style.display = "flex";
 
       var portfolioNameSplit = suggestion.value.split("(");
       var tickerSplit = portfolioNameSplit[1].split(")");
       var ticker = tickerSplit[0];
 
-      console.log('ticker');
-      console.log(ticker);
 
       $.ajax({
         type: 'GET',
@@ -39,7 +47,8 @@ function searchField(portfolio, portfolioName) {
           console.log('searchReturn');
           console.log(data);
 
-          document.getElementById('outputbox').style.display = "block";
+          document.getElementById('outputbox').style.display = "flex";
+          document.getElementById('search-loader').style.display = "none";
 
           var portfolioTitle = '<b>' + suggestion.value + ' </b>';
           $('#portfolioName').html(portfolioTitle);
@@ -48,14 +57,14 @@ function searchField(portfolio, portfolioName) {
           $('#portfolioPrice').html(portfolioPrice);
 
           directPart = ((data.direct / data.NAV) * 100).toFixed(2);
-          var portfolioDirect = 'Your portfolio is comprised of <div class="text-percent-color"><b>' + directPart + '%</b></div> of this instrument';
+          var portfolioDirect = 'Your portfolio is comprised of <br><div class="text-percent-color"><b>' + directPart + '%</b></div> of this instrument';
           $('#portfolioDirect').html(portfolioDirect);
 
           indirectPart = ((data.indirect / data.NAV) * 100).toFixed(2);
-          var portfolioIndirect = 'Did you know that <div class="text-percent-color"><b>' + indirectPart + '%</b></div> of this coverage is owned in either ETF’s or Mutual Funds in your portfolio?';
+          var portfolioIndirect = 'Did you know that <div class="text-percent-color"><b>' + indirectPart + '%</b></div> of this<br> coverage is owned in either ETF’s <br>or Mutual Funds in your portfolio?';
           $('#portfolioIndirect').html(portfolioIndirect);
 
-          var esgData = [
+          var portfolioEsgData = [
             {esg:"Sustainability",value:data.esg.esg_Controversy},
             {esg:"Controversy",value:data.esg.esg_Environmental},
             {esg:"Environmental",value:data.esg.esg_Governance},
@@ -63,7 +72,7 @@ function searchField(portfolio, portfolioName) {
             {esg:"Governance",value:data.esg.esg_Sustainability}
           ]
 
-          portfolioEsgChart(esgData);
+          portfolioEsgChart(portfolioEsgData);
 
         }
       });
@@ -73,80 +82,61 @@ function searchField(portfolio, portfolioName) {
 
 }
 
-
 function portfolioEsgChart(portfolioEsgData) {
 
   var data = portfolioEsgData;
 
-  // what are these and are they things that someone should edit
-  var margin = { top: 30, right: 20, bottom: 60, left: 65 };
-  var width = 400 - (margin.left + margin.right);
-  var height = 200 - (margin.top + margin.bottom);
-  var labelOffset = 50;
-  var axisOffset = 16;
-
-  // Set Time Format (JAN, FEB, etc..)
-  var formatPercent = d3.format(".0%");
-  var formatPercent_four = d3.format(",.4%");
-
-  // Set the scales
-  var x = d3.scaleBand().rangeRound([0, width]).domain(data.map(function (d) {
-      return d.esg;
-  })).padding(0.5);
+  // set the dimensions and margins of the graph
+  var margin = { top: 20, right: 20, bottom: 60, left: 85 };
+  var width = 300 - (margin.left + margin.right);
+  var height = 220 - (margin.top + margin.bottom);
 
 
-  var y = d3.scaleLinear().range([height, 0]).domain([0, d3.max(data, function (d) {
-      return d.value;
-  })]);
+  // set the ranges
+  var y = d3.scaleBand()
+            .range([height, 0])
+            .padding(0.1);
 
-  // // Set the axes
-  var xAxis = d3.axisBottom().scale(x).tickSize(0);
+  var x = d3.scaleLinear()
+            .range([0, width]);
 
+  // append the svg object to the body of the page
+  // append a 'group' element to 'svg'
+  // moves the 'group' element to the top left margin
+  var svg = d3.select("#portfolio-esg-chart")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+      .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
 
-  var yAxis = d3.axisLeft().ticks(4).tickSize(-width).scale(y.nice()); //.tickFormat(formatPercent);
+  // format the data
+  data.forEach(function(d) {
+    d.value = +d.value;
+  });
 
+  // Scale the range of the data in the domains
+  x.domain([0, d3.max(data, function(d){ return d.value; })])
+  y.domain(data.map(function(d) { return d.esg; }));
 
-  // // Set up SVG with initial transform to avoid repeat positioning
-  var svg = d3.select('#portfolio-esg-chart').attr('class', 'graph').attr('width', width + (margin.left + margin.right)).attr('height', height + (margin.top + margin.bottom)).append('g').attr('class', 'group-container').attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')').attr('font-family', 'ibm-plex-sans');
+  // append the rectangles for the bar chart
+  svg.selectAll(".bar")
+      .data(data)
+      .enter().append("rect")
+      .attr("class", "bar")
+      .attr("y", function(d) { return y(d.esg); })
+      .attr("height", y.bandwidth())
+      .transition()
+      .duration(500)
+      .attr("width", function(d) {return x(d.value); } )
+      .attr('fill', '#93C4FB')
 
-  // // Add Y axis
-  svg.append('g')
-  .attr('class', 'axis y')
-  .attr('stroke-dasharray', '4')
-  .call(yAxis)
-  .selectAll('text')
-  .attr("x", -axisOffset)
-  .attr('font-family', 'ibm-plex-sans');
+  // add the x Axis
+  svg.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .call(d3.axisBottom(x).ticks(4));
 
-  // // Add X axis
-  svg.append('g')
-  .attr('class', 'axis x')
-  .attr('transform', 'translate(0, ' + height + ')')
-  .call(xAxis)
-  .selectAll('text')
-  .attr("y", axisOffset)
-  .attr('font-family', 'ibm-plex-sans');
-
-  svg.append('g')
-  .attr('class', 'bar-container')
-  .selectAll('rect')
-  .data(data)
-  .enter()
-  .append('rect')
-  .attr('class', 'bar')
-  .attr('x', function (d) {
-      return x(d.esg);
-  })
-  .attr('y', function (d) {
-      return height;
-  })
-  .attr('height', 0)
-  .attr('width', x.bandwidth())
-  .attr('fill', '#93C4FB')
-  .transition()
-  .duration(500)
-  .delay((d, i) => i * 50)
-  .attr('height', (d) => height - y(d.value))
-  .attr('y', (d) => y(d.value));
-
+  // add the y Axis
+  svg.append("g")
+      .call(d3.axisLeft(y));
 }
