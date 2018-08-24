@@ -116,7 +116,7 @@ function industryChart() {
   var bars = svg.selectAll('.bar').on('mouseover', function (d) {
       var color = d3.color('#93C4FB').darker();
       d3.select(this).attr('fill', color);
-      tooltip.style('display', 'inherit').text((d.percent * 100).toFixed(2) + '%').style('top', y(d.percent) - axisOffset + 'px');
+      tooltip.style('display', 'inherit').text(Number(d.percent * 100).toFixed(2) + '%').style('top', y(d.percent) - axisOffset + 'px');
 
       var bandwidth = x.bandwidth();
       var tooltipWidth = tooltip.nodes()[0].getBoundingClientRect().width;
