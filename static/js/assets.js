@@ -53,7 +53,7 @@ function assetAllocationChart() {
     var amount = d3.select('.amount')
     var item = d3.select('.item');
 
-    amount.text('' + (d.data[1] * 100).toFixed(2) + '%');
+    amount.text('' + Number(d.data[1] * 100).toFixed(2) + '%');
 
     item.text('' + d.data[0]);
   }).on('mouseout', function (d) {
