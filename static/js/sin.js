@@ -61,7 +61,7 @@ function sinTreeMap(sinTreeMapData) {
     d3.select("#tooltip-treemap #heading-treemap")
       .text(d["data"]["name"]);
     d3.select("#tooltip-treemap #percentage-treemap")
-      .text(((d["value"]/NAV) * 100).toFixed(2) + "%");
+      .text(Number((d["value"]/NAV) * 100).toFixed(2) + "%");
     d3.select("#tooltip-treemap").classed("hidden", false);
   };
 
