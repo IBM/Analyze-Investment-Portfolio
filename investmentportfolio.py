@@ -39,13 +39,13 @@ else:
     IP_R_username=os.environ.get("CRED_PORTFOLIO_USERID_R")
     IP_R_password=os.environ.get("CRED_PORTFOLIO_PWD_R")
 
-def Get_Portfolios():
+def Get_Portfolios(name=""):
     """
     Retreives portfolio data by calling the Investment Portfolio service
     """
     print ("Get Portfolios")
     #call the url
-    BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/"
+    BASEURL = "https://investment-portfolio.mybluemix.net/api/v1/portfolios/" + name
     headers = {
         'accept': "application/json",
         'content-type': "application/json"

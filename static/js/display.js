@@ -29,8 +29,7 @@ $( ".dropdown" )
 function displayCompositionTable() {
     document.getElementById('portfolio-table').style.display = "block";
     document.getElementById('composition-chart').style.display = "none";
-
-    compositionTable();
+    
 }
 
 function displayCompositionChart() {

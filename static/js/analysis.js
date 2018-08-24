@@ -58,6 +58,7 @@ $('.run-analysis').click(function() {
         esgPortfolio = portfolioSelected;
 
         assetAllocationChart();
+        compositionTable();
 
     }
   });

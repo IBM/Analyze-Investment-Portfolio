@@ -8,9 +8,10 @@
 
 #sin-treemap {
   height: 200px;
-  width: 500px;
-  padding-left: 70px;
+  width: 400px;
+  /* padding-left: 70px;*/
   padding-right: 50px;
+  box-sizing: unset;
 }
 
 #tooltip-treemap {
@@ -41,7 +42,8 @@
 
 
 .sin-exposure {
-  margin-left: 30%;
+  margin-left: 5%;
+  margin-right: 5%;
   border: thin solid #dcdbdb;
   width: 315px;
   align-self: center;
@@ -54,12 +56,9 @@
 }
 
 .sin-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px 2em;
-  align-content: space-evenly;
-
+  display: -webkit-box;
 }
+
 .sin-exposure-title {
   margin-bottom: 0px;
   text-align: left;
