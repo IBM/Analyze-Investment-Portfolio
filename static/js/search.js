@@ -53,15 +53,15 @@ function searchField() {
           var portfolioTitle = '<b>' + suggestion.value + ' </b>';
           $('#portfolioName').html(portfolioTitle);
 
-          var portfolioPrice = '<b class="price-color">$' + (data.indirect + data.direct).toFixed(2) + '</b>';
+          var portfolioPrice = '<b class="price-color">$' + Number(data.indirect + data.direct).toFixed(2) + '</b>';
           $('#portfolioPrice').html(portfolioPrice);
 
-          total_exposure = (((data.direct + data.indirect) / data.NAV) * 100).toFixed(2);
+          total_exposure = Number(((data.direct + data.indirect) / data.NAV) * 100).toFixed(2);
 
           var portfolioDirect = 'Your portfolio is comprised of <br><div class="text-percent-color"><b>' + total_exposure + '%</b></div> of this instrument';
           $('#portfolioDirect').html(portfolioDirect);
 
-          indirectPart = ((data.indirect / data.NAV) * 100).toFixed(2);
+          indirectPart = Number((data.indirect / data.NAV) * 100).toFixed(2);
           var portfolioIndirect = 'Did you know that <div class="text-percent-color"><b>' + indirectPart + '%</b></div> of this<br> coverage is owned in either ETF’s <br>or Mutual Funds in your portfolio?';
           $('#portfolioIndirect').html(portfolioIndirect);
 
