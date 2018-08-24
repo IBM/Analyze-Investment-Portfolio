@@ -116,7 +116,7 @@ def get_look_through_portfolios():
     Uses type='user_portfolio' to specify.
     '''
     portfolio_names = []
-    res = investmentportfolio.Get_Portfolios_by_Selector('type','look through portfolio')
+    res = investmentportfolio.Get_Portfolios_by_Selector('type','User Portfolio')
     try:
         for portfolios in res['portfolios']:
             portfolio_names.append(portfolios['name'])

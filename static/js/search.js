@@ -53,11 +53,12 @@ function searchField() {
           var portfolioTitle = '<b>' + suggestion.value + ' </b>';
           $('#portfolioName').html(portfolioTitle);
 
-          var portfolioPrice = '<b class="price-color">$' + data.price + '</b>';
+          var portfolioPrice = '<b class="price-color">$' + (data.indirect + data.direct).toFixed(2) + '</b>';
           $('#portfolioPrice').html(portfolioPrice);
 
-          directPart = ((data.direct / data.NAV) * 100).toFixed(2);
-          var portfolioDirect = 'Your portfolio is comprised of <br><div class="text-percent-color"><b>' + directPart + '%</b></div> of this instrument';
+          total_exposure = (((data.direct + data.indirect) / data.NAV) * 100).toFixed(2);
+
+          var portfolioDirect = 'Your portfolio is comprised of <br><div class="text-percent-color"><b>' + total_exposure + '%</b></div> of this instrument';
           $('#portfolioDirect').html(portfolioDirect);
 
           indirectPart = ((data.indirect / data.NAV) * 100).toFixed(2);
