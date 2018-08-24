@@ -12,7 +12,7 @@ function geographyChart() {
               //.offset([-10, 0])
               .direction('e')
               .html(function(d) {
-                return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Investments: </strong><span class='details'>" + format(d.investments) +"</span>";
+                return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" + "<strong>Investments: </strong><span class='details'>" + format(Number(d.investments).toFixed(2)) +"</span>";
               })
 
   var margin = {top: 0, right: 0, bottom: 0, left: 0},
