@@ -1,0 +1,7 @@
+language: python
+python:
+  - "3.6"
+install:
+  - pip install -r requirements.txt
+script:
+  - python run.py & sleep 5; if curl http://localhost:8080; then echo “Test passed”; exit 0; else echo “Test failed”; exit 1; fi

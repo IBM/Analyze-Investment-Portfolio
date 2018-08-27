@@ -29,12 +29,22 @@ $( ".dropdown" )
 function displayCompositionTable() {
     document.getElementById('portfolio-table').style.display = "block";
     document.getElementById('composition-chart').style.display = "none";
-    
+
+    var PortfolioTableIcon = document.getElementById('Portfolio-Table-1');
+    var PortfolioCompositionIcon = document.getElementById('Portfolio-Composition-1');
+    PortfolioTableIcon.style.fill='#0F6FFF';
+    PortfolioCompositionIcon.style.fill='#767676';
+
 }
 
 function displayCompositionChart() {
     document.getElementById('portfolio-table').style.display = "none";
     document.getElementById('composition-chart').style.display = "block";
+
+    var PortfolioTableIcon = document.getElementById('Portfolio-Table-1');
+    var PortfolioCompositionIcon = document.getElementById('Portfolio-Composition-1');
+    PortfolioTableIcon.style.fill='#767676';
+    PortfolioCompositionIcon.style.fill='#0F6FFF';
 }
 
 

@@ -51,6 +51,7 @@ function sinTreeMap(sinTreeMapData) {
 
   var keys = ['Alcohol', 'Fossil Fuels', 'Gambling', 'Military', 'Tobacco']
 
+  //based on http://bl.ocks.org/tgk/6044254
   var mousemove = function(d) {
     var xPosition = d3.event.pageX + 5;
     var yPosition = d3.event.pageY + 5;

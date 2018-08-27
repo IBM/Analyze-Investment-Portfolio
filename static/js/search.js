@@ -37,7 +37,7 @@ function searchField() {
       var tickerSplit = portfolioNameSplit[1].split(")");
       var ticker = tickerSplit[0];
 
-
+      //make call to search for the ticker
       $.ajax({
         type: 'GET',
         url: apiUrl + 'search/' + portfolioName + "/" + ticker,
