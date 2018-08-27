@@ -11,7 +11,7 @@ This code pattern is designed for developers with interest in creating financial
 
 * Load and retrieve data from the Investment Portfolio service
 * Computes all of the exposures associated with a portfolio that may have composite investments present
-* Construct a user interface to display results, or download to a CSV file.
+* Construct a user interface with D3 graphics to display analysis
 
 ![](doc-images/arch.png)
 
@@ -31,7 +31,7 @@ This code pattern is designed for developers with interest in creating financial
 * [JQuery](https://jquery.com): jQuery is a cross-platform JavaScript library designed to simplify the client-side
 scripting of HTML.
 * [D3.js](https://d3js.org/): D3 is a JavaScript library for visualizing data with HTML, SVG, and CSS.
-* [Carbon Design System](http://www.carbondesignsystem.com/): Carbon is the design system for IBM Cloud products. It is a series of individual styles, components, and guidelines used for creating unified UI.
+* [Carbon Design System](http://www.carbondesignsystem.com/): Carbon is the design system for IBM Cloud products with a series of individual styles, components, and guidelines used for creating unified UI.
 
 
 ## Prerequisite
