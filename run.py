@@ -85,13 +85,19 @@ def portfolio_from_csv():
             portfolios[d[portfolio_col]].append(hldg)
 
     #Send each portfolio and its holdings to the investment portfolio service
-    for key, value in portfolios.items():
+    for key, value in portfolios.items(): 
+        if key == 'User Portfolio' or key == 'Sample Portfolio':
+            portfolio_type = 'User Portfolio'
+        else:
+            portfolio_type = 'look through portfolio'
+
         my_portfolio = {
             "timestamp": '{:%Y-%m-%dT%H:%M:%S.%fZ}'.format(datetime.datetime.now()) ,
             'closed':False,
-            'data':{'type':'look through portfolio'},
+            'data':{'type':portfolio_type},
             'name':key
         }
+        #Don't show look-through portfolios in main drop-down menu
 
         #create portfolio
         try:
@@ -107,7 +113,6 @@ def portfolio_from_csv():
             print("Unable to create portfolio holdings for " + str(key) + ".")
     return req
 
-
 #Returns list of 'look through' portfolios
 @app.route('/api/look_through_portfolios',methods=['GET'])
 def get_look_through_portfolios():
@@ -116,7 +121,7 @@ def get_look_through_portfolios():
     Uses type='user_portfolio' to specify.
     '''
     portfolio_names = []
-    res = investmentportfolio.Get_Portfolios_by_Selector('type','User Portfolio')
+    res = investmentportfolio.Get_Portfolios_by_Selector('type','User Portfolio') #Filters out look-through portfolios
     try:
         for portfolios in res['portfolios']:
             portfolio_names.append(portfolios['name'])
@@ -171,7 +176,7 @@ def get_expanded_universe(portfolio):
     for l in look_throughs:
         #Get fund's NAV from user portfolio (that's where the data lives) and our exposure to that fund (in $)
         fund_NAV = [float(item['FUND_NAV']) for item in portfolio if item['TICKER'] == l][0]
-        exposure_to_fund = [(float(item['quantity'])*float(item['PRICE'])) for item in portfolio if item['TICKER'] == l][0]
+        exposure_to_fund = [float(item['quantity']) for item in portfolio if item['TICKER'] == l][0]
 
         #Get fund's individual holdings
         fund = investmentportfolio.Get_Portfolio_Holdings(l,False)['holdings']
@@ -223,7 +228,7 @@ def portfolio_composition():
     exposures = {"NAV":NAV}
     for a in aggregations:
         values = {}
-        #get unique entries for the given aggregation (keep an eye out for python3 quirks)
+        #get unique entries for the given aggregation (keep an eye out for python2 --> 3 quirks)
         unique_a = {item[a]:item[a] for item in universe}.values()
         for u in unique_a:
             values[u] = sum([item['portfolio_value'] for item in universe if item[a]==u])
@@ -269,7 +274,7 @@ def portfolio_analyze(portfolio):
         #sin stocks - just need true
         if 'has_' in a:
             #we omit the parent funds in the portfolio (has_lookthrough=true) to avoid double counting the exposure
-            response['sin'][a] = sum([item['portfolio_value'] for item in universe if item[a]=='TRUE' if item['HAS_LOOKTHROUGH']=='FALSE'])
+            response['sin'][a] = sum([(item['portfolio_value']/NAV) for item in universe if item[a]=='TRUE' if item['HAS_LOOKTHROUGH']=='FALSE'])
         #esg
         elif 'esg_' in a:
             #compute average ESG for the portfolio (and benchmarks!)
@@ -298,7 +303,6 @@ def portfolio_analyze(portfolio):
     create_world_json(response['composition']["geography"])
 
     return Response(json.dumps(response), mimetype='application/json')
-
 
 #Returns list of 'look through' portfolios (returns results)
 @app.route('/api/search/<portfolio>/<security>',methods=['GET','POST'])
@@ -338,18 +342,11 @@ def search(portfolio,security):
     }
     return Response(json.dumps(exposures), mimetype='application/json')
 
-
 def create_world_json(data):
-    #print("create world json")
-    #print(data)
-
     with open('static/js/geography/world_investment_default.json','r') as inFile:
           #print("open file")
           jsonData = json.load(inFile)
           inFile.close()
-
-    #print("world investment json")
-    #print(jsonData)
 
     dataLength = len(jsonData)
 
@@ -358,12 +355,9 @@ def create_world_json(data):
             if (jsonData[x]["name"] == key):
                 jsonData[x]["investments"] = data[key]
 
-    #print (jsonData)
-
     with open('static/js/geography/world_investment.json','w') as outfile:
           json.dump(jsonData, outfile)
           outfile.close()
-
 
 if __name__ == '__main__':
     app.run(host=host, port=port)
