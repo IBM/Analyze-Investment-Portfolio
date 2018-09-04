@@ -27,7 +27,7 @@ This code pattern is designed for developers with interest in creating financial
 
 ## Featured Technology
 
-* [Python](https://www.python.org/downloads/) Python is a programming language that lets you work more quickly and integrate your systems more effectively.
+* [Python](https://www.python.org/downloads/): Python is a programming language that lets you work more quickly and integrate your systems more effectively.
 * [JQuery](https://jquery.com): jQuery is a cross-platform JavaScript library designed to simplify the client-side
 scripting of HTML.
 * [D3.js](https://d3js.org/): D3 is a JavaScript library for visualizing data with HTML, SVG, and CSS.
@@ -171,7 +171,7 @@ Some notes:
 
 ![](doc-images/benchmarks.png)
 
-* View "sin" invetments in your portfolio
+* View "sin" investments in your portfolio
 
 ![](doc-images/sin.png)
 
