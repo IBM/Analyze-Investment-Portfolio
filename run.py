@@ -112,6 +112,7 @@ def portfolio_from_csv():
         except:
             print("Unable to create portfolio holdings for " + str(key) + ".")
     return req
+ 
 
 #Returns list of 'look through' portfolios
 @app.route('/api/look_through_portfolios',methods=['GET'])
@@ -126,7 +127,6 @@ def get_look_through_portfolios():
         for portfolios in res['portfolios']:
             portfolio_names.append(portfolios['name'])
         #returns the portfolio names as list
-        print("Portfolio_names:" + str(portfolio_names))
         return Response(json.dumps(portfolio_names), mimetype='application/json')
     except:
         return "No portfolios found."
@@ -138,7 +138,6 @@ def get_look_through_delete():
     Deletes all portfolios and respective holdings that are of type 'look through'
     '''
     portfolios = investmentportfolio.Get_Portfolios_by_Selector('type','look through portfolio')['portfolios']
-    print(portfolios)
     for p in portfolios:
         holdings = investmentportfolio.Get_Portfolio_Holdings(p['name'],False)
         # delete all holdings
@@ -166,7 +165,7 @@ def get_universe(portfolio):
     return universe
 
 #Returns an augmented universe with effective portfolio value per security (in case there's a significant difference in processing time with the above)
-def get_expanded_universe(portfolio):
+def get_expanded_universe(portfolio,portfolio_NAV):
     #portfolio object as input
     universe = portfolio
     for p in portfolio:
@@ -176,7 +175,7 @@ def get_expanded_universe(portfolio):
     for l in look_throughs:
         #Get fund's NAV from user portfolio (that's where the data lives) and our exposure to that fund (in $)
         fund_NAV = [float(item['FUND_NAV']) for item in portfolio if item['TICKER'] == l][0]
-        exposure_to_fund = [float(item['quantity']) for item in portfolio if item['TICKER'] == l][0]
+        exposure_to_fund = ([float(item['quantity']) * float(item['PRICE']) for item in portfolio if item['TICKER'] == l][0])/portfolio_NAV
 
         #Get fund's individual holdings
         fund = investmentportfolio.Get_Portfolio_Holdings(l,False)['holdings']
@@ -186,10 +185,11 @@ def get_expanded_universe(portfolio):
         #calculate effective dollar exposure to each fund based on market value in parent portfolio
         for f in fund:
             #errors in csv file formats can cause issues here
-            try:
-                f.update({'portfolio_value':((float(f['quantity']) *float(f['PRICE']))/ fund_NAV) * exposure_to_fund,'user_portfolio':False})
-            except:
-                print('look at ' + str(f['name']))
+            if f['HAS_LOOKTHROUGH'] == 'FALSE':
+                try:
+                    f.update({'portfolio_value':((float(f['quantity']) *float(f['PRICE']))/ fund_NAV) * (exposure_to_fund*portfolio_NAV),'user_portfolio':False})
+                except:
+                    print('look at ' + str(f['name']))
         universe += fund
     return universe
 
@@ -249,7 +249,6 @@ def portfolio_analyze(portfolio):
     portfolio = investmentportfolio.Get_Portfolio_Holdings(portfolio,False)['holdings'] # client portfolio
     portfolio = [item['holdings'] for item in portfolio] #since we loaded the data in chunks originally
     portfolio = [item for sublist in portfolio for item in sublist] #flatten the list'
-    #print([item['name'] for item in portfolio])
     aggregations = ["geography","Asset Class","sector","has_Tobacco","has_Alcohol","has_Gambling","has_Military","has_Fossil Fuels","esg_Controversy","esg_Environmental","esg_Governance","esg_Social","esg_Sustainability"]
 
     NAV = sum(float(item['quantity'])*float(item['PRICE']) for item in portfolio)
@@ -261,7 +260,7 @@ def portfolio_analyze(portfolio):
         'portfolio':[{'name':item['name'],'value ($USD)':(float(item['quantity'])*float(item['PRICE'])),'Portfolio Contribution (%)':((float(item['quantity'])*float(item['PRICE']))/NAV)*100,'Industry Sector':item['sector'],'Asset Class':item['Asset Class'],'Geography':item['geography']} for item in portfolio],
         'composition':{}
     }
-    universe = get_expanded_universe(portfolio)
+    universe = get_expanded_universe(portfolio,NAV)
     response['search'] = list(set([item['name'] + ' (' + item['TICKER'] + ')' for item in universe]))
 
     #hard-coded benchmarks for now, as it's possible a user would want to make benchmark choices static...
@@ -274,7 +273,7 @@ def portfolio_analyze(portfolio):
         #sin stocks - just need true
         if 'has_' in a:
             #we omit the parent funds in the portfolio (has_lookthrough=true) to avoid double counting the exposure
-            response['sin'][a] = sum([(item['portfolio_value']/NAV) for item in universe if item[a]=='TRUE' if item['HAS_LOOKTHROUGH']=='FALSE'])
+            response['sin'][a] = sum([item['portfolio_value'] for item in universe if item['HAS_LOOKTHROUGH']=='FALSE' if item[a]=='TRUE'])
         #esg
         elif 'esg_' in a:
             #compute average ESG for the portfolio (and benchmarks!)
@@ -285,7 +284,7 @@ def portfolio_analyze(portfolio):
             #get unique entries for the given aggregation (keep an eye out for python3 quirks)
             unique_a = {item[a]:item[a] for item in universe}.values()
             for u in unique_a:
-                values[u] = sum([item['portfolio_value'] for item in universe if item[a]==u if item['HAS_LOOKTHROUGH']=='FALSE'])
+                values[u] = sum([item['portfolio_value'] for item in universe if item['HAS_LOOKTHROUGH']=='FALSE' if item[a]==u])
             response['composition'][a] = values
 
     #get ESG data for benchmarks
@@ -293,8 +292,8 @@ def portfolio_analyze(portfolio):
         portfolio = investmentportfolio.Get_Portfolio_Holdings(b,False)['holdings']
         portfolio = [item['holdings'] for item in portfolio] #since we loaded the data in chunks originally
         portfolio = [item for sublist in portfolio for item in sublist] #flatten the list'
-        b_universe = get_expanded_universe(portfolio)
         b_NAV = sum(float(item['quantity'])*float(item['PRICE']) for item in portfolio)
+        b_universe = get_expanded_universe(portfolio,b_NAV)
         for a in aggregations:
             if 'esg_' in a:
                 #compute average ESG for the portfolio (and benchmarks!)
@@ -303,6 +302,7 @@ def portfolio_analyze(portfolio):
     create_world_json(response['composition']["geography"])
 
     return Response(json.dumps(response), mimetype='application/json')
+
 
 #Returns list of 'look through' portfolios (returns results)
 @app.route('/api/search/<portfolio>/<security>',methods=['GET','POST'])
@@ -319,15 +319,14 @@ def search(portfolio,security):
     portfolio = [item['holdings'] for item in portfolio] #since we loaded the data in chunks originally
     portfolio = [item for sublist in portfolio for item in sublist] #flatten the list'
 
-
     NAV = sum(float(item['quantity'])*float(item['PRICE']) for item in portfolio)
-    universe = get_expanded_universe(portfolio)
+    universe = get_expanded_universe(portfolio,NAV)
     exposures = {"NAV":NAV}
     #get unique entries for the given aggregation (keep an eye out for python3 quirks)
     securities = [item for item in universe if item['TICKER']==security]
     #get esg data from the first instance (since they theoretically should all be the same for the same security)
     esg_data = {}
-    price = sum(float(item['PRICE']) for item in securities)
+    price = sum(float(item['portfolio_value']) for item in securities)
     for key,value in securities[0].items():
         if 'esg_' in key:
             esg_data[key] = value
@@ -342,9 +341,9 @@ def search(portfolio,security):
     }
     return Response(json.dumps(exposures), mimetype='application/json')
 
+
 def create_world_json(data):
     with open('static/js/geography/world_investment_default.json','r') as inFile:
-          #print("open file")
           jsonData = json.load(inFile)
           inFile.close()
 
