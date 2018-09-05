@@ -82,6 +82,11 @@ function portfolioEsgChart(portfolioEsgData) {
 
   var data = portfolioEsgData;
 
+  d3.select("#portfolio-esg-chart").remove();
+  $('.esg-chart').html(function() {
+    return '<svg id="portfolio-esg-chart"></svg>';
+  });
+
   //set the dimensions and margins of the graph
   var margin = { top: 20, right: 20, bottom: 60, left: 85 };
   var width = 300 - (margin.left + margin.right);
@@ -135,4 +140,6 @@ function portfolioEsgChart(portfolioEsgData) {
   //add the y Axis
   svg.append("g")
       .call(d3.axisLeft(y));
+
+  svg.exit().remove()
 }
