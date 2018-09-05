@@ -14,24 +14,6 @@ app = Flask(__name__)
 port = int(os.getenv('VCAP_APP_PORT', 8080))
 host='0.0.0.0'
 
-# I couldn't add the services to this instance of the app so VCAP is empty
-# do this to workaround for now
-if 'VCAP_SERVICES' in os.environ:
-    if str(os.environ['VCAP_SERVICES']) == '{}':
-        print ('Using a file to populate VCAP_SERVICES')
-        with open('VCAP.json') as data_file:
-            data = json.load(data_file)
-        os.environ['VCAP_SERVICES'] = json.dumps(data)
-
-# stuff for running locally
-if 'RUN_LOCAL' in os.environ:
-    print ('Running locally')
-    port = int(os.getenv('SERVER_PORT', '5555'))
-    host = os.getenv('SERVER_HOST', 'localhost')
-    with open('VCAP.json') as data_file:
-        data = json.load(data_file)
-    os.environ['VCAP_SERVICES'] = json.dumps(data)
-
 #======================================MAIN PAGES======================================
 @app.route('/')
 def run():
