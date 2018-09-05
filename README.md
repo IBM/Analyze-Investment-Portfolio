@@ -114,6 +114,8 @@ In your terminal, cd into this project's root directory
 
 Once the application is running, the first step is to upload a file that will be used to create a portfolio or a series of portfolios in the Investment Portfolio service. We use the file format of the Algorithmics Risk Service (ARS) import file as many production clients are already used to that format.
 
+You can use the `SamplePortfolio.csv` file in this repository.
+
 - The column labeled "UNIQUE ID" must refer to the unique identifier of the asset in our system.
 - The "NAME" column will hold the display name of the asset.
 - "POSITION UNITS" column holds the quantity.

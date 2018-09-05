@@ -18,7 +18,6 @@ $('.run-analysis').click(function() {
   var portfolioSelected = $('.enter-portfolio select').find(":selected").text();
   var Portfolio = JSON.stringify(portfolioSelected);
 
-
   if (Portfolio.includes('Loading...')) {
     alert("Load a portfolio first using Investment Portfolio service");
     return;
@@ -60,6 +59,15 @@ $('.run-analysis').click(function() {
         assetAllocationChart();
         compositionTable();
 
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        //reload on error
+        document.getElementById('loader').style.display = "none";
+
+        alert("Error: Try again")
+        console.log(errorThrown);
+        console.log(textStatus);
+        console.log(jqXHR);
     }
   });
 });

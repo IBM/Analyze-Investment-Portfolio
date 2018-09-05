@@ -1,9 +1,6 @@
-
 function esgGaugeCharts() {
 
-  console.log('esg data');
-  console.log(esgData);
-
+  //use global variable declared in analysis.js
   var portfolioEsg = esgData[esgPortfolio];
 
   esgChart(portfolioEsg.esg_Sustainability, 10, "sustainability", '#3b1a40');
@@ -16,13 +13,13 @@ function esgGaugeCharts() {
 
 function esgChart(amount, total, esgType, color) {
 
-  // Based on this great Demo: http://bl.ocks.org/mbostock/5100636
+  //esg gauge chart
+  //source gauge chart: http://www.carbondesignsystem.com/data-vis/gauge/code
   var tau = 2 * Math.PI;
   var radius = 80;
   var padding = 30;
   var boxSize = (radius + padding) * 2;
   var ratio = amount / total;
-  //var percent = Math.round(ratio * 100);
 
   var arc = d3.arc().innerRadius(radius).outerRadius(radius - 10).startAngle(0);
 
@@ -30,13 +27,17 @@ function esgChart(amount, total, esgType, color) {
 
   var g = svg.append('g').attr('transform', 'translate(' + boxSize / 2 + ', ' + boxSize / 2 + ')');
 
-  // Background Arc
-  var background = g.append('path').datum({ endAngle: tau }).style('fill', '#dfe3e6').attr('d', arc);
+  //background Arc
+  var background = g.append('path').datum({
+    endAngle: tau
+  }).style('fill', '#dfe3e6').attr('d', arc);
 
-  // Foreground Arc
-  var foreground = g.append('path').datum({ endAngle: 0 }).style('fill', color).transition().duration(1000).delay(1000).attrTween('d', arcTween(ratio * tau));
+  //foreground Arc
+  var foreground = g.append('path').datum({
+    endAngle: 0
+  }).style('fill', color).transition().duration(1000).delay(1000).attrTween('d', arcTween(ratio * tau));
 
-  // Text Labels
+  //text Labels
   var amountText = d3.select('.esg-' + esgType + '-amount');
   amountText.style('opacity', 0).transition().duration(1000).delay(1500).style('opacity', 1).text(amount.toFixed(2));
   const totalText = d3.select('.esg-' + esgType + '-total');
@@ -48,16 +49,16 @@ function esgChart(amount, total, esgType, color) {
     .style('opacity', 1)
     .text(`/${10}`);
 
-  // Animation function
+  //animation function
   function arcTween(newAngle) {
-      return function (d) {
-          var interpolate = d3.interpolate(d.endAngle, newAngle);
-          return function (t) {
-              d.endAngle = interpolate(t);
+    return function(d) {
+      var interpolate = d3.interpolate(d.endAngle, newAngle);
+      return function(t) {
+        d.endAngle = interpolate(t);
 
-              return arc(d);
-          };
+        return arc(d);
       };
+    };
   }
 
 }

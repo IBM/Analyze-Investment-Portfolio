@@ -1,14 +1,12 @@
-
-$( ".dropdown" )
-  .change(function () {
+$(".dropdown")
+  .change(function() {
     var str = "";
     var selected = $('.bx--graph-header select').find(":selected").text();
 
-    if(selected == "Asset Allocation") {
+    if (selected == "Asset Allocation") {
       document.getElementById('by-asset').style.display = "block";
       document.getElementById('by-industry').style.display = "none";
       document.getElementById('by-geography').style.display = "none";
-      assetAllocationChart();
 
     } else if (selected == "Industry") {
       document.getElementById('by-asset').style.display = "none";
@@ -27,24 +25,24 @@ $( ".dropdown" )
   .change();
 
 function displayCompositionTable() {
-    document.getElementById('portfolio-table').style.display = "block";
-    document.getElementById('composition-chart').style.display = "none";
+  document.getElementById('portfolio-table').style.display = "block";
+  document.getElementById('composition-chart').style.display = "none";
 
-    var PortfolioTableIcon = document.getElementById('Portfolio-Table-1');
-    var PortfolioCompositionIcon = document.getElementById('Portfolio-Composition-1');
-    PortfolioTableIcon.style.fill='#0F6FFF';
-    PortfolioCompositionIcon.style.fill='#767676';
+  var PortfolioTableIcon = document.getElementById('Portfolio-Table-1');
+  var PortfolioCompositionIcon = document.getElementById('Portfolio-Composition-1');
+  PortfolioTableIcon.style.fill = '#0F6FFF';
+  PortfolioCompositionIcon.style.fill = '#767676';
 
 }
 
 function displayCompositionChart() {
-    document.getElementById('portfolio-table').style.display = "none";
-    document.getElementById('composition-chart').style.display = "block";
+  document.getElementById('portfolio-table').style.display = "none";
+  document.getElementById('composition-chart').style.display = "block";
 
-    var PortfolioTableIcon = document.getElementById('Portfolio-Table-1');
-    var PortfolioCompositionIcon = document.getElementById('Portfolio-Composition-1');
-    PortfolioTableIcon.style.fill='#767676';
-    PortfolioCompositionIcon.style.fill='#0F6FFF';
+  var PortfolioTableIcon = document.getElementById('Portfolio-Table-1');
+  var PortfolioCompositionIcon = document.getElementById('Portfolio-Composition-1');
+  PortfolioTableIcon.style.fill = '#767676';
+  PortfolioCompositionIcon.style.fill = '#0F6FFF';
 }
 
 

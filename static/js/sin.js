@@ -1,4 +1,3 @@
-
 function sinCharts() {
 
   sinGaugeChart();
@@ -12,32 +11,30 @@ function sinTreeMapData() {
 
   var data = {
     "name": "SinInvestments",
-    "children": [
-          {
-            "name": "Alcohol",
-            "value": sinData.has_Alcohol
-          },
-          {
-            "name": "Fossil Fuels",
-            "value": sinData["has_Fossil Fuels"]
-          },
-          {
-            "name": "Gambling",
-            "value": sinData.has_Gambling
-          },
-          {
-            "name": "Military",
-            "value": sinData.has_Military
-          },
-          {
-            "name": "Tobacco",
-            "value": sinData.has_Tobacco
-          }
-        ]
+    "children": [{
+        "name": "Alcohol",
+        "value": sinData.has_Alcohol
+      },
+      {
+        "name": "Fossil Fuels",
+        "value": sinData["has_Fossil Fuels"]
+      },
+      {
+        "name": "Gambling",
+        "value": sinData.has_Gambling
+      },
+      {
+        "name": "Military",
+        "value": sinData.has_Military
+      },
+      {
+        "name": "Tobacco",
+        "value": sinData.has_Tobacco
+      }
+    ]
   };
 
   return data;
-
 
 }
 
@@ -48,10 +45,9 @@ function sinTreeMap(sinTreeMapData) {
 
   var colors = ['#3b1a40', '#473793', '#3c6df0', '#00a68f', '#56D2BB']
   var color = d3.scaleOrdinal(colors);
-
   var keys = ['Alcohol', 'Fossil Fuels', 'Gambling', 'Military', 'Tobacco']
 
-  //based on http://bl.ocks.org/tgk/6044254
+  //treemap tooltip source: http://bl.ocks.org/tgk/6044254
   var mousemove = function(d) {
     var xPosition = d3.event.pageX + 5;
     var yPosition = d3.event.pageY + 5;
@@ -62,12 +58,11 @@ function sinTreeMap(sinTreeMapData) {
     d3.select("#tooltip-treemap #heading-treemap")
       .text(d["data"]["name"]);
     d3.select("#tooltip-treemap #percentage-treemap")
-      .text(Number((d["value"]/NAV) * 100).toFixed(2) + "%");
+      .text(Number((d["value"] / NAV) * 100).toFixed(2) + "%");
     d3.select("#tooltip-treemap").classed("hidden", false);
   };
 
   var mouseout = function() {
-    console.log("mouseout")
     d3.select("#tooltip-treemap").classed("hidden", true);
   };
 
@@ -90,7 +85,9 @@ function sinTreeMap(sinTreeMapData) {
     .data(rootNode.leaves())
     .enter()
     .append('g')
-    .attr('transform', function(d) {return 'translate(' + [d.x0, d.y0] + ')'})
+    .attr('transform', function(d) {
+      return 'translate(' + [d.x0, d.y0] + ')'
+    })
     .on("mousemove", mousemove)
     .on("mouseout", mouseout);
 
@@ -98,34 +95,38 @@ function sinTreeMap(sinTreeMapData) {
   nodes
     .append('rect')
     .attr('class', 'treemap-rect')
-    .attr('width', function(d) { return d.x1 - d.x0; })
-    .attr('height', function(d) { return d.y1 - d.y0; })
-    .attr('fill', function (d, i) {
+    .attr('width', function(d) {
+      return d.x1 - d.x0;
+    })
+    .attr('height', function(d) {
+      return d.y1 - d.y0;
+    })
+    .attr('fill', function(d, i) {
       return color(i);
     })
-    .on('mouseover', function (d) {
+    .on('mouseover', function(d) {
       d3.select(this).transition().style('cursor', 'pointer');
-    }).on('mouseout', function (d) {
-      // Remove the info text on mouse out.
+    }).on('mouseout', function(d) {
+      //remove the info text on mouse out.
       d3.select(this).select('text').remove();
     });
 
 
-    /////////////////////////////////////// add  key ///////////////
-    $('.sin-treemap-key').html(function() {
-      var str = ''
-      for (var i = 0; i < keys.length; i++) {
-         str = str + '<div> <p class="key-value"><span class="key-dot" style="background: ' + colors[i] + ';"></span>' + keys[i] + '</p> </div>';
-      }
-      return str;
-    });
+  //add key
+  $('.sin-treemap-key').html(function() {
+    var str = ''
+    for (var i = 0; i < keys.length; i++) {
+      str = str + '<div> <p class="key-value"><span class="key-dot" style="background: ' + colors[i] + ';"></span>' + keys[i] + '</p> </div>';
+    }
+    return str;
+  });
 
 }
 
 
 function sinGaugeChart() {
 
-  // Based on this great Demo: http://bl.ocks.org/mbostock/5100636
+  //source gauge chart: http://www.carbondesignsystem.com/data-vis/gauge/code
   var tau = 2 * Math.PI;
   var radius = 65;
   var padding = 30;
@@ -140,22 +141,26 @@ function sinGaugeChart() {
 
   var g = svg.append('g').attr('transform', 'translate(' + boxSize / 2 + ', ' + boxSize / 2 + ')');
 
-  // Background Arc
-  var background = g.append('path').datum({ endAngle: tau }).style('fill', '#dfe3e6').attr('d', arc);
+  //background Arc
+  var background = g.append('path').datum({
+    endAngle: tau
+  }).style('fill', '#dfe3e6').attr('d', arc);
 
-  // Foreground Arc
-  var foreground = g.append('path').datum({ endAngle: 0 }).style('fill', '#473793').transition().duration(500).delay(100).attrTween('d', arcTween(ratio * tau));
+  //foreground Arc
+  var foreground = g.append('path').datum({
+    endAngle: 0
+  }).style('fill', '#473793').transition().duration(500).delay(100).attrTween('d', arcTween(ratio * tau));
 
-  // Animation function
+  //animation function
   function arcTween(newAngle) {
-      return function (d) {
-          var interpolate = d3.interpolate(d.endAngle, newAngle);
-          return function (t) {
-              d.endAngle = interpolate(t);
+    return function(d) {
+      var interpolate = d3.interpolate(d.endAngle, newAngle);
+      return function(t) {
+        d.endAngle = interpolate(t);
 
-              return arc(d);
-          };
+        return arc(d);
       };
+    };
   }
 
   $('.sin-text').html(function() {

@@ -1,99 +1,4 @@
-/*
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-*/
-
-button,
-input[type='button'],
-input[type='submit'],
-input[type='reset'],
-input[type='file'] {
+button, input[type='button'], input[type='submit'], input[type='reset'], input[type='file'] {
   border-radius: 0;
 }
 
@@ -101,18 +6,10 @@ input[type='text']::-ms-clear {
   display: none;
 }
 
+
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
@@ -128,20 +25,15 @@ sub {
   vertical-align: sub;
 }
 
-ol,
-ul {
+ol, ul {
   list-style: none;
 }
 
-blockquote,
-q {
+blockquote, q {
   quotes: none;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
+blockquote:before, blockquote:after, q:before, q:after {
   content: '';
   content: none;
 }
@@ -155,10 +47,12 @@ table {
   box-sizing: border-box;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 @keyframes skeleton {
   0% {
     width: 0%;
@@ -481,10 +375,12 @@ table {
   line-height: 1;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 body {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   color: #152935;
@@ -492,10 +388,12 @@ body {
   line-height: 1;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--type-giga {
   font-size: 4.75rem;
   line-height: 1.25;
@@ -530,8 +428,7 @@ body {
   text-transform: uppercase;
 }
 
-strong,
-.bx--type-strong {
+strong, .bx--type-strong {
   font-weight: 700;
 }
 
@@ -549,43 +446,37 @@ a {
   color: #3d70b2;
 }
 
-h1,
-.bx--type-alpha {
+h1, .bx--type-alpha {
   font-size: 2.25rem;
   line-height: 1.25;
   font-weight: 300;
 }
 
-h2,
-.bx--type-beta {
+h2, .bx--type-beta {
   font-size: 1.75rem;
   line-height: 1.25;
   font-weight: 300;
 }
 
-h3,
-.bx--type-gamma {
+h3, .bx--type-gamma {
   font-size: 1.25rem;
   line-height: 1.25;
   font-weight: 300;
 }
 
-h4,
-.bx--type-delta {
+h4, .bx--type-delta {
   font-size: 1.125rem;
   line-height: 1.25;
   font-weight: 600;
 }
 
-h5,
-.bx--type-epsilon {
+h5, .bx--type-epsilon {
   font-size: 1rem;
   line-height: 1.25;
   font-weight: 600;
 }
 
-h6,
-.bx--type-zeta {
+h6, .bx--type-zeta {
   font-size: 0.875rem;
   line-height: 1.25;
   font-weight: 600;
@@ -621,7 +512,7 @@ h6,
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 -5px;
 }
 
@@ -646,7 +537,7 @@ h6,
 
 .bx--col-xs-1 {
   -ms-flex-preferred-size: 8.33333%;
-      flex-basis: 8.33333%;
+  flex-basis: 8.33333%;
 }
 
 .bx--offset-xs-1 {
@@ -655,7 +546,7 @@ h6,
 
 .bx--col-xs-2 {
   -ms-flex-preferred-size: 16.66667%;
-      flex-basis: 16.66667%;
+  flex-basis: 16.66667%;
 }
 
 .bx--offset-xs-2 {
@@ -664,7 +555,7 @@ h6,
 
 .bx--col-xs-3 {
   -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  flex-basis: 25%;
 }
 
 .bx--offset-xs-3 {
@@ -673,7 +564,7 @@ h6,
 
 .bx--col-xs-4 {
   -ms-flex-preferred-size: 33.33333%;
-      flex-basis: 33.33333%;
+  flex-basis: 33.33333%;
 }
 
 .bx--offset-xs-4 {
@@ -682,7 +573,7 @@ h6,
 
 .bx--col-xs-5 {
   -ms-flex-preferred-size: 41.66667%;
-      flex-basis: 41.66667%;
+  flex-basis: 41.66667%;
 }
 
 .bx--offset-xs-5 {
@@ -691,7 +582,7 @@ h6,
 
 .bx--col-xs-6 {
   -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
+  flex-basis: 50%;
 }
 
 .bx--offset-xs-6 {
@@ -700,7 +591,7 @@ h6,
 
 .bx--col-xs-7 {
   -ms-flex-preferred-size: 58.33333%;
-      flex-basis: 58.33333%;
+  flex-basis: 58.33333%;
 }
 
 .bx--offset-xs-7 {
@@ -709,7 +600,7 @@ h6,
 
 .bx--col-xs-8 {
   -ms-flex-preferred-size: 66.66667%;
-      flex-basis: 66.66667%;
+  flex-basis: 66.66667%;
 }
 
 .bx--offset-xs-8 {
@@ -718,7 +609,7 @@ h6,
 
 .bx--col-xs-9 {
   -ms-flex-preferred-size: 75%;
-      flex-basis: 75%;
+  flex-basis: 75%;
 }
 
 .bx--offset-xs-9 {
@@ -727,7 +618,7 @@ h6,
 
 .bx--col-xs-10 {
   -ms-flex-preferred-size: 83.33333%;
-      flex-basis: 83.33333%;
+  flex-basis: 83.33333%;
 }
 
 .bx--offset-xs-10 {
@@ -736,7 +627,7 @@ h6,
 
 .bx--col-xs-11 {
   -ms-flex-preferred-size: 91.66667%;
-      flex-basis: 91.66667%;
+  flex-basis: 91.66667%;
 }
 
 .bx--offset-xs-11 {
@@ -745,7 +636,7 @@ h6,
 
 .bx--col-xs-12 {
   -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
+  flex-basis: 100%;
 }
 
 .bx--offset-xs-12 {
@@ -755,89 +646,89 @@ h6,
 @media (min-width: 576px) {
   .bx--col-sm-auto {
     -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    flex: 0 0 auto;
     width: auto;
   }
   .bx--col-sm-1 {
     -ms-flex-preferred-size: 8.33333%;
-        flex-basis: 8.33333%;
+    flex-basis: 8.33333%;
   }
   .bx--offset-sm-1 {
     margin-left: 8.33333%;
   }
   .bx--col-sm-2 {
     -ms-flex-preferred-size: 16.66667%;
-        flex-basis: 16.66667%;
+    flex-basis: 16.66667%;
   }
   .bx--offset-sm-2 {
     margin-left: 16.66667%;
   }
   .bx--col-sm-3 {
     -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
+    flex-basis: 25%;
   }
   .bx--offset-sm-3 {
     margin-left: 25%;
   }
   .bx--col-sm-4 {
     -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
+    flex-basis: 33.33333%;
   }
   .bx--offset-sm-4 {
     margin-left: 33.33333%;
   }
   .bx--col-sm-5 {
     -ms-flex-preferred-size: 41.66667%;
-        flex-basis: 41.66667%;
+    flex-basis: 41.66667%;
   }
   .bx--offset-sm-5 {
     margin-left: 41.66667%;
   }
   .bx--col-sm-6 {
     -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    flex-basis: 50%;
   }
   .bx--offset-sm-6 {
     margin-left: 50%;
   }
   .bx--col-sm-7 {
     -ms-flex-preferred-size: 58.33333%;
-        flex-basis: 58.33333%;
+    flex-basis: 58.33333%;
   }
   .bx--offset-sm-7 {
     margin-left: 58.33333%;
   }
   .bx--col-sm-8 {
     -ms-flex-preferred-size: 66.66667%;
-        flex-basis: 66.66667%;
+    flex-basis: 66.66667%;
   }
   .bx--offset-sm-8 {
     margin-left: 66.66667%;
   }
   .bx--col-sm-9 {
     -ms-flex-preferred-size: 75%;
-        flex-basis: 75%;
+    flex-basis: 75%;
   }
   .bx--offset-sm-9 {
     margin-left: 75%;
   }
   .bx--col-sm-10 {
     -ms-flex-preferred-size: 83.33333%;
-        flex-basis: 83.33333%;
+    flex-basis: 83.33333%;
   }
   .bx--offset-sm-10 {
     margin-left: 83.33333%;
   }
   .bx--col-sm-11 {
     -ms-flex-preferred-size: 91.66667%;
-        flex-basis: 91.66667%;
+    flex-basis: 91.66667%;
   }
   .bx--offset-sm-11 {
     margin-left: 91.66667%;
   }
   .bx--col-sm-12 {
     -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   .bx--offset-sm-12 {
     margin-left: 100%;
@@ -847,89 +738,89 @@ h6,
 @media (min-width: 768px) {
   .bx--col-md-auto {
     -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    flex: 0 0 auto;
     width: auto;
   }
   .bx--col-md-1 {
     -ms-flex-preferred-size: 8.33333%;
-        flex-basis: 8.33333%;
+    flex-basis: 8.33333%;
   }
   .bx--offset-md-1 {
     margin-left: 8.33333%;
   }
   .bx--col-md-2 {
     -ms-flex-preferred-size: 16.66667%;
-        flex-basis: 16.66667%;
+    flex-basis: 16.66667%;
   }
   .bx--offset-md-2 {
     margin-left: 16.66667%;
   }
   .bx--col-md-3 {
     -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
+    flex-basis: 25%;
   }
   .bx--offset-md-3 {
     margin-left: 25%;
   }
   .bx--col-md-4 {
     -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
+    flex-basis: 33.33333%;
   }
   .bx--offset-md-4 {
     margin-left: 33.33333%;
   }
   .bx--col-md-5 {
     -ms-flex-preferred-size: 41.66667%;
-        flex-basis: 41.66667%;
+    flex-basis: 41.66667%;
   }
   .bx--offset-md-5 {
     margin-left: 41.66667%;
   }
   .bx--col-md-6 {
     -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    flex-basis: 50%;
   }
   .bx--offset-md-6 {
     margin-left: 50%;
   }
   .bx--col-md-7 {
     -ms-flex-preferred-size: 58.33333%;
-        flex-basis: 58.33333%;
+    flex-basis: 58.33333%;
   }
   .bx--offset-md-7 {
     margin-left: 58.33333%;
   }
   .bx--col-md-8 {
     -ms-flex-preferred-size: 66.66667%;
-        flex-basis: 66.66667%;
+    flex-basis: 66.66667%;
   }
   .bx--offset-md-8 {
     margin-left: 66.66667%;
   }
   .bx--col-md-9 {
     -ms-flex-preferred-size: 75%;
-        flex-basis: 75%;
+    flex-basis: 75%;
   }
   .bx--offset-md-9 {
     margin-left: 75%;
   }
   .bx--col-md-10 {
     -ms-flex-preferred-size: 83.33333%;
-        flex-basis: 83.33333%;
+    flex-basis: 83.33333%;
   }
   .bx--offset-md-10 {
     margin-left: 83.33333%;
   }
   .bx--col-md-11 {
     -ms-flex-preferred-size: 91.66667%;
-        flex-basis: 91.66667%;
+    flex-basis: 91.66667%;
   }
   .bx--offset-md-11 {
     margin-left: 91.66667%;
   }
   .bx--col-md-12 {
     -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   .bx--offset-md-12 {
     margin-left: 100%;
@@ -939,89 +830,89 @@ h6,
 @media (min-width: 992px) {
   .bx--col-lg-auto {
     -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    flex: 0 0 auto;
     width: auto;
   }
   .bx--col-lg-1 {
     -ms-flex-preferred-size: 8.33333%;
-        flex-basis: 8.33333%;
+    flex-basis: 8.33333%;
   }
   .bx--offset-lg-1 {
     margin-left: 8.33333%;
   }
   .bx--col-lg-2 {
     -ms-flex-preferred-size: 16.66667%;
-        flex-basis: 16.66667%;
+    flex-basis: 16.66667%;
   }
   .bx--offset-lg-2 {
     margin-left: 16.66667%;
   }
   .bx--col-lg-3 {
     -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
+    flex-basis: 25%;
   }
   .bx--offset-lg-3 {
     margin-left: 25%;
   }
   .bx--col-lg-4 {
     -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
+    flex-basis: 33.33333%;
   }
   .bx--offset-lg-4 {
     margin-left: 33.33333%;
   }
   .bx--col-lg-5 {
     -ms-flex-preferred-size: 41.66667%;
-        flex-basis: 41.66667%;
+    flex-basis: 41.66667%;
   }
   .bx--offset-lg-5 {
     margin-left: 41.66667%;
   }
   .bx--col-lg-6 {
     -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    flex-basis: 50%;
   }
   .bx--offset-lg-6 {
     margin-left: 50%;
   }
   .bx--col-lg-7 {
     -ms-flex-preferred-size: 58.33333%;
-        flex-basis: 58.33333%;
+    flex-basis: 58.33333%;
   }
   .bx--offset-lg-7 {
     margin-left: 58.33333%;
   }
   .bx--col-lg-8 {
     -ms-flex-preferred-size: 66.66667%;
-        flex-basis: 66.66667%;
+    flex-basis: 66.66667%;
   }
   .bx--offset-lg-8 {
     margin-left: 66.66667%;
   }
   .bx--col-lg-9 {
     -ms-flex-preferred-size: 75%;
-        flex-basis: 75%;
+    flex-basis: 75%;
   }
   .bx--offset-lg-9 {
     margin-left: 75%;
   }
   .bx--col-lg-10 {
     -ms-flex-preferred-size: 83.33333%;
-        flex-basis: 83.33333%;
+    flex-basis: 83.33333%;
   }
   .bx--offset-lg-10 {
     margin-left: 83.33333%;
   }
   .bx--col-lg-11 {
     -ms-flex-preferred-size: 91.66667%;
-        flex-basis: 91.66667%;
+    flex-basis: 91.66667%;
   }
   .bx--offset-lg-11 {
     margin-left: 91.66667%;
   }
   .bx--col-lg-12 {
     -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   .bx--offset-lg-12 {
     margin-left: 100%;
@@ -1031,89 +922,89 @@ h6,
 @media (min-width: 1200px) {
   .bx--col-xl-auto {
     -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    flex: 0 0 auto;
     width: auto;
   }
   .bx--col-xl-1 {
     -ms-flex-preferred-size: 8.33333%;
-        flex-basis: 8.33333%;
+    flex-basis: 8.33333%;
   }
   .bx--offset-xl-1 {
     margin-left: 8.33333%;
   }
   .bx--col-xl-2 {
     -ms-flex-preferred-size: 16.66667%;
-        flex-basis: 16.66667%;
+    flex-basis: 16.66667%;
   }
   .bx--offset-xl-2 {
     margin-left: 16.66667%;
   }
   .bx--col-xl-3 {
     -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
+    flex-basis: 25%;
   }
   .bx--offset-xl-3 {
     margin-left: 25%;
   }
   .bx--col-xl-4 {
     -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
+    flex-basis: 33.33333%;
   }
   .bx--offset-xl-4 {
     margin-left: 33.33333%;
   }
   .bx--col-xl-5 {
     -ms-flex-preferred-size: 41.66667%;
-        flex-basis: 41.66667%;
+    flex-basis: 41.66667%;
   }
   .bx--offset-xl-5 {
     margin-left: 41.66667%;
   }
   .bx--col-xl-6 {
     -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    flex-basis: 50%;
   }
   .bx--offset-xl-6 {
     margin-left: 50%;
   }
   .bx--col-xl-7 {
     -ms-flex-preferred-size: 58.33333%;
-        flex-basis: 58.33333%;
+    flex-basis: 58.33333%;
   }
   .bx--offset-xl-7 {
     margin-left: 58.33333%;
   }
   .bx--col-xl-8 {
     -ms-flex-preferred-size: 66.66667%;
-        flex-basis: 66.66667%;
+    flex-basis: 66.66667%;
   }
   .bx--offset-xl-8 {
     margin-left: 66.66667%;
   }
   .bx--col-xl-9 {
     -ms-flex-preferred-size: 75%;
-        flex-basis: 75%;
+    flex-basis: 75%;
   }
   .bx--offset-xl-9 {
     margin-left: 75%;
   }
   .bx--col-xl-10 {
     -ms-flex-preferred-size: 83.33333%;
-        flex-basis: 83.33333%;
+    flex-basis: 83.33333%;
   }
   .bx--offset-xl-10 {
     margin-left: 83.33333%;
   }
   .bx--col-xl-11 {
     -ms-flex-preferred-size: 91.66667%;
-        flex-basis: 91.66667%;
+    flex-basis: 91.66667%;
   }
   .bx--offset-xl-11 {
     margin-left: 91.66667%;
   }
   .bx--col-xl-12 {
     -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   .bx--offset-xl-12 {
     margin-left: 100%;
@@ -1123,107 +1014,105 @@ h6,
 @media (min-width: 1600px) {
   .bx--col-xxl-auto {
     -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
+    flex: 0 0 auto;
     width: auto;
   }
   .bx--col-xxl-1 {
     -ms-flex-preferred-size: 8.33333%;
-        flex-basis: 8.33333%;
+    flex-basis: 8.33333%;
   }
   .bx--offset-xxl-1 {
     margin-left: 8.33333%;
   }
   .bx--col-xxl-2 {
     -ms-flex-preferred-size: 16.66667%;
-        flex-basis: 16.66667%;
+    flex-basis: 16.66667%;
   }
   .bx--offset-xxl-2 {
     margin-left: 16.66667%;
   }
   .bx--col-xxl-3 {
     -ms-flex-preferred-size: 25%;
-        flex-basis: 25%;
+    flex-basis: 25%;
   }
   .bx--offset-xxl-3 {
     margin-left: 25%;
   }
   .bx--col-xxl-4 {
     -ms-flex-preferred-size: 33.33333%;
-        flex-basis: 33.33333%;
+    flex-basis: 33.33333%;
   }
   .bx--offset-xxl-4 {
     margin-left: 33.33333%;
   }
   .bx--col-xxl-5 {
     -ms-flex-preferred-size: 41.66667%;
-        flex-basis: 41.66667%;
+    flex-basis: 41.66667%;
   }
   .bx--offset-xxl-5 {
     margin-left: 41.66667%;
   }
   .bx--col-xxl-6 {
     -ms-flex-preferred-size: 50%;
-        flex-basis: 50%;
+    flex-basis: 50%;
   }
   .bx--offset-xxl-6 {
     margin-left: 50%;
   }
   .bx--col-xxl-7 {
     -ms-flex-preferred-size: 58.33333%;
-        flex-basis: 58.33333%;
+    flex-basis: 58.33333%;
   }
   .bx--offset-xxl-7 {
     margin-left: 58.33333%;
   }
   .bx--col-xxl-8 {
     -ms-flex-preferred-size: 66.66667%;
-        flex-basis: 66.66667%;
+    flex-basis: 66.66667%;
   }
   .bx--offset-xxl-8 {
     margin-left: 66.66667%;
   }
   .bx--col-xxl-9 {
     -ms-flex-preferred-size: 75%;
-        flex-basis: 75%;
+    flex-basis: 75%;
   }
   .bx--offset-xxl-9 {
     margin-left: 75%;
   }
   .bx--col-xxl-10 {
     -ms-flex-preferred-size: 83.33333%;
-        flex-basis: 83.33333%;
+    flex-basis: 83.33333%;
   }
   .bx--offset-xxl-10 {
     margin-left: 83.33333%;
   }
   .bx--col-xxl-11 {
     -ms-flex-preferred-size: 91.66667%;
-        flex-basis: 91.66667%;
+    flex-basis: 91.66667%;
   }
   .bx--offset-xxl-11 {
     margin-left: 91.66667%;
   }
   .bx--col-xxl-12 {
     -ms-flex-preferred-size: 100%;
-        flex-basis: 100%;
+    flex-basis: 100%;
   }
   .bx--offset-xxl-12 {
     margin-left: 100%;
   }
 }
 
-.bx--col-xs,
-.bx--col-sm,
-.bx--col-md,
-.bx--col-lg {
+.bx--col-xs, .bx--col-sm, .bx--col-md, .bx--col-lg {
   -ms-flex-preferred-size: 0;
-      flex-basis: 0;
+  flex-basis: 0;
   -ms-flex: 1;
-      flex: 1;
+  flex: 1;
   -ms-flex-positive: 1;
-      flex-grow: 1;
+  flex-grow: 1;
   max-width: 100%;
 }
+
 
 /**
  * We flag this variable as true if someone uses the globals/scss/styles.scss
@@ -1234,10 +1123,13 @@ h6,
  * this variable _will not_ be set to true, so the deprecation message will be
  * displayed after the @import.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 button.bx--btn {
   display: inline-block;
 }
@@ -1268,11 +1160,11 @@ button.bx--btn .bx--btn__icon {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   font-size: 0.875rem;
   font-weight: 600;
   height: 2.5rem;
@@ -1365,8 +1257,7 @@ button.bx--btn .bx--btn__icon {
   color: #3d70b2;
 }
 
-.bx--btn--secondary:hover > .bx--btn__icon,
-.bx--btn--secondary:focus > .bx--btn__icon {
+.bx--btn--secondary:hover>.bx--btn__icon, .bx--btn--secondary:focus>.bx--btn__icon {
   fill: #fff;
 }
 
@@ -1415,8 +1306,7 @@ button.bx--btn .bx--btn__icon {
   color: #5a6872;
 }
 
-.bx--btn--tertiary:hover > .bx--btn__icon,
-.bx--btn--tertiary:focus > .bx--btn__icon {
+.bx--btn--tertiary:hover>.bx--btn__icon, .bx--btn--tertiary:focus>.bx--btn__icon {
   fill: #fff;
 }
 
@@ -1516,8 +1406,7 @@ button.bx--btn .bx--btn__icon {
   border: 2px solid #e0182d;
 }
 
-.bx--btn--danger:hover > .bx--btn__icon,
-.bx--btn--danger:focus > .bx--btn__icon {
+.bx--btn--danger:hover>.bx--btn__icon, .bx--btn--danger:focus>.bx--btn__icon {
   fill: #fff;
 }
 
@@ -1561,8 +1450,7 @@ button.bx--btn .bx--btn__icon {
   padding: 0 0.5rem;
 }
 
-.bx--btn--secondary + .bx--btn--primary,
-.bx--btn--tertiary + .bx--btn--danger--primary {
+.bx--btn--secondary+.bx--btn--primary, .bx--btn--tertiary+.bx--btn--danger--primary {
   margin-left: 1rem;
 }
 
@@ -1594,14 +1482,18 @@ button.bx--btn .bx--btn__icon {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--btn--copy {
   position: relative;
   overflow: visible;
@@ -1660,22 +1552,30 @@ button.bx--btn .bx--btn__icon {
   display: inline-flex;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--fieldset {
   margin-bottom: 2rem;
 }
@@ -1685,15 +1585,14 @@ button.bx--btn .bx--btn__icon {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex: 1;
-      flex: 1;
+  flex: 1;
   -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
 }
 
-.bx--form-item--light input,
-.bx--form-item--light input[type='number'] {
+.bx--form-item--light input, .bx--form-item--light input[type='number'] {
   background: #fff !important;
 }
 
@@ -1744,15 +1643,11 @@ button.bx--btn .bx--btn__icon {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
-input[data-invalid],
-textarea[data-invalid],
-select[data-invalid] {
+input[data-invalid], textarea[data-invalid], select[data-invalid] {
   box-shadow: 0 2px 0px 0px #e0182d;
 }
 
-input[data-invalid] ~ .bx--form-requirement,
-textarea[data-invalid] ~ .bx--form-requirement,
-select[data-invalid] ~ .bx--form-requirement {
+input[data-invalid]~.bx--form-requirement, textarea[data-invalid]~.bx--form-requirement, select[data-invalid]~.bx--form-requirement {
   max-height: 12.5rem;
   display: block;
 }
@@ -1781,7 +1676,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   font-size: 0.75rem;
   color: #5a6872;
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
   line-height: 1.5;
   z-index: 0;
   max-height: 3rem;
@@ -1810,7 +1705,9 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   }
 }
 
+
 /* Stroke animations */
+
 @keyframes init-stroke {
   0% {
     stroke-dashoffset: 240;
@@ -1885,9 +1782,9 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   transition: background-color 2000ms cubic-bezier(0.5, 0, 0.1, 1);
   z-index: 8000;
 }
@@ -1941,9 +1838,9 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   min-height: 1.875rem;
   background-color: #fff;
   border: 1px solid #dfe3e6;
@@ -1965,14 +1862,14 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   color: #152935;
   margin-right: 1rem;
   height: 1.875rem;
   /*rtl:ignore*/
   direction: ltr;
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
   /*rtl:{flex-end}*/
 }
 
@@ -1980,7 +1877,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--file__state-container .bx--loading {
@@ -1993,16 +1890,14 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   stroke: #5a6872;
 }
 
-.bx--file__state-container .bx--file-close,
-.bx--file__state-container .bx--file-complete {
+.bx--file__state-container .bx--file-close, .bx--file__state-container .bx--file-complete {
   width: 1rem;
   height: 1rem;
   fill: #152935;
   cursor: pointer;
 }
 
-.bx--file__state-container .bx--file-close:focus,
-.bx--file__state-container .bx--file-complete:focus {
+.bx--file__state-container .bx--file-close:focus, .bx--file__state-container .bx--file-complete:focus {
   outline: 1px solid #3d70b2;
 }
 
@@ -2014,14 +1909,18 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   fill: #5aa700;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--form-item.bx--checkbox-wrapper {
   margin-bottom: 1rem;
 }
@@ -2055,7 +1954,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   cursor: pointer;
   position: relative;
   padding-left: 1.5rem;
@@ -2090,35 +1989,29 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   margin-top: -0.1875rem;
 }
 
-.bx--checkbox:checked + .bx--checkbox-label::before,
-.bx--checkbox:indeterminate + .bx--checkbox-label::before,
-.bx--checkbox-label[data-contained-checkbox-state='true']::before,
-.bx--checkbox-label[data-contained-checkbox-state='mixed']::before {
+.bx--checkbox:checked+.bx--checkbox-label::before, .bx--checkbox:indeterminate+.bx--checkbox-label::before, .bx--checkbox-label[data-contained-checkbox-state='true']::before, .bx--checkbox-label[data-contained-checkbox-state='mixed']::before {
   background-color: #3d70b2;
   border-color: #3d70b2;
 }
 
-.bx--checkbox:checked + .bx--checkbox-label::after,
-.bx--checkbox-label[data-contained-checkbox-state='true']::after {
+.bx--checkbox:checked+.bx--checkbox-label::after, .bx--checkbox-label[data-contained-checkbox-state='true']::after {
   opacity: 1;
   /*rtl:ignore*/
   transform: scale(1) rotate(-45deg);
 }
 
-.bx--checkbox:not(:checked) + .bx--checkbox-label::after {
+.bx--checkbox:not(:checked)+.bx--checkbox-label::after {
   opacity: 0;
   /*rtl:ignore*/
   transform: scale(0) rotate(-45deg);
 }
 
-.bx--checkbox:focus + .bx--checkbox-label::before,
-.bx--checkbox-label__focus::before {
+.bx--checkbox:focus+.bx--checkbox-label::before, .bx--checkbox-label__focus::before {
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent;
 }
 
-.bx--checkbox:indeterminate + .bx--checkbox-label::after,
-.bx--checkbox-label[data-contained-checkbox-state='mixed']::after {
+.bx--checkbox:indeterminate+.bx--checkbox-label::after, .bx--checkbox-label[data-contained-checkbox-state='mixed']::after {
   transform: scale(1) rotate(0deg);
   /*rtl:ignore*/
   border-left: 0 solid #fff;
@@ -2129,9 +2022,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   left: 0.25rem;
 }
 
-.bx--checkbox:disabled + .bx--checkbox-label,
-.bx--checkbox:disabled ~ .bx--checkbox-label-text,
-.bx--checkbox-label[data-contained-checkbox-disabled='true'] {
+.bx--checkbox:disabled+.bx--checkbox-label, .bx--checkbox:disabled~.bx--checkbox-label-text, .bx--checkbox-label[data-contained-checkbox-disabled='true'] {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -2149,27 +2040,25 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   min-width: 1.125rem;
 }
 
-.bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
+.bx--checkbox:checked+.bx--checkbox-label .bx--checkbox-appearance {
   top: -0.0625rem;
 }
 
-.bx--checkbox:checked + .bx--checkbox-appearance,
-.bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
+.bx--checkbox:checked+.bx--checkbox-appearance, .bx--checkbox:checked+.bx--checkbox-label .bx--checkbox-appearance {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: baseline;
-      align-items: baseline;
+  align-items: baseline;
   background-color: #3d70b2;
   border-color: #3d70b2;
 }
 
-.bx--checkbox:focus + .bx--checkbox-label .bx--checkbox-appearance,
-.bx--checkbox:focus + .bx--checkbox-appearance {
+.bx--checkbox:focus+.bx--checkbox-label .bx--checkbox-appearance, .bx--checkbox:focus+.bx--checkbox-appearance {
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent;
 }
 
-.bx--checkbox:disabled + .bx--checkbox-appearance {
+.bx--checkbox:disabled+.bx--checkbox-appearance {
   opacity: 0.5;
   cursor: not-allowed;
 }
@@ -2181,14 +2070,12 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   height: 100%;
 }
 
-.bx--checkbox:checked + .bx--checkbox-appearance .bx--checkbox-checkmark,
-.bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance .bx--checkbox-checkmark {
+.bx--checkbox:checked+.bx--checkbox-appearance .bx--checkbox-checkmark, .bx--checkbox:checked+.bx--checkbox-label .bx--checkbox-appearance .bx--checkbox-checkmark {
   display: block;
 }
 
 @-moz-document url-prefix() {
-  .bx--checkbox:checked + .bx--checkbox-appearance .bx--checkbox-checkmark,
-  .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance .bx--checkbox-checkmark {
+  .bx--checkbox:checked+.bx--checkbox-appearance .bx--checkbox-checkmark, .bx--checkbox:checked+.bx--checkbox-label .bx--checkbox-appearance .bx--checkbox-checkmark {
     stroke: #3d70b2;
   }
 }
@@ -2269,7 +2156,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
   cursor: pointer;
   color: #152935;
 }
@@ -2282,14 +2169,11 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   opacity: 0.5;
 }
 
-.bx--list-box--disabled,
-.bx--list-box--disabled .bx--list-box__field,
-.bx--list-box--disabled .bx--list-box__menu-icon {
+.bx--list-box--disabled, .bx--list-box--disabled .bx--list-box__field, .bx--list-box--disabled .bx--list-box__menu-icon {
   cursor: not-allowed;
 }
 
-.bx--list-box--disabled .bx--list-box__menu-item:hover,
-.bx--list-box--disabled .bx--list-box__menu-item--highlighted {
+.bx--list-box--disabled .bx--list-box__menu-item:hover, .bx--list-box--disabled .bx--list-box__menu-item--highlighted {
   background-color: transparent;
   text-decoration: none;
 }
@@ -2314,18 +2198,17 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   padding: 0 0.5rem;
 }
 
-.bx--list-box--inline > .bx--list-box__menu {
+.bx--list-box--inline>.bx--list-box__menu {
   top: 2rem;
   width: 18.75rem;
 }
 
-.bx--list-box--inline > .bx--list-box__field[aria-expanded='true'] ~ .bx--list-box__menu {
+.bx--list-box--inline>.bx--list-box__field[aria-expanded='true']~.bx--list-box__menu {
   outline: 1px solid #3d70b2;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
-.bx--list-box--inline > .bx--list-box__field[aria-expanded='true'],
-.bx--list-box.bx--list-box--inline > .bx--list-box__field:focus {
+.bx--list-box--inline>.bx--list-box__field[aria-expanded='true'], .bx--list-box.bx--list-box--inline>.bx--list-box__field:focus {
   outline: none;
   box-shadow: none;
 }
@@ -2338,8 +2221,8 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -2348,7 +2231,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   height: 100%;
   padding: 0 1rem;
   cursor: pointer;
@@ -2358,8 +2241,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   border: 0;
 }
 
-.bx--list-box__field:focus,
-.bx--list-box__field[aria-expanded='true'] {
+.bx--list-box__field:focus, .bx--list-box__field[aria-expanded='true'] {
   outline: none;
   box-shadow: 0 2px 0 0 #3d70b2;
 }
@@ -2374,9 +2256,9 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   color: #152935;
   font-weight: 600;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .bx--list-box__menu-icon {
@@ -2391,7 +2273,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   cursor: pointer;
 }
 
-.bx--list-box__menu-icon > svg {
+.bx--list-box__menu-icon>svg {
   fill: #3d70b2;
   height: 100%;
 }
@@ -2410,13 +2292,13 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   padding: 0 1rem;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   transition: background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
 }
 
-.bx--list-box__selection > svg {
+.bx--list-box__selection>svg {
   fill: #5a6872;
   height: 100%;
 }
@@ -2431,9 +2313,9 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   padding: 0;
   background-color: #3d70b2;
   height: 1.125rem;
@@ -2444,15 +2326,14 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   border-radius: 0.8125rem;
 }
 
-.bx--list-box__selection--multi > svg {
+.bx--list-box__selection--multi>svg {
   fill: white;
   width: 0.5rem;
   height: 0.5rem;
   margin-left: 0.3125rem;
 }
 
-.bx--list-box__selection--multi:focus,
-.bx--list-box__selection--multi:hover {
+.bx--list-box__selection--multi:focus, .bx--list-box__selection--multi:hover {
   background-color: #30588c;
   outline: none;
 }
@@ -2475,25 +2356,24 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   height: 2.5rem;
   padding: 0 1rem;
   cursor: pointer;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.bx--list-box__menu-item:hover,
-.bx--list-box__menu-item--highlighted {
+.bx--list-box__menu-item:hover, .bx--list-box__menu-item--highlighted {
   background-color: rgba(85, 150, 230, 0.1);
   outline: 1px solid transparent;
   text-decoration: underline;
   color: #152935;
 }
 
-.bx--list-box__menu-item > .bx--form-item.bx--checkbox-wrapper {
+.bx--list-box__menu-item>.bx--form-item.bx--checkbox-wrapper {
   margin: 0;
 }
 
@@ -2523,23 +2403,27 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   opacity: 1;
 }
 
-.bx--combo-box > .bx--list-box__field {
+.bx--combo-box>.bx--list-box__field {
   padding: 0;
 }
+
 
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--radio-button-group {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   margin-top: 0.5rem;
 }
 
@@ -2563,7 +2447,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   cursor: pointer;
   margin-right: 1rem;
 }
@@ -2573,23 +2457,23 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   border-radius: 50%;
   border: 2px solid #5a6872;
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   height: 1.125rem;
   width: 1.125rem;
   margin-right: 0.5rem;
 }
 
-.bx--radio-button:checked + .bx--radio-button__label .bx--radio-button__appearance {
+.bx--radio-button:checked+.bx--radio-button__label .bx--radio-button__appearance {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   border-color: #3d70b2;
 }
 
-.bx--radio-button:checked + .bx--radio-button__label .bx--radio-button__appearance:before {
+.bx--radio-button:checked+.bx--radio-button__label .bx--radio-button__appearance:before {
   content: '';
   display: inline-block;
   position: relative;
@@ -2599,12 +2483,12 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   background-color: #3d70b2;
 }
 
-.bx--radio-button:disabled + .bx--radio-button__label {
+.bx--radio-button:disabled+.bx--radio-button__label {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.bx--radio-button:focus + .bx--radio-button__label .bx--radio-button__appearance {
+.bx--radio-button:focus+.bx--radio-button__label .bx--radio-button__appearance {
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent;
 }
@@ -2642,14 +2526,18 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: none;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--toggle {
   position: absolute;
   width: 1px;
@@ -2669,7 +2557,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
   cursor: pointer;
   margin: 1rem 0;
@@ -2708,16 +2596,16 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
 }
 
-.bx--toggle--small + .bx--toggle__label {
+.bx--toggle--small+.bx--toggle__label {
   width: 2rem;
 }
 
-.bx--toggle--small + .bx--toggle__label .bx--toggle__appearance {
+.bx--toggle--small+.bx--toggle__label .bx--toggle__appearance {
   width: 2rem;
   height: 1rem;
 }
 
-.bx--toggle--small + .bx--toggle__label .bx--toggle__appearance:before {
+.bx--toggle--small+.bx--toggle__label .bx--toggle__appearance:before {
   box-sizing: border-box;
   height: 1rem;
   width: 2rem;
@@ -2727,7 +2615,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   top: 0;
 }
 
-.bx--toggle--small + .bx--toggle__label .bx--toggle__appearance:after {
+.bx--toggle--small+.bx--toggle__label .bx--toggle__appearance:after {
   width: 0.625rem;
   height: 0.625rem;
   background-color: #8897a2;
@@ -2746,13 +2634,12 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   transform: scale(0.2);
 }
 
-.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__check {
+.bx--toggle--small:checked+.bx--toggle__label .bx--toggle__check {
   fill: #3d70b2;
   transform: scale(1) translateX(16px);
 }
 
-.bx--toggle__text--left,
-.bx--toggle__text--right {
+.bx--toggle__text--left, .bx--toggle__text--right {
   font-size: 0.875rem;
   position: relative;
   color: #152935;
@@ -2766,70 +2653,69 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   margin-left: 0.5rem;
 }
 
-.bx--toggle:checked + .bx--toggle__label .bx--toggle__appearance:before {
+.bx--toggle:checked+.bx--toggle__label .bx--toggle__appearance:before {
   background-color: #3d70b2;
 }
 
-.bx--toggle:checked + .bx--toggle__label .bx--toggle__appearance:after {
+.bx--toggle:checked+.bx--toggle__label .bx--toggle__appearance:after {
   transform: translateX(24px);
   background-color: #3d70b2;
   box-shadow: none;
   border-color: #3d70b2;
 }
 
-.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__appearance:before {
+.bx--toggle--small:checked+.bx--toggle__label .bx--toggle__appearance:before {
   background-color: #3d70b2;
   border-color: #3d70b2;
 }
 
-.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__appearance:after {
+.bx--toggle--small:checked+.bx--toggle__label .bx--toggle__appearance:after {
   background-color: #fff;
   border-color: #fff;
   margin-left: 0px;
   transform: translateX(17px);
 }
 
-.bx--toggle:focus + .bx--toggle__label .bx--toggle__appearance:before {
+.bx--toggle:focus+.bx--toggle__label .bx--toggle__appearance:before {
   outline: 1px solid transparent;
 }
 
-.bx--toggle:focus + .bx--toggle__label .bx--toggle__appearance:after {
+.bx--toggle:focus+.bx--toggle__label .bx--toggle__appearance:after {
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent;
 }
 
-.bx--toggle--small:focus + .bx--toggle__label .bx--toggle__appearance:before {
+.bx--toggle--small:focus+.bx--toggle__label .bx--toggle__appearance:before {
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent;
 }
 
-.bx--toggle--small:focus + .bx--toggle__label .bx--toggle__appearance:after {
+.bx--toggle--small:focus+.bx--toggle__label .bx--toggle__appearance:after {
   outline: none;
   box-shadow: none;
 }
 
-.bx--toggle:disabled + .bx--toggle__label {
+.bx--toggle:disabled+.bx--toggle__label {
   cursor: not-allowed;
   opacity: 0.5;
 }
 
-.bx--toggle:disabled + .bx--toggle__label .bx--toggle__appearance:before, .bx--toggle:disabled + .bx--toggle__label .bx--toggle__appearance:after {
+.bx--toggle:disabled+.bx--toggle__label .bx--toggle__appearance:before, .bx--toggle:disabled+.bx--toggle__label .bx--toggle__appearance:after {
   cursor: not-allowed;
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
 }
 
-.bx--toggle.bx--skeleton + .bx--toggle__label {
+.bx--toggle.bx--skeleton+.bx--toggle__label {
   cursor: default;
 }
 
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__appearance:before, .bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__appearance:after {
+.bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__appearance:before, .bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__appearance:after {
   background-color: #3d70b2;
   border-color: #3d70b2;
   cursor: default;
 }
 
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--left,
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--right {
+.bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--left, .bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--right {
   position: relative;
   border: none;
   padding: 0;
@@ -2840,17 +2726,13 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   height: 0.75rem;
 }
 
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--left:hover, .bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--left:focus, .bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--left:active,
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--right:hover,
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--right:focus,
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--right:active {
+.bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--left:hover, .bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--left:focus, .bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--left:active, .bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--right:hover, .bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--right:focus, .bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--right:active {
   border: none;
   outline: none;
   cursor: default;
 }
 
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--left:before,
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__text--right:before {
+.bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--left:before, .bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__text--right:before {
   content: '';
   width: 0%;
   height: 100%;
@@ -2862,12 +2744,12 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__appearance:before {
+.bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__appearance:before {
   background: transparent;
   border-color: #5a6872;
 }
 
-.bx--toggle.bx--skeleton + .bx--toggle__label > .bx--toggle__appearance:after {
+.bx--toggle.bx--skeleton+.bx--toggle__label>.bx--toggle__appearance:after {
   background-color: #5a6872;
   border: none;
 }
@@ -2889,10 +2771,12 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -2933,8 +2817,8 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
 .bx--search-input {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: none;
   background-color: #f4f7fb;
   color: #152935;
@@ -2943,14 +2827,14 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   text-overflow: ellipsis;
   width: 100%;
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
 }
 
 .bx--search-input:focus {
   outline: none;
 }
 
-.bx--search-input:focus ~ .bx--search-magnifier {
+.bx--search-input:focus~.bx--search-magnifier {
   fill: #3d70b2;
 }
 
@@ -2987,8 +2871,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   height: 2.5rem;
 }
 
-.bx--search-magnifier,
-.bx--search-close {
+.bx--search-magnifier, .bx--search-close {
   position: absolute;
   height: 1rem;
   width: 1rem;
@@ -3009,8 +2892,8 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -3050,7 +2933,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   padding: 0;
   outline: 1px solid transparent;
   -ms-flex-order: 2;
-      order: 2;
+  order: 2;
 }
 
 .bx--search-button svg {
@@ -3064,15 +2947,13 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   width: 1rem;
 }
 
-.bx--search-button:hover,
-.bx--search-button:focus {
+.bx--search-button:hover, .bx--search-button:focus {
   cursor: pointer;
   background-color: #3d70b2;
   outline: 1px solid transparent;
 }
 
-.bx--search-button:hover svg,
-.bx--search-button:focus svg {
+.bx--search-button:hover svg, .bx--search-button:focus svg {
   fill: #fff;
 }
 
@@ -3085,8 +2966,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: none;
 }
 
-.bx--search--lg.bx--skeleton .bx--search-input,
-.bx--search--sm.bx--skeleton .bx--search-input {
+.bx--search--lg.bx--skeleton .bx--search-input, .bx--search--sm.bx--skeleton .bx--search-input {
   position: relative;
   border: none;
   padding: 0;
@@ -3096,17 +2976,13 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   width: 100%;
 }
 
-.bx--search--lg.bx--skeleton .bx--search-input:hover, .bx--search--lg.bx--skeleton .bx--search-input:focus, .bx--search--lg.bx--skeleton .bx--search-input:active,
-.bx--search--sm.bx--skeleton .bx--search-input:hover,
-.bx--search--sm.bx--skeleton .bx--search-input:focus,
-.bx--search--sm.bx--skeleton .bx--search-input:active {
+.bx--search--lg.bx--skeleton .bx--search-input:hover, .bx--search--lg.bx--skeleton .bx--search-input:focus, .bx--search--lg.bx--skeleton .bx--search-input:active, .bx--search--sm.bx--skeleton .bx--search-input:hover, .bx--search--sm.bx--skeleton .bx--search-input:focus, .bx--search--sm.bx--skeleton .bx--search-input:active {
   border: none;
   outline: none;
   cursor: default;
 }
 
-.bx--search--lg.bx--skeleton .bx--search-input:before,
-.bx--search--sm.bx--skeleton .bx--search-input:before {
+.bx--search--lg.bx--skeleton .bx--search-input:before, .bx--search--sm.bx--skeleton .bx--search-input:before {
   content: '';
   width: 0%;
   height: 100%;
@@ -3118,35 +2994,36 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
-.bx--search--lg.bx--skeleton .bx--search-input::-webkit-input-placeholder,
-.bx--search--sm.bx--skeleton .bx--search-input::-webkit-input-placeholder {
+.bx--search--lg.bx--skeleton .bx--search-input::-webkit-input-placeholder, .bx--search--sm.bx--skeleton .bx--search-input::-webkit-input-placeholder {
   color: transparent;
 }
 
-.bx--search--lg.bx--skeleton .bx--search-input:-ms-input-placeholder,
-.bx--search--sm.bx--skeleton .bx--search-input:-ms-input-placeholder {
+.bx--search--lg.bx--skeleton .bx--search-input:-ms-input-placeholder, .bx--search--sm.bx--skeleton .bx--search-input:-ms-input-placeholder {
   color: transparent;
 }
 
-.bx--search--lg.bx--skeleton .bx--search-input::placeholder,
-.bx--search--sm.bx--skeleton .bx--search-input::placeholder {
+.bx--search--lg.bx--skeleton .bx--search-input::placeholder, .bx--search--sm.bx--skeleton .bx--search-input::placeholder {
   color: transparent;
 }
+
 
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--select {
   position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
 }
 
 .bx--select-input {
@@ -3154,8 +3031,8 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   font-size: 0.875rem;
   height: 2.5rem;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   display: block;
   width: 100%;
   padding: 0 2.5rem 0 1rem;
@@ -3164,7 +3041,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
   -ms-flex-order: 2;
-      order: 2;
+  order: 2;
   border-radius: 0;
   cursor: pointer;
   border-bottom: 1px solid transparent;
@@ -3174,9 +3051,9 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: none;
 }
 
-.bx--select-input ~ .bx--label {
+.bx--select-input~.bx--label {
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
 }
 
 .bx--select-input:focus {
@@ -3188,11 +3065,11 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   box-shadow: 0 2px 0 0 #e0182d;
 }
 
-.bx--select-input:focus ~ .bx--label {
+.bx--select-input:focus~.bx--label {
   color: #3d70b2;
 }
 
-.bx--select-input[data-invalid]:focus ~ .bx--label {
+.bx--select-input[data-invalid]:focus~.bx--label {
   color: #e0182d;
 }
 
@@ -3201,15 +3078,15 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   cursor: not-allowed;
 }
 
-.bx--select-input ~ .bx--form-requirement {
+.bx--select-input~.bx--form-requirement {
   -ms-flex-order: 3;
-      order: 3;
+  order: 3;
   color: #e0182d;
   font-weight: 400;
   margin-top: 0.25rem;
 }
 
-.bx--select-input ~ .bx--form-requirement::before {
+.bx--select-input~.bx--form-requirement::before {
   display: none;
 }
 
@@ -3227,12 +3104,11 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   pointer-events: none;
 }
 
-[data-invalid] ~ .bx--select__arrow {
+[data-invalid]~.bx--select__arrow {
   bottom: 2.25rem;
 }
 
-.bx--select-optgroup,
-.bx--select-option {
+.bx--select-optgroup, .bx--select-option {
   color: #152935;
 }
 
@@ -3255,7 +3131,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  grid-template-columns: auto auto;
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
@@ -3263,9 +3139,9 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-direction: row;
-        flex-direction: row;
+    flex-direction: row;
     -ms-flex-align: center;
-        align-items: center;
+    align-items: center;
   }
 }
 
@@ -3274,8 +3150,8 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   margin: 0 0.5rem 0 0;
   font-weight: 400;
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  -ms-grid-row-align: center;
+  align-self: center;
 }
 
 .bx--select--inline .bx--select-input {
@@ -3293,7 +3169,7 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   outline: 1px solid #3d70b2;
 }
 
-.bx--select--inline .bx--select-input ~ .bx--select__arrow {
+.bx--select--inline .bx--select-input~.bx--select__arrow {
   bottom: auto;
   top: 1rem;
 }
@@ -3308,18 +3184,18 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   box-shadow: none;
 }
 
-.bx--select--inline .bx--select-input:disabled ~ * {
+.bx--select--inline .bx--select-input:disabled~* {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.bx--select--inline .bx--select-input ~ .bx--form-requirement {
+.bx--select--inline .bx--select-input~.bx--form-requirement {
   -ms-grid-column: 2;
-      grid-column-start: 2;
+  grid-column-start: 2;
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
-  .bx--select--inline .bx--select-input ~ .bx--form-requirement {
+  .bx--select--inline .bx--select-input~.bx--form-requirement {
     position: absolute;
     bottom: -1.5rem;
   }
@@ -3358,14 +3234,18 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   display: none;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-input {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
@@ -3379,13 +3259,13 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
   -ms-flex-order: 2;
-      order: 2;
+  order: 2;
   border-bottom: 1px solid transparent;
 }
 
-.bx--text-input ~ .bx--label {
+.bx--text-input~.bx--label {
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
 }
 
 .bx--text-input::-webkit-input-placeholder {
@@ -3409,11 +3289,11 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   box-shadow: 0 2px 0 0 #e0182d;
 }
 
-.bx--text-input:focus ~ .bx--label {
+.bx--text-input:focus~.bx--label {
   color: #3d70b2;
 }
 
-.bx--text-input[data-invalid]:focus + .bx--label {
+.bx--text-input[data-invalid]:focus+.bx--label {
   color: #e0182d;
 }
 
@@ -3426,15 +3306,15 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   border: none;
 }
 
-.bx--text-input ~ .bx--form-requirement {
+.bx--text-input~.bx--form-requirement {
   -ms-flex-order: 3;
-      order: 3;
+  order: 3;
   color: #e0182d;
   font-weight: 400;
   margin-top: 0.25rem;
 }
 
-.bx--text-input ~ .bx--form-requirement::before {
+.bx--text-input~.bx--form-requirement::before {
   display: none;
 }
 
@@ -3474,14 +3354,18 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   color: transparent;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-area {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
@@ -3493,14 +3377,14 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
   -ms-flex-order: 2;
-      order: 2;
+  order: 2;
   resize: vertical;
   border-bottom: 1px solid transparent;
 }
 
-.bx--text-area ~ .bx--label {
+.bx--text-area~.bx--label {
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
 }
 
 .bx--text-area:focus {
@@ -3533,23 +3417,23 @@ input:not(output):not([data-invalid]):-moz-ui-invalid {
   box-shadow: 0 2px 0 0 #e0182d;
 }
 
-.bx--text-area:focus ~ .bx--label {
+.bx--text-area:focus~.bx--label {
   color: #3d70b2;
 }
 
-.bx--text-area[data-invalid]:focus + .bx--label {
+.bx--text-area[data-invalid]:focus+.bx--label {
   color: #e0182d;
 }
 
-.bx--text-area ~ .bx--form-requirement {
+.bx--text-area~.bx--form-requirement {
   -ms-flex-order: 3;
-      order: 3;
+  order: 3;
   color: #e0182d;
   font-weight: 400;
   margin-top: 0.25rem;
 }
 
-.bx--text-area ~ .bx--form-requirement::before {
+.bx--text-area~.bx--form-requirement::before {
   display: none;
 }
 
@@ -3653,19 +3537,23 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   color: transparent;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--number {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   position: relative;
 }
 
@@ -3686,14 +3574,14 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
   -ms-flex-order: 2;
-      order: 2;
+  order: 2;
   border-radius: 0;
   border-bottom: 1px solid transparent;
 }
 
-.bx--number input[type='number'] ~ .bx--label {
+.bx--number input[type='number']~.bx--label {
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
 }
 
 .bx--number input[type='number']:focus {
@@ -3701,7 +3589,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   box-shadow: 0 2px 0 0 #3d70b2;
 }
 
-.bx--number input[type='number']:focus ~ .bx--label {
+.bx--number input[type='number']:focus~.bx--label {
   color: #3d70b2;
 }
 
@@ -3710,29 +3598,29 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   cursor: not-allowed;
 }
 
-.bx--number input[type='number']:disabled ~ .bx--number__controls {
+.bx--number input[type='number']:disabled~.bx--number__controls {
   opacity: 0.5;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.bx--number input[type='number'] ~ .bx--form-requirement {
+.bx--number input[type='number']~.bx--form-requirement {
   -ms-flex-order: 3;
-      order: 3;
+  order: 3;
   color: #e0182d;
   font-weight: 400;
   margin-top: 0.25rem;
   overflow: visible;
 }
 
-.bx--number input[type='number'] ~ .bx--form-requirement::before {
+.bx--number input[type='number']~.bx--form-requirement::before {
   display: none;
 }
 
 .bx--number input[type='number'] {
   -webkit-appearance: textfield;
-     -moz-appearance: textfield;
-          appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 .bx--number input[type='number']::-ms-clear {
@@ -3741,7 +3629,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
 
 .bx--number input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
 }
 
 .bx--number__controls {
@@ -3751,11 +3639,11 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   left: auto;
   right: 0.5rem;
   bottom: 0.625rem;
@@ -3769,8 +3657,8 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -3778,9 +3666,9 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   position: relative;
   width: 1.25rem;
   height: 0.625rem;
@@ -3816,13 +3704,12 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   max-height: 12.5rem;
 }
 
-.bx--number[data-invalid] input[type='number'],
-.bx--number[data-invalid] input[type='number']:focus {
+.bx--number[data-invalid] input[type='number'], .bx--number[data-invalid] input[type='number']:focus {
   outline: none;
   box-shadow: 0 2px 0px 0px #e0182d;
 }
 
-.bx--number[data-invalid] input[type='number']:focus ~ .bx--label {
+.bx--number[data-invalid] input[type='number']:focus~.bx--label {
   color: #e0182d;
 }
 
@@ -3867,10 +3754,12 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: none;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -3888,10 +3777,12 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--link {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
@@ -3937,9 +3828,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   overflow: hidden;
 }
 
-.bx--list--nested,
-.bx--list--unordered,
-.bx--list--ordered {
+.bx--list--nested, .bx--list--unordered, .bx--list--ordered {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
@@ -3948,8 +3837,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   line-height: 1.5;
 }
 
-.bx--list--unordered,
-.bx--list--ordered {
+.bx--list--unordered, .bx--list--ordered {
   padding: 1rem;
 }
 
@@ -3959,11 +3847,11 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   color: #152935;
 }
 
-.bx--list--unordered > .bx--list__item {
+.bx--list--unordered>.bx--list__item {
   list-style-type: disc;
 }
 
-.bx--list--ordered > .bx--list__item {
+.bx--list--ordered>.bx--list__item {
   list-style-type: decimal;
 }
 
@@ -3971,12 +3859,12 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   margin-left: 0.5rem;
 }
 
-.bx--list--nested > .bx--list__item {
+.bx--list--nested>.bx--list__item {
   list-style-type: none;
   font-weight: 400;
 }
 
-.bx--list--nested > .bx--list__item:before {
+.bx--list--nested>.bx--list__item:before {
   content: '-';
   padding-right: 0.25rem;
 }
@@ -3998,22 +3886,30 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -4058,9 +3954,9 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   display: none;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
   position: absolute;
   z-index: 10000;
   background-color: #fff;
@@ -4103,7 +3999,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: flex;
   background-color: transparent;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   width: 100%;
   padding: 0;
 }
@@ -4234,8 +4130,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   outline: 1px solid #3d70b2;
 }
 
-.bx--responsive-table--tall td,
-.bx--responsive-table--tall th {
+.bx--responsive-table--tall td, .bx--responsive-table--tall th {
   padding-top: 0.9375rem;
   padding-bottom: 0.9375rem;
 }
@@ -4246,13 +4141,11 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   border: 2px solid #dfe3e6;
 }
 
-.bx--responsive-table--static-size tr td:first-child,
-.bx--responsive-table--static-size tr th:first-child {
+.bx--responsive-table--static-size tr td:first-child, .bx--responsive-table--static-size tr th:first-child {
   padding-left: 1.5rem;
 }
 
-.bx--responsive-table--tall td,
-.bx--responsive-table--tall th {
+.bx--responsive-table--tall td, .bx--responsive-table--tall th {
   padding-top: 0.625rem;
   padding-bottom: 0.625rem;
 }
@@ -4275,23 +4168,19 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   height: 2.5rem;
 }
 
-.bx--table-body > .bx--parent-row,
-.bx--table-body > .bx--parent-row {
+.bx--table-body>.bx--parent-row, .bx--table-body>.bx--parent-row {
   /* background-color: #fff;  */
 }
 
-.bx--table-body > .bx--parent-row + .bx--expandable-row,
-.bx--table-body > .bx--parent-row + .bx--expandable-row {
+.bx--table-body>.bx--parent-row+.bx--expandable-row, .bx--table-body>.bx--parent-row+.bx--expandable-row {
   background-color: #fff;
 }
 
-.bx--table-body > .bx--parent-row--even,
-.bx--table-body > .bx--parent-row--even {
+.bx--table-body>.bx--parent-row--even, .bx--table-body>.bx--parent-row--even {
   background-color: #f4f7fb;
 }
 
-.bx--table-body > .bx--parent-row--even + .bx--expandable-row,
-.bx--table-body > .bx--parent-row--even + .bx--expandable-row {
+.bx--table-body>.bx--parent-row--even+.bx--expandable-row, .bx--table-body>.bx--parent-row--even+.bx--expandable-row {
   background-color: #f4f7fb;
 }
 
@@ -4309,7 +4198,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   outline: 1px solid #5596e6;
 }
 
-.bx--expandable-row > td {
+.bx--expandable-row>td {
   border-left: 4px solid #3d70b2;
   padding: 2rem;
 }
@@ -4404,10 +4293,12 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   padding: 0;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--table-toolbar {
   display: -ms-flexbox;
   display: flex;
@@ -4440,8 +4331,8 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -4455,7 +4346,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   border: 0;
 }
 
-.bx--toolbar-action:hover > .bx--toolbar-action__icon {
+.bx--toolbar-action:hover>.bx--toolbar-action__icon {
   fill: #3d70b2;
 }
 
@@ -4463,11 +4354,11 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   outline: 1px solid #3d70b2;
 }
 
-.bx--toolbar-action:focus > .bx--toolbar-action__icon {
+.bx--toolbar-action:focus>.bx--toolbar-action__icon {
   fill: #3d70b2;
 }
 
-.bx--toolbar-action:active > .bx--toolbar-action__icon {
+.bx--toolbar-action:active>.bx--toolbar-action__icon {
   fill: #3d70b2;
 }
 
@@ -4475,7 +4366,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   padding-right: 0;
 }
 
-.bx--toolbar-action ~ .bx--btn {
+.bx--toolbar-action~.bx--btn {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
 }
@@ -4492,7 +4383,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   position: absolute;
   opacity: 0;
   left: 0;
@@ -4562,7 +4453,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   color: #fff;
 }
 
@@ -4579,8 +4470,8 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -4600,14 +4491,12 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   border-bottom: 1px solid #fff;
 }
 
-.bx--batch-actions ~ .bx--toolbar-search-container,
-.bx--batch-actions ~ .bx--toolbar-content {
+.bx--batch-actions~.bx--toolbar-search-container, .bx--batch-actions~.bx--toolbar-content {
   opacity: 1;
   transition: opacity 250ms;
 }
 
-.bx--batch-actions--active ~ .bx--toolbar-search-container,
-.bx--batch-actions--active ~ .bx--toolbar-content {
+.bx--batch-actions--active~.bx--toolbar-search-container, .bx--batch-actions--active~.bx--toolbar-content {
   opacity: 0;
 }
 
@@ -4662,8 +4551,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   border-top: 1px solid #dfe3e6;
 }
 
-.bx--data-table-v2 th,
-.bx--data-table-v2 td {
+.bx--data-table-v2 th, .bx--data-table-v2 td {
   font-size: 0.875rem;
   border-top: 1px solid #dfe3e6;
   padding-left: 0.75rem;
@@ -4672,14 +4560,12 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   color: #152935;
 }
 
-.bx--data-table-v2 th:first-of-type,
-.bx--data-table-v2 td:first-of-type {
+.bx--data-table-v2 th:first-of-type, .bx--data-table-v2 td:first-of-type {
   padding-left: 1.5rem;
   border-left: 1px solid #dfe3e6;
 }
 
-.bx--data-table-v2 th:last-of-type,
-.bx--data-table-v2 td:last-of-type {
+.bx--data-table-v2 th:last-of-type, .bx--data-table-v2 td:last-of-type {
   padding-right: 1.5rem;
   border-right: 1px solid #dfe3e6;
 }
@@ -4719,13 +4605,11 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   border-bottom-color: transparent;
 }
 
-.bx--data-table-v2--no-border th:first-of-type,
-.bx--data-table-v2--no-border td:first-of-type {
+.bx--data-table-v2--no-border th:first-of-type, .bx--data-table-v2--no-border td:first-of-type {
   border-left-color: transparent;
 }
 
-.bx--data-table-v2--no-border th:last-of-type,
-.bx--data-table-v2--no-border td:last-of-type {
+.bx--data-table-v2--no-border th:last-of-type, .bx--data-table-v2--no-border td:last-of-type {
   border-right-color: #dfe3e6;
 }
 
@@ -4745,8 +4629,7 @@ bx--text-area.bx--skeleton::-webkit-input-placeholder {
   width: auto;
 }
 
-.bx--data-table-v2--zebra tbody tr.bx--data-table-v2--selected,
-tbody tr.bx--data-table-v2--selected {
+.bx--data-table-v2--zebra tbody tr.bx--data-table-v2--selected, tbody tr.bx--data-table-v2--selected {
   background-color: rgba(85, 150, 230, 0.1);
 }
 
@@ -4754,11 +4637,11 @@ tr.bx--expandable-row-v2.bx--expandable-row--hidden-v2 {
   display: none;
 }
 
-tr.bx--expandable-row-v2 > td:first-of-type {
+tr.bx--expandable-row-v2>td:first-of-type {
   position: relative;
 }
 
-tr.bx--expandable-row-v2 > td:first-of-type:before {
+tr.bx--expandable-row-v2>td:first-of-type:before {
   content: '';
   position: absolute;
   top: 0;
@@ -4768,39 +4651,39 @@ tr.bx--expandable-row-v2 > td:first-of-type:before {
   background-color: #3d70b2;
 }
 
-tr.bx--expandable-row-v2 + tr[data-child-row] td {
+tr.bx--expandable-row-v2+tr[data-child-row] td {
   border-top: 0;
   padding-bottom: 0.5rem;
 }
 
-tr.bx--expandable-row-v2:hover > td {
+tr.bx--expandable-row-v2:hover>td {
   background-color: rgba(85, 150, 230, 0.1);
 }
 
-tr.bx--expandable-row-v2:hover > td:first-of-type {
+tr.bx--expandable-row-v2:hover>td:first-of-type {
   border-left: 1px solid transparent;
 }
 
-tr.bx--expandable-row-v2:hover > td:last-of-type {
+tr.bx--expandable-row-v2:hover>td:last-of-type {
   border-right: 1px solid #3d70b2;
 }
 
-tr.bx--expandable-row-v2:hover[data-parent-row] > td {
+tr.bx--expandable-row-v2:hover[data-parent-row]>td {
   border-bottom: 0;
 }
 
-tr.bx--expandable-row-v2:hover + tr[data-child-row] > td {
+tr.bx--expandable-row-v2:hover+tr[data-child-row]>td {
   background-color: rgba(85, 150, 230, 0.1);
   border-bottom: 1px solid #3d70b2;
   border-right: 1px solid #3d70b2;
 }
 
-tr.bx--expandable-row--hover-v2 > td {
+tr.bx--expandable-row--hover-v2>td {
   background-color: rgba(85, 150, 230, 0.1);
   border-top: 1px solid #3d70b2;
 }
 
-tr.bx--expandable-row--hover-v2 > td:last-of-type {
+tr.bx--expandable-row--hover-v2>td:last-of-type {
   border-right: 1px solid #3d70b2;
 }
 
@@ -4817,8 +4700,8 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -4867,8 +4750,8 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -4878,7 +4761,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   width: 100%;
   color: #152935;
 }
@@ -4915,9 +4798,9 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--inline-edit-label:hover .bx--inline-edit-label__icon {
@@ -4936,8 +4819,8 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -4995,20 +4878,19 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   border-bottom: 1px solid #3d70b2;
 }
 
-.bx--data-table-v2.bx--skeleton th:nth-child(3n + 1) {
+.bx--data-table-v2.bx--skeleton th:nth-child(3n+1) {
   width: 10%;
 }
 
-.bx--data-table-v2.bx--skeleton th:nth-child(3n + 2) {
+.bx--data-table-v2.bx--skeleton th:nth-child(3n+2) {
   width: 30%;
 }
 
-.bx--data-table-v2.bx--skeleton th:nth-child(3n + 3) {
+.bx--data-table-v2.bx--skeleton th:nth-child(3n+3) {
   width: 15%;
 }
 
-.bx--data-table-v2.bx--skeleton th span,
-.bx--data-table-v2.bx--skeleton td span {
+.bx--data-table-v2.bx--skeleton th span, .bx--data-table-v2.bx--skeleton td span {
   position: relative;
   border: none;
   padding: 0;
@@ -5020,17 +4902,13 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: block;
 }
 
-.bx--data-table-v2.bx--skeleton th span:hover, .bx--data-table-v2.bx--skeleton th span:focus, .bx--data-table-v2.bx--skeleton th span:active,
-.bx--data-table-v2.bx--skeleton td span:hover,
-.bx--data-table-v2.bx--skeleton td span:focus,
-.bx--data-table-v2.bx--skeleton td span:active {
+.bx--data-table-v2.bx--skeleton th span:hover, .bx--data-table-v2.bx--skeleton th span:focus, .bx--data-table-v2.bx--skeleton th span:active, .bx--data-table-v2.bx--skeleton td span:hover, .bx--data-table-v2.bx--skeleton td span:focus, .bx--data-table-v2.bx--skeleton td span:active {
   border: none;
   outline: none;
   cursor: default;
 }
 
-.bx--data-table-v2.bx--skeleton th span:before,
-.bx--data-table-v2.bx--skeleton td span:before {
+.bx--data-table-v2.bx--skeleton th span:before, .bx--data-table-v2.bx--skeleton td span:before {
   content: '';
   width: 0%;
   height: 100%;
@@ -5055,14 +4933,18 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   pointer-events: none;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -5080,37 +4962,31 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   overflow: hidden;
 }
 
-.bx--structured-list--selection .bx--structured-list-td,
-.bx--structured-list--selection .bx--structured-list-th {
+.bx--structured-list--selection .bx--structured-list-td, .bx--structured-list--selection .bx--structured-list-th {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-.bx--structured-list--selection .bx--structured-list-td:first-child,
-.bx--structured-list--selection .bx--structured-list-th:first-child {
+.bx--structured-list--selection .bx--structured-list-td:first-child, .bx--structured-list--selection .bx--structured-list-th:first-child {
   padding-left: 1rem;
   padding-right: 0.5rem;
 }
 
-.bx--structured-list--selection .bx--structured-list-td:last-child,
-.bx--structured-list--selection .bx--structured-list-th:last-child {
+.bx--structured-list--selection .bx--structured-list-td:last-child, .bx--structured-list--selection .bx--structured-list-th:last-child {
   padding-right: 2rem;
 }
 
-[data-structured-list] .bx--structured-list-td,
-[data-structured-list] .bx--structured-list-th {
+[data-structured-list] .bx--structured-list-td, [data-structured-list] .bx--structured-list-th {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-[data-structured-list] .bx--structured-list-td:first-child,
-[data-structured-list] .bx--structured-list-th:first-child {
+[data-structured-list] .bx--structured-list-td:first-child, [data-structured-list] .bx--structured-list-th:first-child {
   padding-left: 1rem;
   padding-right: 0.5rem;
 }
 
-[data-structured-list] .bx--structured-list-td:last-child,
-[data-structured-list] .bx--structured-list-th:last-child {
+[data-structured-list] .bx--structured-list-td:last-child, [data-structured-list] .bx--structured-list-th:last-child {
   padding-right: 2rem;
 }
 
@@ -5136,8 +5012,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   background-color: #fff;
 }
 
-.bx--structured-list.bx--structured-list--condensed .bx--structured-list-td,
-.bx--structured-list.bx--structured-list--condensed .bx--structured-list-th {
+.bx--structured-list.bx--structured-list--condensed .bx--structured-list-td, .bx--structured-list.bx--structured-list--condensed .bx--structured-list-th {
   padding: 0.5rem;
   padding-left: 0;
 }
@@ -5214,8 +5089,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   padding-right: 2rem;
 }
 
-.bx--structured-list-th,
-.bx--structured-list-td {
+.bx--structured-list-th, .bx--structured-list-td {
   color: #152935;
 }
 
@@ -5234,8 +5108,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   fill: rgba(85, 150, 230, 0.1);
 }
 
-.bx--structured-list-input:checked + .bx--structured-list-row .bx--structured-list-svg,
-.bx--structured-list-input:checked + .bx--structured-list-td .bx--structured-list-svg {
+.bx--structured-list-input:checked+.bx--structured-list-row .bx--structured-list-svg, .bx--structured-list-input:checked+.bx--structured-list-td .bx--structured-list-svg {
   fill: #5596e6;
 }
 
@@ -5243,11 +5116,11 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   width: 8%;
 }
 
-.bx--structured-list.bx--skeleton .bx--structured-list-th:nth-child(3n + 2) {
+.bx--structured-list.bx--skeleton .bx--structured-list-th:nth-child(3n+2) {
   width: 30%;
 }
 
-.bx--structured-list.bx--skeleton .bx--structured-list-th:nth-child(3n + 3) {
+.bx--structured-list.bx--skeleton .bx--structured-list-th:nth-child(3n+3) {
   width: 15%;
 }
 
@@ -5293,14 +5166,18 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   font-size: 0.875rem;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--snippet code {
   font-family: "ibm-plex-mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
 }
@@ -5358,7 +5235,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   height: 130%;
   overflow-x: scroll;
   position: relative;
@@ -5505,8 +5382,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   transition: 250ms;
 }
 
-.bx--snippet-btn--expand:hover .bx--icon-chevron--down,
-.bx--snippet-btn--expand:focus .bx--icon-chevron--down {
+.bx--snippet-btn--expand:hover .bx--icon-chevron--down, .bx--snippet-btn--expand:focus .bx--icon-chevron--down {
   fill: #fff;
 }
 
@@ -5573,9 +5449,11 @@ bx--snippet--multi.bx--skeleton {
   padding-bottom: 0;
 }
 
+
 /*
     Deprecated class names will be removed in v10.x
   */
+
 .bx--snippet--terminal {
   font-size: 0.75rem;
   line-height: 1.45;
@@ -5593,7 +5471,7 @@ bx--snippet--multi.bx--skeleton {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   height: 130%;
   white-space: nowrap;
   overflow-x: scroll;
@@ -5675,10 +5553,12 @@ bx--snippet--multi.bx--skeleton {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -5696,10 +5576,12 @@ bx--snippet--multi.bx--skeleton {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--content-switcher {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -ms-flexbox;
@@ -5716,7 +5598,7 @@ bx--snippet--multi.bx--skeleton {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   padding: 0 2rem;
   margin: 0;
   text-decoration: none;
@@ -5802,14 +5684,18 @@ bx--snippet--multi.bx--skeleton {
   background-color: #30588c;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .flatpickr-calendar {
   background: transparent;
   overflow: hidden;
@@ -5828,13 +5714,12 @@ bx--snippet--multi.bx--skeleton {
   width: 315px;
   box-sizing: border-box;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   background: #fff;
   box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0, 0, 0, 0.08);
 }
 
-.flatpickr-calendar.open,
-.flatpickr-calendar.inline {
+.flatpickr-calendar.open, .flatpickr-calendar.inline {
   opacity: 1;
   visibility: visible;
   overflow: visible;
@@ -5870,8 +5755,7 @@ bx--snippet--multi.bx--skeleton {
   width: auto;
 }
 
-.flatpickr-calendar .hasWeeks .dayContainer,
-.flatpickr-calendar .hasTime .dayContainer {
+.flatpickr-calendar .hasWeeks .dayContainer, .flatpickr-calendar .hasTime .dayContainer {
   border-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -5890,8 +5774,7 @@ bx--snippet--multi.bx--skeleton {
   height: auto;
 }
 
-.flatpickr-calendar:before,
-.flatpickr-calendar:after {
+.flatpickr-calendar:before, .flatpickr-calendar:after {
   position: absolute;
   display: block;
   pointer-events: none;
@@ -5902,8 +5785,7 @@ bx--snippet--multi.bx--skeleton {
   left: 22px;
 }
 
-.flatpickr-calendar.rightMost:before,
-.flatpickr-calendar.rightMost:after {
+.flatpickr-calendar.rightMost:before, .flatpickr-calendar.rightMost:after {
   left: auto;
   right: 22px;
 }
@@ -5918,8 +5800,7 @@ bx--snippet--multi.bx--skeleton {
   margin: 0 -4px;
 }
 
-.flatpickr-calendar.arrowTop:before,
-.flatpickr-calendar.arrowTop:after {
+.flatpickr-calendar.arrowTop:before, .flatpickr-calendar.arrowTop:after {
   bottom: 100%;
 }
 
@@ -5931,8 +5812,7 @@ bx--snippet--multi.bx--skeleton {
   border-bottom-color: #fff;
 }
 
-.flatpickr-calendar.arrowBottom:before,
-.flatpickr-calendar.arrowBottom:after {
+.flatpickr-calendar.arrowBottom:before, .flatpickr-calendar.arrowBottom:after {
   top: 100%;
 }
 
@@ -5968,8 +5848,7 @@ bx--snippet--multi.bx--skeleton {
   overflow: hidden;
 }
 
-.flatpickr-prev-month,
-.flatpickr-next-month {
+.flatpickr-prev-month, .flatpickr-next-month {
   text-decoration: none;
   cursor: pointer;
   position: absolute;
@@ -5980,13 +5859,11 @@ bx--snippet--multi.bx--skeleton {
   z-index: 3;
 }
 
-.flatpickr-prev-month i,
-.flatpickr-next-month i {
+.flatpickr-prev-month i, .flatpickr-next-month i {
   position: relative;
 }
 
-.flatpickr-prev-month.flatpickr-prev-month,
-.flatpickr-next-month.flatpickr-prev-month {
+.flatpickr-prev-month.flatpickr-prev-month, .flatpickr-next-month.flatpickr-prev-month {
   /*
         /*rtl:begin:ignore*/
   /*
@@ -5998,12 +5875,15 @@ bx--snippet--multi.bx--skeleton {
         */
 }
 
+
 /*
         /*rtl:begin:ignore*/
+
+
 /*
         /*rtl:end:ignore*/
-.flatpickr-prev-month.flatpickr-next-month,
-.flatpickr-next-month.flatpickr-next-month {
+
+.flatpickr-prev-month.flatpickr-next-month, .flatpickr-next-month.flatpickr-next-month {
   /*
         /*rtl:begin:ignore*/
   /*
@@ -6015,27 +5895,27 @@ bx--snippet--multi.bx--skeleton {
         */
 }
 
+
 /*
         /*rtl:begin:ignore*/
+
+
 /*
         /*rtl:end:ignore*/
-.flatpickr-prev-month:hover,
-.flatpickr-next-month:hover {
+
+.flatpickr-prev-month:hover, .flatpickr-next-month:hover {
   color: #959ea9;
 }
 
-.flatpickr-prev-month:hover svg,
-.flatpickr-next-month:hover svg {
+.flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg {
   fill: #f64747;
 }
 
-.flatpickr-prev-month svg,
-.flatpickr-next-month svg {
+.flatpickr-prev-month svg, .flatpickr-next-month svg {
   width: 14px;
 }
 
-.flatpickr-prev-month svg path,
-.flatpickr-next-month svg path {
+.flatpickr-prev-month svg path, .flatpickr-next-month svg path {
   transition: fill 0.1s;
   fill: inherit;
 }
@@ -6045,8 +5925,7 @@ bx--snippet--multi.bx--skeleton {
   height: auto;
 }
 
-.numInputWrapper input,
-.numInputWrapper span {
+.numInputWrapper input, .numInputWrapper span {
   display: inline-block;
 }
 
@@ -6205,8 +6084,7 @@ bx--snippet--multi.bx--skeleton {
   outline: 0;
 }
 
-.flatpickr-current-month input.cur-year[disabled],
-.flatpickr-current-month input.cur-year[disabled]:hover {
+.flatpickr-current-month input.cur-year[disabled], .flatpickr-current-month input.cur-year[disabled]:hover {
   font-size: 100%;
   color: rgba(0, 0, 0, 0.5);
   background: transparent;
@@ -6239,8 +6117,7 @@ span.flatpickr-weekday {
   font-weight: bolder;
 }
 
-.dayContainer,
-.flatpickr-weeks {
+.dayContainer, .flatpickr-weeks {
   padding: 1px 0 0 0;
 }
 
@@ -6279,8 +6156,7 @@ span.flatpickr-weekday {
   animation: fpFadeOut 400ms cubic-bezier(0.23, 1, 0.32, 1), fpSlideLeft 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.flatpickr-calendar.animate .dayContainer.slideLeft,
-.flatpickr-calendar.animate .dayContainer.slideLeftNew {
+.flatpickr-calendar.animate .dayContainer.slideLeft, .flatpickr-calendar.animate .dayContainer.slideLeftNew {
   transform: translate3d(-100%, 0px, 0px);
 }
 
@@ -6424,8 +6300,7 @@ span.flatpickr-weekday {
   font-weight: bold;
 }
 
-.flatpickr-time input.flatpickr-minute,
-.flatpickr-time input.flatpickr-second {
+.flatpickr-time input.flatpickr-minute, .flatpickr-time input.flatpickr-second {
   font-weight: 400;
 }
 
@@ -6434,8 +6309,7 @@ span.flatpickr-weekday {
   border: 0;
 }
 
-.flatpickr-time .flatpickr-time-separator,
-.flatpickr-time .flatpickr-am-pm {
+.flatpickr-time .flatpickr-time-separator, .flatpickr-time .flatpickr-am-pm {
   height: inherit;
   display: inline-block;
   float: left;
@@ -6460,8 +6334,7 @@ span.flatpickr-weekday {
   font-weight: 400;
 }
 
-.flatpickr-time .flatpickr-am-pm:hover,
-.flatpickr-time .flatpickr-am-pm:focus {
+.flatpickr-time .flatpickr-am-pm:hover, .flatpickr-time .flatpickr-am-pm:focus {
   background: #f0f0f0;
 }
 
@@ -6538,16 +6411,16 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
 }
 
 .bx--date-picker--light .bx--date-picker__input {
   background: #fff;
 }
 
-.bx--date-picker ~ .bx--label {
+.bx--date-picker~.bx--label {
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
 }
 
 .bx--date-picker-container {
@@ -6555,7 +6428,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
 }
 
 .bx--date-picker.bx--date-picker--simple .bx--date-picker__input {
@@ -6582,7 +6455,7 @@ span.flatpickr-weekday {
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
   -ms-flex-order: 2;
-      order: 2;
+  order: 2;
   color: #152935;
   border-bottom: 1px solid transparent;
 }
@@ -6592,7 +6465,7 @@ span.flatpickr-weekday {
   box-shadow: 0 2px 0 0 #3d70b2;
 }
 
-.bx--date-picker__input:focus ~ .bx--label {
+.bx--date-picker__input:focus~.bx--label {
   color: #3d70b2;
 }
 
@@ -6600,20 +6473,20 @@ span.flatpickr-weekday {
   box-shadow: 0 2px 0 0 #e0182d;
 }
 
-.bx--date-picker__input[data-invalid]:focus + .bx--label {
+.bx--date-picker__input[data-invalid]:focus+.bx--label {
   color: #e0182d;
 }
 
-.bx--date-picker__input ~ .bx--form-requirement {
+.bx--date-picker__input~.bx--form-requirement {
   -ms-flex-order: 3;
-      order: 3;
+  order: 3;
   color: #e0182d;
   font-weight: 400;
   margin-top: 0.25rem;
   overflow: visible;
 }
 
-.bx--date-picker__input ~ .bx--form-requirement::before {
+.bx--date-picker__input~.bx--form-requirement::before {
   display: none;
 }
 
@@ -6655,7 +6528,7 @@ span.flatpickr-weekday {
   top: 0.875rem;
 }
 
-.bx--date-picker__icon ~ .bx--date-picker__input {
+.bx--date-picker__icon~.bx--date-picker__input {
   padding-left: 3rem;
 }
 
@@ -6665,7 +6538,7 @@ span.flatpickr-weekday {
   position: relative;
 }
 
-.bx--date-picker--range > .bx--date-picker-container:first-child {
+.bx--date-picker--range>.bx--date-picker-container:first-child {
   margin-right: 0.5rem;
 }
 
@@ -6678,18 +6551,17 @@ span.flatpickr-weekday {
   width: 7.075rem;
 }
 
-.bx--date-picker__calendar,
-.flatpickr-calendar.open {
+.bx--date-picker__calendar, .flatpickr-calendar.open {
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   padding: 1rem 1rem 0.25rem;
   width: 17.8125rem !important;
   height: 16.375rem;
@@ -6699,65 +6571,50 @@ span.flatpickr-weekday {
   margin-top: 1px;
 }
 
-.bx--date-picker__calendar:before, .bx--date-picker__calendar:after,
-.flatpickr-calendar.open:before,
-.flatpickr-calendar.open:after {
+.bx--date-picker__calendar:before, .bx--date-picker__calendar:after, .flatpickr-calendar.open:before, .flatpickr-calendar.open:after {
   display: none;
 }
 
-.bx--date-picker__calendar:focus,
-.flatpickr-calendar.open:focus {
+.bx--date-picker__calendar:focus, .flatpickr-calendar.open:focus {
   outline: 1px solid #3d70b2;
 }
 
-.bx--date-picker__month,
-.flatpickr-month {
+.bx--date-picker__month, .flatpickr-month {
   width: 100%;
   margin-bottom: 0.25rem;
 }
 
-.bx--date-picker__month .flatpickr-prev-month,
-.bx--date-picker__month .flatpickr-next-month,
-.flatpickr-month .flatpickr-prev-month,
-.flatpickr-month .flatpickr-next-month {
+.bx--date-picker__month .flatpickr-prev-month, .bx--date-picker__month .flatpickr-next-month, .flatpickr-month .flatpickr-prev-month, .flatpickr-month .flatpickr-next-month {
   padding: 0;
   line-height: 1.25rem;
   fill: #152935;
 }
 
-.bx--date-picker__month .flatpickr-prev-month:hover svg,
-.bx--date-picker__month .flatpickr-next-month:hover svg,
-.flatpickr-month .flatpickr-prev-month:hover svg,
-.flatpickr-month .flatpickr-next-month:hover svg {
+.bx--date-picker__month .flatpickr-prev-month:hover svg, .bx--date-picker__month .flatpickr-next-month:hover svg, .flatpickr-month .flatpickr-prev-month:hover svg, .flatpickr-month .flatpickr-next-month:hover svg {
   fill: #3d70b2;
 }
 
-.bx--date-picker__month .flatpickr-current-month,
-.flatpickr-month .flatpickr-current-month {
+.bx--date-picker__month .flatpickr-current-month, .flatpickr-month .flatpickr-current-month {
   font-size: 0.75rem;
   text-transform: uppercase;
   padding: 0;
 }
 
-.bx--date-picker__month .flatpickr-current-month svg,
-.flatpickr-month .flatpickr-current-month svg {
+.bx--date-picker__month .flatpickr-current-month svg, .flatpickr-month .flatpickr-current-month svg {
   fill: #152935;
 }
 
-.bx--date-picker__month .flatpickr-current-month .cur-month,
-.flatpickr-month .flatpickr-current-month .cur-month {
+.bx--date-picker__month .flatpickr-current-month .cur-month, .flatpickr-month .flatpickr-current-month .cur-month {
   margin-right: 0.25rem;
   color: #152935;
 }
 
-.numInputWrapper,
-.flatpickr-current-month .numInputWrapper {
+.numInputWrapper, .flatpickr-current-month .numInputWrapper {
   min-width: 2.375rem;
   width: 2.375rem;
 }
 
-.bx--date-picker__month .numInputWrapper .numInput,
-.flatpickr-month .numInputWrapper .numInput {
+.bx--date-picker__month .numInputWrapper .numInput, .flatpickr-month .numInputWrapper .numInput {
   font-weight: 600;
   color: #152935;
   background-color: #f4f7fb;
@@ -6768,104 +6625,82 @@ span.flatpickr-weekday {
   padding: 0.25rem;
 }
 
-.bx--date-picker__month .numInputWrapper .numInput:focus,
-.flatpickr-month .numInputWrapper .numInput:focus {
+.bx--date-picker__month .numInputWrapper .numInput:focus, .flatpickr-month .numInputWrapper .numInput:focus {
   outline: 1px solid #3d70b2;
 }
 
-.bx--date-picker__month .numInputWrapper span.arrowUp,
-.bx--date-picker__month .numInputWrapper span.arrowDown,
-.flatpickr-month .numInputWrapper span.arrowUp,
-.flatpickr-month .numInputWrapper span.arrowDown {
+.bx--date-picker__month .numInputWrapper span.arrowUp, .bx--date-picker__month .numInputWrapper span.arrowDown, .flatpickr-month .numInputWrapper span.arrowUp, .flatpickr-month .numInputWrapper span.arrowDown {
   left: 2.6rem;
   border: none;
   width: 0.75rem;
 }
 
-.bx--date-picker__month .numInputWrapper span.arrowUp:hover,
-.bx--date-picker__month .numInputWrapper span.arrowDown:hover,
-.flatpickr-month .numInputWrapper span.arrowUp:hover,
-.flatpickr-month .numInputWrapper span.arrowDown:hover {
+.bx--date-picker__month .numInputWrapper span.arrowUp:hover, .bx--date-picker__month .numInputWrapper span.arrowDown:hover, .flatpickr-month .numInputWrapper span.arrowUp:hover, .flatpickr-month .numInputWrapper span.arrowDown:hover {
   background: none;
 }
 
-.bx--date-picker__month .numInputWrapper span.arrowUp:hover:after,
-.bx--date-picker__month .numInputWrapper span.arrowDown:hover:after,
-.flatpickr-month .numInputWrapper span.arrowUp:hover:after,
-.flatpickr-month .numInputWrapper span.arrowDown:hover:after {
+.bx--date-picker__month .numInputWrapper span.arrowUp:hover:after, .bx--date-picker__month .numInputWrapper span.arrowDown:hover:after, .flatpickr-month .numInputWrapper span.arrowUp:hover:after, .flatpickr-month .numInputWrapper span.arrowDown:hover:after {
   border-bottom-color: #5596e6;
   border-top-color: #5596e6;
 }
 
-.bx--date-picker__month .numInputWrapper span.arrowUp:after,
-.bx--date-picker__month .numInputWrapper span.arrowDown:after,
-.flatpickr-month .numInputWrapper span.arrowUp:after,
-.flatpickr-month .numInputWrapper span.arrowDown:after {
+.bx--date-picker__month .numInputWrapper span.arrowUp:after, .bx--date-picker__month .numInputWrapper span.arrowDown:after, .flatpickr-month .numInputWrapper span.arrowUp:after, .flatpickr-month .numInputWrapper span.arrowDown:after {
   border-bottom-color: #3d70b2;
   border-top-color: #3d70b2;
 }
 
-.bx--date-picker__month .numInputWrapper span.arrowUp,
-.flatpickr-month .numInputWrapper span.arrowUp {
+.bx--date-picker__month .numInputWrapper span.arrowUp, .flatpickr-month .numInputWrapper span.arrowUp {
   top: 1px;
 }
 
-.bx--date-picker__month .numInputWrapper span.arrowDown,
-.flatpickr-month .numInputWrapper span.arrowDown {
+.bx--date-picker__month .numInputWrapper span.arrowDown, .flatpickr-month .numInputWrapper span.arrowDown {
   top: 9px;
 }
 
-span.bx--date-picker__weekday,
-span.flatpickr-weekday {
+span.bx--date-picker__weekday, span.flatpickr-weekday {
   font-size: 0.75rem;
   font-weight: 600;
   color: #152935;
 }
 
-.bx--date-picker__day,
-.flatpickr-day {
+.bx--date-picker__day, .flatpickr-day {
   font-size: 0.75rem;
   height: 1.5625rem;
   width: 1.8rem;
   line-height: 1.5625rem;
   -ms-flex-preferred-size: 1.8rem;
-      flex-basis: 1.8rem;
+  flex-basis: 1.8rem;
   margin: 0.03125rem 0;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   color: #152935;
   border-radius: 0;
   border: 2px solid transparent;
 }
 
-.bx--date-picker__day:hover,
-.flatpickr-day:hover {
+.bx--date-picker__day:hover, .flatpickr-day:hover {
   background: rgba(85, 150, 230, 0.1);
 }
 
-.bx--date-picker__day:focus,
-.flatpickr-day:focus {
+.bx--date-picker__day:focus, .flatpickr-day:focus {
   outline: none;
   background: #dfe3e6;
 }
 
-.bx--date-picker__days .nextMonthDay,
-.bx--date-picker__days .prevMonthDay {
+.bx--date-picker__days .nextMonthDay, .bx--date-picker__days .prevMonthDay {
   opacity: 0.5;
   color: #5a6872;
 }
 
-.bx--date-picker__day.today,
-.flatpickr-day.today {
+.bx--date-picker__day.today, .flatpickr-day.today {
   position: relative;
 }
 
-.bx--date-picker__day.today::after,
-.flatpickr-day.today::after {
+.bx--date-picker__day.today::after, .flatpickr-day.today::after {
   content: '';
   position: absolute;
   display: block;
@@ -6878,8 +6713,7 @@ span.flatpickr-weekday {
   background: #3d70b2;
 }
 
-.bx--date-picker__day.today.no-border,
-.flatpickr-day.today.no-border {
+.bx--date-picker__day.today.no-border, .flatpickr-day.today.no-border {
   border: none;
 }
 
@@ -6891,38 +6725,32 @@ span.flatpickr-weekday {
   display: none;
 }
 
-.bx--date-picker__day.disabled,
-.flatpickr-day.disabled {
+.bx--date-picker__day.disabled, .flatpickr-day.disabled {
   cursor: not-allowed;
   opacity: 0.5;
   color: #5a6872;
 }
 
-.bx--date-picker__day.disabled:hover,
-.flatpickr-day.disabled:hover {
+.bx--date-picker__day.disabled:hover, .flatpickr-day.disabled:hover {
   background: transparent;
 }
 
-.bx--date-picker__day.inRange,
-.flatpickr-day.inRange {
+.bx--date-picker__day.inRange, .flatpickr-day.inRange {
   background: #f4f7fb;
   box-shadow: -6px 0 0 #f4f7fb, 6px 0 0 #f4f7fb;
 }
 
-.bx--date-picker__day.selected,
-.flatpickr-day.selected {
+.bx--date-picker__day.selected, .flatpickr-day.selected {
   border: 2px solid #3d70b2;
   background: #fff;
 }
 
-.bx--date-picker__day.startRange.selected,
-.flatpickr-day.startRange.selected {
+.bx--date-picker__day.startRange.selected, .flatpickr-day.startRange.selected {
   box-shadow: none;
   z-index: 2;
 }
 
-.bx--date-picker__day.endRange.inRange,
-.flatpickr-day.endRange.inRange {
+.bx--date-picker__day.endRange.inRange, .flatpickr-day.endRange.inRange {
   background: #fff;
   color: #152935;
   border: 2px solid #3d70b2;
@@ -6930,38 +6758,32 @@ span.flatpickr-weekday {
   box-shadow: none;
 }
 
-.bx--date-picker__day.endRange.inRange.selected,
-.flatpickr-day.endRange.inRange.selected {
+.bx--date-picker__day.endRange.inRange.selected, .flatpickr-day.endRange.inRange.selected {
   box-shadow: none;
   border: 2px solid #3d70b2;
   background: #fff;
 }
 
-.bx--date-picker__day.startRange.inRange:not(.selected),
-.flatpickr-day.startRange.inRange:not(.selected) {
+.bx--date-picker__day.startRange.inRange:not(.selected), .flatpickr-day.startRange.inRange:not(.selected) {
   box-shadow: none;
   background: #fff;
   border: 2px solid #3d70b2;
   z-index: 3;
 }
 
-.bx--date-picker__days,
-.dayContainer {
+.bx--date-picker__days, .dayContainer {
   width: 14.0625rem;
   min-width: 14.0625rem;
   max-width: 14.0625rem;
   height: 10.25rem;
 }
 
-.flatpickr-innerContainer,
-.flatpickr-rContainer {
+.flatpickr-innerContainer, .flatpickr-rContainer {
   width: 14.0625rem;
   height: 12.5rem;
 }
 
-.bx--date-picker__weekdays,
-.flatpickr-weekdays,
-.flatpickr-weekdaycontainer {
+.bx--date-picker__weekdays, .flatpickr-weekdays, .flatpickr-weekdaycontainer {
   width: 14.0625rem;
   margin-bottom: 0.25rem;
 }
@@ -6978,30 +6800,25 @@ span.flatpickr-weekday {
   position: relative;
 }
 
-.flatpickr-prev-month,
-.flatpickr-next-month {
+.flatpickr-prev-month, .flatpickr-next-month {
   padding-top: 5px;
 }
 
-.flatpickr-prev-month:hover svg,
-.flatpickr-next-month:hover svg {
+.flatpickr-prev-month:hover svg, .flatpickr-next-month:hover svg {
   fill: #3d70b2;
 }
 
-.flatpickr-next-month.disabled svg,
-.flatpickr-prev-month.disabled svg {
+.flatpickr-next-month.disabled svg, .flatpickr-prev-month.disabled svg {
   fill: #5a6872;
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.flatpickr-next-month.disabled:hover svg,
-.flatpickr-prev-month.disabled:hover svg {
+.flatpickr-next-month.disabled:hover svg, .flatpickr-prev-month.disabled:hover svg {
   fill: #5a6872;
 }
 
-.bx--date-picker.bx--skeleton input,
-.bx--date-picker__input.bx--skeleton {
+.bx--date-picker.bx--skeleton input, .bx--date-picker__input.bx--skeleton {
   position: relative;
   border: none;
   padding: 0;
@@ -7011,17 +6828,13 @@ span.flatpickr-weekday {
   width: 100%;
 }
 
-.bx--date-picker.bx--skeleton input:hover, .bx--date-picker.bx--skeleton input:focus, .bx--date-picker.bx--skeleton input:active,
-.bx--date-picker__input.bx--skeleton:hover,
-.bx--date-picker__input.bx--skeleton:focus,
-.bx--date-picker__input.bx--skeleton:active {
+.bx--date-picker.bx--skeleton input:hover, .bx--date-picker.bx--skeleton input:focus, .bx--date-picker.bx--skeleton input:active, .bx--date-picker__input.bx--skeleton:hover, .bx--date-picker__input.bx--skeleton:focus, .bx--date-picker__input.bx--skeleton:active {
   border: none;
   outline: none;
   cursor: default;
 }
 
-.bx--date-picker.bx--skeleton input:before,
-.bx--date-picker__input.bx--skeleton:before {
+.bx--date-picker.bx--skeleton input:before, .bx--date-picker__input.bx--skeleton:before {
   content: '';
   width: 0%;
   height: 100%;
@@ -7033,8 +6846,7 @@ span.flatpickr-weekday {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
-.bx--date-picker.bx--skeleton input::-webkit-input-placeholder,
-.bx--date-picker__input.bx--skeleton::-webkit-input-placeholder {
+.bx--date-picker.bx--skeleton input::-webkit-input-placeholder, .bx--date-picker__input.bx--skeleton::-webkit-input-placeholder {
   color: transparent;
 }
 
@@ -7067,14 +6879,18 @@ span.flatpickr-weekday {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -7102,7 +6918,7 @@ span.flatpickr-weekday {
   border: none;
   box-shadow: 0 1px 0 0 #5a6872;
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
   width: 100%;
   height: 2.5rem;
   cursor: pointer;
@@ -7167,7 +6983,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   width: 100%;
   list-style: none;
   position: absolute;
@@ -7334,7 +7150,9 @@ span.flatpickr-weekday {
   }
 }
 
+
 /* Stroke animations */
+
 @keyframes init-stroke {
   0% {
     stroke-dashoffset: 240;
@@ -7353,10 +7171,12 @@ span.flatpickr-weekday {
   }
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -7374,14 +7194,18 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--modal {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   position: fixed;
@@ -7393,9 +7217,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   content: '';
   opacity: 0;
   background-color: rgba(223, 227, 230, 0.5);
@@ -7420,7 +7244,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   background-color: #fff;
   border-top: #3d70b2 4px solid;
   min-width: 100%;
@@ -7477,7 +7301,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   background-color: #f4f7fb;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
@@ -7546,7 +7370,7 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
-.bx--multi-select.bx--combo-box > .bx--list-box__field {
+.bx--multi-select.bx--combo-box>.bx--list-box__field {
   padding: 0 1rem;
 }
 
@@ -7555,14 +7379,18 @@ span.flatpickr-weekday {
   outline: none;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--inline-notification {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -7571,7 +7399,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   background-color: transparent;
   padding: 0.75rem 1rem;
   min-height: 2.5rem;
@@ -7620,7 +7448,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--inline-notification__icon {
@@ -7633,14 +7461,14 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 1rem;
 }
 
 @media (max-width: 640px) {
   .bx--inline-notification__text-wrapper {
     -ms-flex-direction: column;
-        flex-direction: column;
+    flex-direction: column;
     width: 100%;
   }
 }
@@ -7680,14 +7508,18 @@ span.flatpickr-weekday {
   right: 1px;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--toast-notification {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -7696,7 +7528,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   width: 16.875rem;
   padding: 1rem 1rem 0.5rem 1rem;
   background-color: #fff;
@@ -7771,19 +7603,23 @@ span.flatpickr-weekday {
   line-height: 1;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--tooltip--icon {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--tooltip__label {
@@ -7792,7 +7628,7 @@ span.flatpickr-weekday {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   color: #152935;
   font-weight: normal;
   margin-bottom: 0.5rem;
@@ -7810,15 +7646,15 @@ span.flatpickr-weekday {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -7832,9 +7668,7 @@ span.flatpickr-weekday {
   fill: #30588c;
 }
 
-.bx--tooltip__trigger path,
-.bx--tooltip__trigger polygon,
-.bx--tooltip__trigger circle {
+.bx--tooltip__trigger path, .bx--tooltip__trigger polygon, .bx--tooltip__trigger circle {
   fill: #3d70b2;
 }
 
@@ -7842,11 +7676,7 @@ span.flatpickr-weekday {
   color: #152935;
 }
 
-.bx--tooltip__trigger:hover path,
-.bx--tooltip__trigger:hover polygon,
-.bx--tooltip__trigger:hover circle, .bx--tooltip__trigger:focus path,
-.bx--tooltip__trigger:focus polygon,
-.bx--tooltip__trigger:focus circle {
+.bx--tooltip__trigger:hover path, .bx--tooltip__trigger:hover polygon, .bx--tooltip__trigger:hover circle, .bx--tooltip__trigger:focus path, .bx--tooltip__trigger:focus polygon, .bx--tooltip__trigger:focus circle {
   fill: #30588c;
 }
 
@@ -7878,9 +7708,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   -ms-flex-align: end;
-      align-items: flex-end;
+  align-items: flex-end;
   margin-top: 1rem;
 }
 
@@ -7941,8 +7771,7 @@ span.flatpickr-weekday {
   cursor: pointer;
 }
 
-.bx--tooltip--definition .bx--tooltip__trigger:hover + .bx--tooltip--definition__top,
-.bx--tooltip--definition .bx--tooltip__trigger:hover + .bx--tooltip--definition__bottom {
+.bx--tooltip--definition .bx--tooltip__trigger:hover+.bx--tooltip--definition__top, .bx--tooltip--definition .bx--tooltip__trigger:hover+.bx--tooltip--definition__bottom {
   display: block;
 }
 
@@ -7950,13 +7779,11 @@ span.flatpickr-weekday {
   outline: 1px solid #3d70b2;
 }
 
-.bx--tooltip--definition .bx--tooltip__trigger:focus + .bx--tooltip--definition__top,
-.bx--tooltip--definition .bx--tooltip__trigger:focus + .bx--tooltip--definition__bottom {
+.bx--tooltip--definition .bx--tooltip__trigger:focus+.bx--tooltip--definition__top, .bx--tooltip--definition .bx--tooltip__trigger:focus+.bx--tooltip--definition__bottom {
   display: block;
 }
 
-.bx--tooltip--definition__bottom,
-.bx--tooltip--definition__top {
+.bx--tooltip--definition__bottom, .bx--tooltip--definition__top {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   position: absolute;
   z-index: 1;
@@ -7970,15 +7797,13 @@ span.flatpickr-weekday {
   cursor: pointer;
 }
 
-.bx--tooltip--definition__bottom p,
-.bx--tooltip--definition__top p {
+.bx--tooltip--definition__bottom p, .bx--tooltip--definition__top p {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.75rem;
   color: #fff;
 }
 
-.bx--tooltip--definition__bottom .bx--tooltip__caret,
-.bx--tooltip--definition__top .bx--tooltip__caret {
+.bx--tooltip--definition__bottom .bx--tooltip__caret, .bx--tooltip--definition__top .bx--tooltip__caret {
   position: absolute;
   right: 0;
   left: 0;
@@ -8003,34 +7828,29 @@ span.flatpickr-weekday {
   transform: rotate(45deg);
 }
 
-.bx--tooltip--icon__top,
-.bx--tooltip--icon__bottom {
+.bx--tooltip--icon__top, .bx--tooltip--icon__bottom {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   position: relative;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   cursor: pointer;
   overflow: visible;
 }
 
-.bx--tooltip--icon__top path,
-.bx--tooltip--icon__bottom path {
+.bx--tooltip--icon__top path, .bx--tooltip--icon__bottom path {
   fill: #3d70b2;
 }
 
-.bx--tooltip--icon__top:before, .bx--tooltip--icon__top:after,
-.bx--tooltip--icon__bottom:before,
-.bx--tooltip--icon__bottom:after {
+.bx--tooltip--icon__top:before, .bx--tooltip--icon__top:after, .bx--tooltip--icon__bottom:before, .bx--tooltip--icon__bottom:after {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   position: absolute;
   display: none;
   background-color: #272d33;
 }
 
-.bx--tooltip--icon__top:before,
-.bx--tooltip--icon__bottom:before {
+.bx--tooltip--icon__top:before, .bx--tooltip--icon__bottom:before {
   right: 0;
   left: 0;
   width: 0.6rem;
@@ -8041,8 +7861,7 @@ span.flatpickr-weekday {
   margin-left: 50%;
 }
 
-.bx--tooltip--icon__top:after,
-.bx--tooltip--icon__bottom:after {
+.bx--tooltip--icon__top:after, .bx--tooltip--icon__bottom:after {
   font-size: 0.75rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   max-width: 11rem;
@@ -8058,28 +7877,20 @@ span.flatpickr-weekday {
   margin-left: 50%;
 }
 
-.bx--tooltip--icon__top:hover path, .bx--tooltip--icon__top:focus path,
-.bx--tooltip--icon__bottom:hover path,
-.bx--tooltip--icon__bottom:focus path {
+.bx--tooltip--icon__top:hover path, .bx--tooltip--icon__top:focus path, .bx--tooltip--icon__bottom:hover path, .bx--tooltip--icon__bottom:focus path {
   fill: #30588c;
 }
 
-.bx--tooltip--icon__top:hover:before, .bx--tooltip--icon__top:hover:after, .bx--tooltip--icon__top:focus:before, .bx--tooltip--icon__top:focus:after,
-.bx--tooltip--icon__bottom:hover:before,
-.bx--tooltip--icon__bottom:hover:after,
-.bx--tooltip--icon__bottom:focus:before,
-.bx--tooltip--icon__bottom:focus:after {
+.bx--tooltip--icon__top:hover:before, .bx--tooltip--icon__top:hover:after, .bx--tooltip--icon__top:focus:before, .bx--tooltip--icon__top:focus:after, .bx--tooltip--icon__bottom:hover:before, .bx--tooltip--icon__bottom:hover:after, .bx--tooltip--icon__bottom:focus:before, .bx--tooltip--icon__bottom:focus:after {
   position: absolute;
   display: block;
 }
 
-.bx--tooltip--icon__top:focus,
-.bx--tooltip--icon__bottom:focus {
+.bx--tooltip--icon__top:focus, .bx--tooltip--icon__bottom:focus {
   outline: 1px solid transparent;
 }
 
-.bx--tooltip--icon__top:focus svg,
-.bx--tooltip--icon__bottom:focus svg {
+.bx--tooltip--icon__top:focus svg, .bx--tooltip--icon__bottom:focus svg {
   outline: 1px solid #3d70b2;
 }
 
@@ -8107,10 +7918,12 @@ span.flatpickr-weekday {
   margin-left: 0;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -8128,10 +7941,12 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--tabs {
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
@@ -8155,9 +7970,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   padding: 0 1rem;
   height: 2.5rem;
   cursor: pointer;
@@ -8206,7 +8021,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   z-index: 7000;
   background: #fff;
 }
@@ -8215,7 +8030,7 @@ span.flatpickr-weekday {
   .bx--tabs__nav {
     font-size: 1rem;
     -ms-flex-direction: row;
-        flex-direction: row;
+    flex-direction: row;
     margin-right: 1rem;
     margin-left: 1rem;
     background: none;
@@ -8264,7 +8079,7 @@ span.flatpickr-weekday {
     background: transparent;
     padding: 0.75rem 0 0.75rem;
   }
-  .bx--tabs__nav-item + .bx--tabs__nav-item {
+  .bx--tabs__nav-item+.bx--tabs__nav-item {
     margin-left: 3rem;
   }
 }
@@ -8402,17 +8217,19 @@ span.flatpickr-weekday {
   white-space: nowrap;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--tag {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.75rem;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   padding: 0 0.5rem;
   height: 1.25rem;
   margin: 0.125rem;
@@ -8438,9 +8255,7 @@ span.flatpickr-weekday {
   color: #006d5d;
 }
 
-.bx--tag--local,
-.bx--tag--dedicated,
-.bx--tag--custom {
+.bx--tag--local, .bx--tag--dedicated, .bx--tag--custom {
   background-color: #eed2ff;
   color: #734098;
 }
@@ -8496,10 +8311,12 @@ span.flatpickr-weekday {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -8517,10 +8334,12 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--left-nav__trigger {
   width: 3.75rem;
   height: 3.125rem;
@@ -8538,11 +8357,7 @@ span.flatpickr-weekday {
   background-color: #5aaafa;
 }
 
-.bx--left-nav__trigger:hover span,
-.bx--left-nav__trigger:hover span:before,
-.bx--left-nav__trigger:hover span:after, .bx--left-nav__trigger:focus span,
-.bx--left-nav__trigger:focus span:before,
-.bx--left-nav__trigger:focus span:after {
+.bx--left-nav__trigger:hover span, .bx--left-nav__trigger:hover span:before, .bx--left-nav__trigger:hover span:after, .bx--left-nav__trigger:focus span, .bx--left-nav__trigger:focus span:before, .bx--left-nav__trigger:focus span:after {
   background: #fff;
 }
 
@@ -8556,9 +8371,7 @@ span.flatpickr-weekday {
   display: flex;
 }
 
-.bx--left-nav__trigger--btn span,
-.bx--left-nav__trigger--btn span:before,
-.bx--left-nav__trigger--btn span:after {
+.bx--left-nav__trigger--btn span, .bx--left-nav__trigger--btn span:before, .bx--left-nav__trigger--btn span:after {
   height: 0.125rem;
   width: 1.25rem;
   cursor: pointer;
@@ -8580,8 +8393,7 @@ span.flatpickr-weekday {
   left: 1.125rem;
 }
 
-.bx--left-nav__trigger--active .bx--left-nav__trigger--btn span:before,
-.bx--left-nav__trigger--active .bx--left-nav__trigger--btn span:after {
+.bx--left-nav__trigger--active .bx--left-nav__trigger--btn span:before, .bx--left-nav__trigger--active .bx--left-nav__trigger--btn span:after {
   top: 0;
   width: 1.59125rem;
 }
@@ -8594,9 +8406,7 @@ span.flatpickr-weekday {
   transform: rotate(-45deg);
 }
 
-.bx--left-nav__trigger--apps span,
-.bx--left-nav__trigger--apps span:before,
-.bx--left-nav__trigger--apps span:after {
+.bx--left-nav__trigger--apps span, .bx--left-nav__trigger--apps span:before, .bx--left-nav__trigger--apps span:after {
   background: #00b4a0;
 }
 
@@ -8608,11 +8418,7 @@ span.flatpickr-weekday {
   background-color: #008571;
 }
 
-.bx--left-nav__trigger--apps:hover span,
-.bx--left-nav__trigger--apps:hover span:before,
-.bx--left-nav__trigger--apps:hover span:after, .bx--left-nav__trigger--apps:focus span,
-.bx--left-nav__trigger--apps:focus span:before,
-.bx--left-nav__trigger--apps:focus span:after {
+.bx--left-nav__trigger--apps:hover span, .bx--left-nav__trigger--apps:hover span:before, .bx--left-nav__trigger--apps:hover span:after, .bx--left-nav__trigger--apps:focus span, .bx--left-nav__trigger--apps:focus span:before, .bx--left-nav__trigger--apps:focus span:after {
   background: #fff;
 }
 
@@ -8620,8 +8426,7 @@ span.flatpickr-weekday {
   background: transparent;
 }
 
-.bx--left-nav__trigger--apps.bx--left-nav__trigger--active span:before,
-.bx--left-nav__trigger--apps.bx--left-nav__trigger--active span:after {
+.bx--left-nav__trigger--apps.bx--left-nav__trigger--active span:before, .bx--left-nav__trigger--apps.bx--left-nav__trigger--active span:after {
   background: #008571;
 }
 
@@ -8629,15 +8434,11 @@ span.flatpickr-weekday {
   background-color: #008571;
 }
 
-.bx--left-nav__trigger--apps.bx--left-nav__trigger--active:hover span:before,
-.bx--left-nav__trigger--apps.bx--left-nav__trigger--active:hover span:after, .bx--left-nav__trigger--apps.bx--left-nav__trigger--active:focus span:before,
-.bx--left-nav__trigger--apps.bx--left-nav__trigger--active:focus span:after {
+.bx--left-nav__trigger--apps.bx--left-nav__trigger--active:hover span:before, .bx--left-nav__trigger--apps.bx--left-nav__trigger--active:hover span:after, .bx--left-nav__trigger--apps.bx--left-nav__trigger--active:focus span:before, .bx--left-nav__trigger--apps.bx--left-nav__trigger--active:focus span:after {
   background: #fff;
 }
 
-.bx--left-nav__trigger--services span,
-.bx--left-nav__trigger--services span:before,
-.bx--left-nav__trigger--services span:after {
+.bx--left-nav__trigger--services span, .bx--left-nav__trigger--services span:before, .bx--left-nav__trigger--services span:after {
   background: #ba8ff7;
 }
 
@@ -8649,11 +8450,7 @@ span.flatpickr-weekday {
   background-color: #734098;
 }
 
-.bx--left-nav__trigger--services:hover span,
-.bx--left-nav__trigger--services:hover span:before,
-.bx--left-nav__trigger--services:hover span:after, .bx--left-nav__trigger--services:focus span,
-.bx--left-nav__trigger--services:focus span:before,
-.bx--left-nav__trigger--services:focus span:after {
+.bx--left-nav__trigger--services:hover span, .bx--left-nav__trigger--services:hover span:before, .bx--left-nav__trigger--services:hover span:after, .bx--left-nav__trigger--services:focus span, .bx--left-nav__trigger--services:focus span:before, .bx--left-nav__trigger--services:focus span:after {
   background: #fff;
 }
 
@@ -8661,8 +8458,7 @@ span.flatpickr-weekday {
   background: transparent;
 }
 
-.bx--left-nav__trigger--services.bx--left-nav__trigger--active span:before,
-.bx--left-nav__trigger--services.bx--left-nav__trigger--active span:after {
+.bx--left-nav__trigger--services.bx--left-nav__trigger--active span:before, .bx--left-nav__trigger--services.bx--left-nav__trigger--active span:after {
   background: #734098;
 }
 
@@ -8670,15 +8466,11 @@ span.flatpickr-weekday {
   background-color: #734098;
 }
 
-.bx--left-nav__trigger--services.bx--left-nav__trigger--active:hover span:before,
-.bx--left-nav__trigger--services.bx--left-nav__trigger--active:hover span:after, .bx--left-nav__trigger--services.bx--left-nav__trigger--active:focus span:before,
-.bx--left-nav__trigger--services.bx--left-nav__trigger--active:focus span:after {
+.bx--left-nav__trigger--services.bx--left-nav__trigger--active:hover span:before, .bx--left-nav__trigger--services.bx--left-nav__trigger--active:hover span:after, .bx--left-nav__trigger--services.bx--left-nav__trigger--active:focus span:before, .bx--left-nav__trigger--services.bx--left-nav__trigger--active:focus span:after {
   background: #fff;
 }
 
-.bx--left-nav__trigger--infrastructure span,
-.bx--left-nav__trigger--infrastructure span:before,
-.bx--left-nav__trigger--infrastructure span:after {
+.bx--left-nav__trigger--infrastructure span, .bx--left-nav__trigger--infrastructure span:before, .bx--left-nav__trigger--infrastructure span:after {
   background: #5aaafa;
 }
 
@@ -8690,11 +8482,7 @@ span.flatpickr-weekday {
   background-color: #3d70b2;
 }
 
-.bx--left-nav__trigger--infrastructure:hover span,
-.bx--left-nav__trigger--infrastructure:hover span:before,
-.bx--left-nav__trigger--infrastructure:hover span:after, .bx--left-nav__trigger--infrastructure:focus span,
-.bx--left-nav__trigger--infrastructure:focus span:before,
-.bx--left-nav__trigger--infrastructure:focus span:after {
+.bx--left-nav__trigger--infrastructure:hover span, .bx--left-nav__trigger--infrastructure:hover span:before, .bx--left-nav__trigger--infrastructure:hover span:after, .bx--left-nav__trigger--infrastructure:focus span, .bx--left-nav__trigger--infrastructure:focus span:before, .bx--left-nav__trigger--infrastructure:focus span:after {
   background: #fff;
 }
 
@@ -8702,8 +8490,7 @@ span.flatpickr-weekday {
   background: transparent;
 }
 
-.bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active span:before,
-.bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active span:after {
+.bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active span:before, .bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active span:after {
   background: #3d70b2;
 }
 
@@ -8711,9 +8498,7 @@ span.flatpickr-weekday {
   background-color: #3d70b2;
 }
 
-.bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active:hover span:before,
-.bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active:hover span:after, .bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active:focus span:before,
-.bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active:focus span:after {
+.bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active:hover span:before, .bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active:hover span:after, .bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active:focus span:before, .bx--left-nav__trigger--infrastructure.bx--left-nav__trigger--active:focus span:after {
   background: #fff;
 }
 
@@ -8727,7 +8512,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   height: 3.125rem;
   line-height: 1.5;
   background-color: #152935;
@@ -8738,14 +8523,14 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--global-header__title--logo {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   padding: 0 0.5rem;
   text-decoration: none;
   color: #fff;
@@ -8762,7 +8547,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   font-weight: 400;
   font-size: 1.125rem;
   line-height: inherit;
@@ -8805,14 +8590,14 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--global-header__right-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   padding-right: 1%;
   background-color: #152935;
 }
@@ -8823,13 +8608,13 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .bx--global-header__menu__item {
   width: 100%;
   -ms-flex: 0 1 100px;
-      flex: 0 1 100px;
+  flex: 0 1 100px;
 }
 
 .bx--global-header__menu__item:focus {
@@ -8850,9 +8635,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   height: 3.125rem;
   text-decoration: none;
   background-color: #152935;
@@ -8884,8 +8669,7 @@ span.flatpickr-weekday {
   color: #5aaafa;
 }
 
-.bx--global-header__menu__item .bx--dropdown:focus .bx--dropdown__menu-text,
-.bx--global-header__menu__item .bx--dropdown:focus .bx--dropdown__list {
+.bx--global-header__menu__item .bx--dropdown:focus .bx--dropdown__menu-text, .bx--global-header__menu__item .bx--dropdown:focus .bx--dropdown__list {
   outline: 0;
 }
 
@@ -8895,12 +8679,12 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   padding-top: 0;
   padding-right: 1rem;
   padding-bottom: 0;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   height: 100%;
   z-index: 1000;
   color: #fff;
@@ -8918,7 +8702,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   position: absolute;
   top: 100%;
   width: auto;
@@ -8958,7 +8742,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   background-color: #0f212e;
   width: 100%;
   height: 2.25rem;
@@ -8969,18 +8753,16 @@ span.flatpickr-weekday {
   z-index: 9500;
 }
 
-.bx--top-nav__left-container,
-.bx--top-nav__right-container {
+.bx--top-nav__left-container, .bx--top-nav__right-container {
   list-style: none;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   min-width: 50%;
 }
 
-.bx--top-nav__left-container .bx--dropdown,
-.bx--top-nav__right-container .bx--dropdown {
+.bx--top-nav__left-container .bx--dropdown, .bx--top-nav__right-container .bx--dropdown {
   font-size: 0.75rem;
   list-style: none;
   background-color: #0f212e;
@@ -8989,19 +8771,17 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
-.bx--top-nav__left-container .bx--dropdown__arrow,
-.bx--top-nav__right-container .bx--dropdown__arrow {
+.bx--top-nav__left-container .bx--dropdown__arrow, .bx--top-nav__right-container .bx--dropdown__arrow {
   fill: #fff;
   right: 0.75rem;
   width: 0.75rem;
   height: 1.5rem;
 }
 
-.bx--top-nav__left-container .bx--dropdown-text,
-.bx--top-nav__right-container .bx--dropdown-text {
+.bx--top-nav__left-container .bx--dropdown-text, .bx--top-nav__right-container .bx--dropdown-text {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   max-width: 12.5rem;
@@ -9011,8 +8791,7 @@ span.flatpickr-weekday {
   font-weight: 600;
 }
 
-.bx--top-nav__left-container .bx--dropdown-list,
-.bx--top-nav__right-container .bx--dropdown-list {
+.bx--top-nav__left-container .bx--dropdown-list, .bx--top-nav__right-container .bx--dropdown-list {
   width: auto;
   position: absolute;
   top: 100%;
@@ -9022,49 +8801,42 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-50%);
   z-index: -1;
 }
 
-.bx--top-nav__left-container .bx--dropdown-item,
-.bx--top-nav__right-container .bx--dropdown-item {
+.bx--top-nav__left-container .bx--dropdown-item, .bx--top-nav__right-container .bx--dropdown-item {
   min-width: 10.625rem;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-.bx--top-nav__left-container .bx--dropdown-item:hover,
-.bx--top-nav__right-container .bx--dropdown-item:hover {
+.bx--top-nav__left-container .bx--dropdown-item:hover, .bx--top-nav__right-container .bx--dropdown-item:hover {
   background-color: #5aaafa;
   color: #152935;
 }
 
-.bx--top-nav__left-container .bx--dropdown-link,
-.bx--top-nav__right-container .bx--dropdown-link {
+.bx--top-nav__left-container .bx--dropdown-link, .bx--top-nav__right-container .bx--dropdown-link {
   color: #fff;
 }
 
-.bx--top-nav__left-container .bx--dropdown--open,
-.bx--top-nav__right-container .bx--dropdown--open {
+.bx--top-nav__left-container .bx--dropdown--open, .bx--top-nav__right-container .bx--dropdown--open {
   background-color: #2d3f49;
 }
 
-.bx--top-nav__left-container .bx--dropdown--open .bx--dropdown-text,
-.bx--top-nav__right-container .bx--dropdown--open .bx--dropdown-text {
+.bx--top-nav__left-container .bx--dropdown--open .bx--dropdown-text, .bx--top-nav__right-container .bx--dropdown--open .bx--dropdown-text {
   color: #5aaafa;
 }
 
-.bx--top-nav__left-container .bx--dropdown--open .bx--dropdown__arrow,
-.bx--top-nav__right-container .bx--dropdown--open .bx--dropdown__arrow {
+.bx--top-nav__left-container .bx--dropdown--open .bx--dropdown__arrow, .bx--top-nav__right-container .bx--dropdown--open .bx--dropdown__arrow {
   fill: #5aaafa;
 }
 
-.bx--top-nav__left-container .bx--dropdown--open .bx--dropdown-list,
-.bx--top-nav__right-container .bx--dropdown--open .bx--dropdown-list {
+.bx--top-nav__left-container .bx--dropdown--open .bx--dropdown-list, .bx--top-nav__right-container .bx--dropdown--open .bx--dropdown-list {
   transform: translateY(0);
   opacity: 1;
   visibility: visible;
@@ -9078,10 +8850,10 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
   background-color: #0f212e;
   -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
   text-decoration: none;
   color: #fff;
   font-weight: 600;
@@ -9150,17 +8922,15 @@ span.flatpickr-weekday {
 
 .bx--top-nav__right-container {
   -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown-text,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown-text {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown-text, .bx--top-nav__right-container__item[data-credit] .bx--dropdown-text {
   padding: 0.75rem 2rem 0.75rem 1rem;
   color: #fff;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown-list,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown-list {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown-list, .bx--top-nav__right-container__item[data-credit] .bx--dropdown-list {
   left: initial;
   outline: 0;
   right: 0;
@@ -9168,104 +8938,73 @@ span.flatpickr-weekday {
   transform: translateY(-10%);
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__arrow,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__arrow {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__arrow, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__arrow {
   top: 0.5rem;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown--open .bx--dropdown-list,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown--open .bx--dropdown-list {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown--open .bx--dropdown-list, .bx--top-nav__right-container__item[data-credit] .bx--dropdown--open .bx--dropdown-list {
   transform: translateY(0);
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown--open .bx--dropdown-text,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown--open .bx--dropdown-text {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown--open .bx--dropdown-text, .bx--top-nav__right-container__item[data-credit] .bx--dropdown--open .bx--dropdown-text {
   color: #5aaafa;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown:hover,
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown:focus,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown:hover,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown:focus {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown:hover, .bx--top-nav__right-container__item[data-trial] .bx--dropdown:focus, .bx--top-nav__right-container__item[data-credit] .bx--dropdown:hover, .bx--top-nav__right-container__item[data-credit] .bx--dropdown:focus {
   outline: 0;
   background-color: #2d3f49;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown:hover .bx--dropdown-text,
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown:focus .bx--dropdown-text,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown:hover .bx--dropdown-text,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown:focus .bx--dropdown-text {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown:hover .bx--dropdown-text, .bx--top-nav__right-container__item[data-trial] .bx--dropdown:focus .bx--dropdown-text, .bx--top-nav__right-container__item[data-credit] .bx--dropdown:hover .bx--dropdown-text, .bx--top-nav__right-container__item[data-credit] .bx--dropdown:focus .bx--dropdown-text {
   color: #5aaafa;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown:hover .bx--dropdown__arrow use,
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown:focus .bx--dropdown__arrow use,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown:hover .bx--dropdown__arrow use,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown:focus .bx--dropdown__arrow use {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown:hover .bx--dropdown__arrow use, .bx--top-nav__right-container__item[data-trial] .bx--dropdown:focus .bx--dropdown__arrow use, .bx--top-nav__right-container__item[data-credit] .bx--dropdown:hover .bx--dropdown__arrow use, .bx--top-nav__right-container__item[data-credit] .bx--dropdown:focus .bx--dropdown__arrow use {
   fill: #5aaafa;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content,
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content, .bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content {
   cursor: auto;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   padding: 1rem;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content:focus, .bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content:hover,
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content:focus,
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content:hover,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content:focus,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content:hover,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content:focus,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content:hover {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content:focus, .bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content:hover, .bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content:focus, .bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content:hover, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content:focus, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content:hover, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content:focus, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content:hover {
   outline: 0;
   background-color: initial;
   color: #fff;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content--desc,
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content--desc,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content--desc,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content--desc {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content--desc, .bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content--desc, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content--desc, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content--desc {
   margin-bottom: 1rem;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content .bx--link,
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content .bx--link,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content .bx--link,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content .bx--link {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content .bx--link, .bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content .bx--link, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content .bx--link, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content .bx--link {
   font-size: 0.6875rem;
   color: #5aaafa;
   margin-top: 1rem;
   text-align: center;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content--desc,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content--desc {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content--desc, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__trial-content--desc {
   font-size: 0.75rem;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content div .bx--dropdown__credit-content--heading,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content div .bx--dropdown__credit-content--heading {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content div .bx--dropdown__credit-content--heading, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content div .bx--dropdown__credit-content--heading {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.75rem;
   font-weight: 600;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content div .bx--dropdown__credit-content--desc,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content div .bx--dropdown__credit-content--desc {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content div .bx--dropdown__credit-content--desc, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content div .bx--dropdown__credit-content--desc {
   font-size: 0.875rem;
 }
 
-.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content div:last-child .bx--dropdown__credit-content--desc,
-.bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content div:last-child .bx--dropdown__credit-content--desc {
+.bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content div:last-child .bx--dropdown__credit-content--desc, .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content div:last-child .bx--dropdown__credit-content--desc {
   margin-bottom: 0;
 }
 
@@ -9290,9 +9029,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   margin: 0rem 1rem;
 }
 
@@ -9300,13 +9039,12 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   border-radius: 50%;
   overflow: hidden;
 }
 
-.bx--top-nav__right-container__item:last-child .bx--dropdown-text--profile-image .profile-image svg,
-.bx--top-nav__right-container__item:last-child .bx--dropdown-text--profile-image .profile-image img {
+.bx--top-nav__right-container__item:last-child .bx--dropdown-text--profile-image .profile-image svg, .bx--top-nav__right-container__item:last-child .bx--dropdown-text--profile-image .profile-image img {
   fill: #fff;
   max-height: 1.5rem;
   max-width: 1.5rem;
@@ -9323,7 +9061,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
 }
 
 .bx--top-nav__right-container__item:last-child .bx--dropdown-item svg {
@@ -9364,9 +9102,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--dropdown__profile-dropdown__container a {
@@ -9445,7 +9183,7 @@ span.flatpickr-weekday {
 
 .bx--left-nav__header {
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   height: 3.125rem;
   cursor: pointer;
   position: relative;
@@ -9453,7 +9191,7 @@ span.flatpickr-weekday {
   display: flex;
   background-color: #0f212e;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   top: 0;
   left: 0;
   width: 100%;
@@ -9509,7 +9247,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   cursor: pointer;
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
   background-color: #fff;
@@ -9540,9 +9278,9 @@ span.flatpickr-weekday {
 
 .bx--left-nav__section--active, .bx--left-nav__section--transition {
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   cursor: pointer;
   position: relative;
   display: -ms-flexbox;
@@ -9601,7 +9339,7 @@ span.flatpickr-weekday {
   width: 100%;
   padding: 0 1.25rem;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   text-decoration: none;
 }
 
@@ -9610,7 +9348,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   color: #152935;
   height: 3.125rem;
 }
@@ -9620,7 +9358,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   margin-bottom: 5rem;
   margin-top: 0;
   transition: all 250ms cubic-bezier(0, 0, 0.25, 1);
@@ -9664,9 +9402,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
   text-decoration: none;
   padding: 0.5rem 1.25rem;
   transition: background-color 250ms cubic-bezier(0.5, 0, 0.1, 1);
@@ -9698,8 +9436,7 @@ span.flatpickr-weekday {
   color: #008571;
 }
 
-.bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
-.bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
+.bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon, .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
   fill: #008571;
 }
 
@@ -9707,8 +9444,7 @@ span.flatpickr-weekday {
   color: #734098;
 }
 
-.bx--left-nav__main-nav[data-left-nav-list='services'] .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
-.bx--left-nav__main-nav[data-left-nav-list='services'] .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
+.bx--left-nav__main-nav[data-left-nav-list='services'] .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon, .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
   fill: #734098;
 }
 
@@ -9716,8 +9452,7 @@ span.flatpickr-weekday {
   color: #3d70b2;
 }
 
-.bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
-.bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
+.bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon, .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
   fill: #3d70b2;
 }
 
@@ -9733,8 +9468,7 @@ span.flatpickr-weekday {
   color: #fff;
 }
 
-.bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
-.bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
+.bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon, .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
   fill: #fff;
 }
 
@@ -9746,8 +9480,7 @@ span.flatpickr-weekday {
   color: #fff;
 }
 
-.bx--left-nav__main-nav[data-left-nav-list='services'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
-.bx--left-nav__main-nav[data-left-nav-list='services'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
+.bx--left-nav__main-nav[data-left-nav-list='services'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon, .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
   fill: #fff;
 }
 
@@ -9759,8 +9492,7 @@ span.flatpickr-weekday {
   color: #fff;
 }
 
-.bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
-.bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
+.bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon, .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
   fill: #fff;
 }
 
@@ -9780,7 +9512,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   margin-top: 0;
   list-style: none;
   max-height: 0;
@@ -9820,9 +9552,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   text-decoration: none;
   position: relative;
   margin-right: auto;
@@ -9940,7 +9672,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--flyout-menu__item:hover .bx--flyout-menu__item--link {
@@ -9998,9 +9730,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   min-width: 21.875rem;
 }
 
@@ -10019,9 +9751,9 @@ span.flatpickr-weekday {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   color: #fff;
   padding: 0 1rem;
   background-color: #0f212e;
@@ -10057,8 +9789,7 @@ span.flatpickr-weekday {
   font-weight: 300;
 }
 
-.bx--account-switcher__toggle--text[data-switcher-account-sl],
-.bx--account-switcher__toggle--text[data-switcher-account] {
+.bx--account-switcher__toggle--text[data-switcher-account-sl], .bx--account-switcher__toggle--text[data-switcher-account] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
@@ -10068,14 +9799,14 @@ span.flatpickr-weekday {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--account-switcher__toggle--text[data-switcher-account] .bx--account-switcher__linked-icon {
   margin-right: 0;
 }
 
-.bx--account-switcher__toggle--text > [data-dropdown-account-linked] {
+.bx--account-switcher__toggle--text>[data-dropdown-account-linked] {
   margin-left: 0.5rem;
   margin-right: 0;
 }
@@ -10130,9 +9861,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   -ms-flex-align: start;
-      align-items: flex-start;
+  align-items: flex-start;
   padding: 1rem;
 }
 
@@ -10140,7 +9871,7 @@ span.flatpickr-weekday {
   border-bottom: 1px solid #42535c;
 }
 
-.bx--account-switcher__menu__item:nth-child(n + 2) {
+.bx--account-switcher__menu__item:nth-child(n+2) {
   padding: 1rem 1rem 0;
 }
 
@@ -10149,7 +9880,7 @@ span.flatpickr-weekday {
   display: flex;
   margin-left: auto;
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
   max-width: 75%;
   padding: 0.75rem 0 1rem 1.5rem;
 }
@@ -10178,19 +9909,19 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex: 1;
-      flex: 1;
+  flex: 1;
 }
 
 .bx--account-switcher__menu__item .bx--dropdown {
   font-size: 0.875rem;
   -ms-flex: 3;
-      flex: 3;
+  flex: 3;
   background-color: #42535c;
   display: block;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   min-width: 200px;
 }
 
@@ -10232,7 +9963,7 @@ span.flatpickr-weekday {
 .bx--account-switcher__menu__item .bx--dropdown-text {
   padding-right: 2rem;
   -ms-flex-item-align: start;
-      align-self: flex-start;
+  align-self: flex-start;
   background-color: #42535c;
 }
 
@@ -10254,14 +9985,12 @@ span.flatpickr-weekday {
   background-color: #2d3f49;
 }
 
-.bx--account-switcher__menu__item .bx--dropdown-item > .bx--dropdown-link:hover,
-.bx--account-switcher__menu__item .bx--dropdown-item .bx--dropdown-link:focus {
+.bx--account-switcher__menu__item .bx--dropdown-item>.bx--dropdown-link:hover, .bx--account-switcher__menu__item .bx--dropdown-item .bx--dropdown-link:focus {
   background-color: #5aaafa;
   color: #152935;
 }
 
-.bx--account-switcher__menu__item .bx--dropdown-item > .bx--dropdown-link:hover svg,
-.bx--account-switcher__menu__item .bx--dropdown-item .bx--dropdown-link:focus svg {
+.bx--account-switcher__menu__item .bx--dropdown-item>.bx--dropdown-link:hover svg, .bx--account-switcher__menu__item .bx--dropdown-item .bx--dropdown-link:focus svg {
   fill: #152935;
 }
 
@@ -10289,7 +10018,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   max-height: 2000px;
   z-index: 10;
 }
@@ -10303,10 +10032,12 @@ span.flatpickr-weekday {
   z-index: 6000;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -10324,23 +10055,31 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
-.bx--data-table-v2-container + .bx--pagination {
+
+.bx--data-table-v2-container+.bx--pagination {
   border-top: 0;
 }
 
@@ -10352,28 +10091,28 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   border: 1px solid #dfe3e6;
   height: 2.5rem;
 }
 
 .bx--pagination .bx--form-item {
   -ms-flex: auto;
-      flex: auto;
+  flex: auto;
 }
 
 .bx--pagination__left {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--pagination__right {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   margin-left: auto;
 }
 
@@ -10445,9 +10184,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--pagination .bx--select-input {
@@ -10464,7 +10203,7 @@ span.flatpickr-weekday {
   outline: 1px solid #3d70b2;
 }
 
-.bx--pagination .bx--select--inline .bx--select-input ~ .bx--select__arrow {
+.bx--pagination .bx--select--inline .bx--select-input~.bx--select__arrow {
   right: 0.3rem;
   top: 0.625rem;
 }
@@ -10480,7 +10219,7 @@ span.flatpickr-weekday {
   text-align: center;
   box-shadow: none;
   -ms-flex-order: 0;
-      order: 0;
+  order: 0;
 }
 
 .bx--pagination .bx--text-input:focus {
@@ -10522,14 +10261,18 @@ span.flatpickr-weekday {
   margin-bottom: 0;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--accordion {
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   list-style: none;
@@ -10564,8 +10307,8 @@ span.flatpickr-weekday {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -10574,11 +10317,11 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
   -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
   cursor: pointer;
   padding: 0.5rem 0;
 }
@@ -10642,8 +10385,7 @@ span.flatpickr-weekday {
   fill: #3d70b2;
 }
 
-.bx--accordion.bx--skeleton .bx--accordion__heading,
-.bx--accordion.bx--skeleton .bx--accordion__button {
+.bx--accordion.bx--skeleton .bx--accordion__heading, .bx--accordion.bx--skeleton .bx--accordion__button {
   cursor: default;
 }
 
@@ -10669,10 +10411,12 @@ span.flatpickr-weekday {
   margin-bottom: 0;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -10702,9 +10446,9 @@ span.flatpickr-weekday {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   -ms-flex: 1;
-      flex: 1;
+  flex: 1;
   min-width: 7rem;
   transition: 250ms all cubic-bezier(0.5, 0, 0.1, 1);
   overflow: visible;
@@ -10819,18 +10563,24 @@ span.flatpickr-weekday {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -10848,10 +10598,12 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--breadcrumb {
   font-size: 0.875rem;
   font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
@@ -10863,7 +10615,7 @@ span.flatpickr-weekday {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
@@ -10872,7 +10624,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--breadcrumb-item::after {
@@ -10935,50 +10687,47 @@ span.flatpickr-weekday {
   animation: 3000ms ease-in-out skeleton infinite;
 }
 
-/**
- * Generic `deprecate` mixin that is being used to indicate that a component is
- * no longer going to be present in the next major release of Carbon.
- */
-/**
- * Generic `deprecate` mixin that is being used to indicate that a component is
- * no longer going to be present in the next major release of Carbon.
- */
-/**
- * Generic `deprecate` mixin that is being used to indicate that a component is
- * no longer going to be present in the next major release of Carbon.
- */
-/**
- * Generic `deprecate` mixin that is being used to indicate that a component is
- * no longer going to be present in the next major release of Carbon.
- */
-/**
- * Generic `deprecate` mixin that is being used to indicate that a component is
- * no longer going to be present in the next major release of Carbon.
- */
-/**
- * Generic `deprecate` mixin that is being used to indicate that a component is
- * no longer going to be present in the next major release of Carbon.
- */
-/**
- * Generic `deprecate` mixin that is being used to indicate that a component is
- * no longer going to be present in the next major release of Carbon.
- */
-.bx--text-truncate--end {
-  width: 100%;
-  display: inline-block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
 
-.bx--text-truncate--front {
-  width: 100%;
-  display: inline-block;
-  direction: rtl;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 
 .bx--text-truncate--end {
   width: 100%;
@@ -10997,10 +10746,29 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+.bx--text-truncate--end {
+  width: 100%;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bx--text-truncate--front {
+  width: 100%;
+  display: inline-block;
+  direction: rtl;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -11023,13 +10791,13 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-flow: row nowrap;
-      flex-flow: row nowrap;
+  flex-flow: row nowrap;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   margin: 1rem 0;
 }
 
-.bx--toolbar > div {
+.bx--toolbar>div {
   margin: 0 0.25rem;
 }
 
@@ -11083,7 +10851,7 @@ span.flatpickr-weekday {
   margin-bottom: 0;
 }
 
-.bx--toolbar .bx--overflow-menu--open > .bx--overflow-menu__icon {
+.bx--toolbar .bx--overflow-menu--open>.bx--overflow-menu__icon {
   fill: #3d70b2;
 }
 
@@ -11136,19 +10904,19 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: end;
-      align-items: flex-end;
+  align-items: flex-end;
 }
 
 .bx--time-picker .bx--label {
   -ms-flex-order: 1;
-      order: 1;
+  order: 1;
 }
 
 .bx--time-picker__input {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   border-bottom: 1px solid transparent;
 }
 
@@ -11166,7 +10934,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   background-color: #f4f7fb;
   border: none;
   width: 4.875rem;
@@ -11174,7 +10942,7 @@ span.flatpickr-weekday {
   height: 2.5rem;
   padding: 0 1rem;
   -ms-flex-order: 2;
-      order: 2;
+  order: 2;
   box-shadow: 0 1px 0 0 #5a6872;
 }
 
@@ -11183,7 +10951,7 @@ span.flatpickr-weekday {
   box-shadow: 0 2px 0 0 #3d70b2;
 }
 
-.bx--time-picker__input-field:focus ~ .bx--label {
+.bx--time-picker__input-field:focus~.bx--label {
   color: #3d70b2;
 }
 
@@ -11203,24 +10971,24 @@ span.flatpickr-weekday {
   box-shadow: 0 2px 0 0 #e0182d;
 }
 
-.bx--time-picker__input-field[data-invalid]:focus ~ .bx--label {
+.bx--time-picker__input-field[data-invalid]:focus~.bx--label {
   color: #e0182d;
 }
 
-.bx--time-picker__input-field ~ .bx--form-requirement {
+.bx--time-picker__input-field~.bx--form-requirement {
   -ms-flex-order: 3;
-      order: 3;
+  order: 3;
   color: #e0182d;
   font-weight: 400;
   margin-top: 0;
   max-height: 0;
 }
 
-.bx--time-picker__input-field ~ .bx--form-requirement::before {
+.bx--time-picker__input-field~.bx--form-requirement::before {
   display: none;
 }
 
-.bx--time-picker__input-field[data-invalid] ~ .bx--form-requirement {
+.bx--time-picker__input-field[data-invalid]~.bx--form-requirement {
   overflow: visible;
   max-height: 0;
   margin-top: 0.25rem;
@@ -11235,10 +11003,12 @@ span.flatpickr-weekday {
   background: #fff;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -11256,27 +11026,33 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--slider-container {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .bx--slider {
@@ -11368,8 +11144,7 @@ span.flatpickr-weekday {
   display: none;
 }
 
-.bx--slider-text-input,
-.bx-slider-text-input {
+.bx--slider-text-input, .bx-slider-text-input {
   width: 3.75rem;
   min-width: 0;
   height: 2rem;
@@ -11379,9 +11154,7 @@ span.flatpickr-weekday {
   -moz-appearance: textfield;
 }
 
-.bx--slider-text-input::-webkit-outer-spin-button, .bx--slider-text-input::-webkit-inner-spin-button,
-.bx-slider-text-input::-webkit-outer-spin-button,
-.bx-slider-text-input::-webkit-inner-spin-button {
+.bx--slider-text-input::-webkit-outer-spin-button, .bx--slider-text-input::-webkit-inner-spin-button, .bx-slider-text-input::-webkit-outer-spin-button, .bx-slider-text-input::-webkit-inner-spin-button {
   display: none;
 }
 
@@ -11425,10 +11198,12 @@ span.flatpickr-weekday {
   pointer-events: none;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--tile {
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   display: block;
@@ -11444,37 +11219,24 @@ span.flatpickr-weekday {
   outline: 1px solid #3d70b2;
 }
 
-.bx--tile--clickable,
-.bx--tile--selectable,
-.bx--tile--expandable {
+.bx--tile--clickable, .bx--tile--selectable, .bx--tile--expandable {
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
   cursor: pointer;
 }
 
-.bx--tile--clickable:hover,
-.bx--tile--selectable:hover,
-.bx--tile--expandable:hover {
+.bx--tile--clickable:hover, .bx--tile--selectable:hover, .bx--tile--expandable:hover {
   border: 1px solid #8897a2;
 }
 
-.bx--tile--clickable:hover .bx--tile__checkmark, .bx--tile--clickable:focus .bx--tile__checkmark,
-.bx--tile--selectable:hover .bx--tile__checkmark,
-.bx--tile--selectable:focus .bx--tile__checkmark,
-.bx--tile--expandable:hover .bx--tile__checkmark,
-.bx--tile--expandable:focus .bx--tile__checkmark {
+.bx--tile--clickable:hover .bx--tile__checkmark, .bx--tile--clickable:focus .bx--tile__checkmark, .bx--tile--selectable:hover .bx--tile__checkmark, .bx--tile--selectable:focus .bx--tile__checkmark, .bx--tile--expandable:hover .bx--tile__checkmark, .bx--tile--expandable:focus .bx--tile__checkmark {
   opacity: 1;
 }
 
-.bx--tile--clickable:hover .bx--tile__chevron svg, .bx--tile--clickable:focus .bx--tile__chevron svg,
-.bx--tile--selectable:hover .bx--tile__chevron svg,
-.bx--tile--selectable:focus .bx--tile__chevron svg,
-.bx--tile--expandable:hover .bx--tile__chevron svg,
-.bx--tile--expandable:focus .bx--tile__chevron svg {
+.bx--tile--clickable:hover .bx--tile__chevron svg, .bx--tile--clickable:focus .bx--tile__chevron svg, .bx--tile--selectable:hover .bx--tile__chevron svg, .bx--tile--selectable:focus .bx--tile__chevron svg, .bx--tile--expandable:hover .bx--tile__chevron svg, .bx--tile--expandable:focus .bx--tile__chevron svg {
   fill: #3d70b2;
 }
 
-.bx--tile--clickable:focus,
-.bx--tile--expandable:focus {
+.bx--tile--clickable:focus, .bx--tile--expandable:focus {
   outline: 1px solid #3d70b2;
 }
 
@@ -11492,16 +11254,14 @@ span.flatpickr-weekday {
   border: 1px solid #8897a2;
 }
 
-.bx--tile__checkmark,
-.bx--tile__chevron {
+.bx--tile__checkmark, .bx--tile__chevron {
   position: absolute;
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
   border: none;
   background: transparent;
 }
 
-.bx--tile__checkmark:focus,
-.bx--tile__chevron:focus {
+.bx--tile__checkmark:focus, .bx--tile__chevron:focus {
   outline: 1px solid #3d70b2;
 }
 
@@ -11565,18 +11325,16 @@ span.flatpickr-weekday {
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
 }
 
-.bx--tile--is-selected,
-.bx--tile--is-selected:hover,
-.bx--tile--is-selected:focus {
+.bx--tile--is-selected, .bx--tile--is-selected:hover, .bx--tile--is-selected:focus {
   border: 1px solid #3d70b2;
   outline: none;
 }
 
-.bx--tile-input:checked + .bx--tile__checkmark {
+.bx--tile-input:checked+.bx--tile__checkmark {
   opacity: 1;
 }
 
-.bx--tile-input:checked + .bx--tile__checkmark svg {
+.bx--tile-input:checked+.bx--tile__checkmark svg {
   fill: #3d70b2;
   background-color: #fff;
 }
@@ -11590,14 +11348,18 @@ span.flatpickr-weekday {
   display: none;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--lightbox {
   width: 66rem;
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
@@ -11647,19 +11409,23 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--carousel {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--carousel-container {
@@ -11672,7 +11438,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   transition: transform 100ms cubic-bezier(0.25, 0, 1, 1);
   padding: 1.5rem 0;
   width: auto;
@@ -11686,8 +11452,8 @@ span.flatpickr-weekday {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -11719,8 +11485,8 @@ span.flatpickr-weekday {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -11762,8 +11528,8 @@ span.flatpickr-weekday {
   display: inline-block;
   background: none;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -11786,10 +11552,12 @@ span.flatpickr-weekday {
   outline: 1px solid #3d70b2;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--skeleton__text {
   position: relative;
   border: none;
@@ -11865,7 +11633,7 @@ span.flatpickr-weekday {
   display: flex;
   width: 100%;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--inline-loading__text {
@@ -11879,9 +11647,9 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 
 .bx--inline-loading__checkmark-container {
@@ -11910,7 +11678,9 @@ span.flatpickr-weekday {
   stroke: #3d70b2;
 }
 
+
 /* If IE11 Don't show check animation */
+
 @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
   .bx--inline-loading__checkmark-container {
     top: 1px;
@@ -11923,18 +11693,24 @@ span.flatpickr-weekday {
   }
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--text-truncate--end {
   width: 100%;
   display: inline-block;
@@ -11952,10 +11728,12 @@ span.flatpickr-weekday {
   overflow: hidden;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--footer--bottom-fixed {
   position: fixed;
   bottom: 0;
@@ -11968,7 +11746,7 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   border-top: 2px solid #3d70b2;
   background-color: #fff;
   min-height: 3.5rem;
@@ -11985,7 +11763,7 @@ span.flatpickr-weekday {
 @media screen and (max-width: 600px) {
   .bx--footer-info {
     -ms-flex-direction: column;
-        flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -11995,23 +11773,23 @@ span.flatpickr-weekday {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   margin: 0;
   margin-right: 4rem;
 }
 
-.bx--footer-info__item > .bx--link {
+.bx--footer-info__item>.bx--link {
   font-weight: 600;
 }
 
-.bx--footer-info__item > .bx--footer-label {
+.bx--footer-info__item>.bx--footer-label {
   font-size: 0.875rem;
   line-height: 1.5;
   margin: 0;
 }
 
 @media screen and (max-width: 600px) {
-  .bx--footer-info__item > .bx--footer-label {
+  .bx--footer-info__item>.bx--footer-label {
     display: none;
   }
 }
@@ -12020,10 +11798,12 @@ span.flatpickr-weekday {
   margin-left: auto;
 }
 
+
 /**
  * Generic `deprecate` mixin that is being used to indicate that a component is
  * no longer going to be present in the next major release of Carbon.
  */
+
 .bx--fab {
   transform: rotate(0);
   transition: transform 250ms;
@@ -12033,7 +11813,7 @@ span.flatpickr-weekday {
   height: 4.5rem;
   text-decoration: none;
   -webkit-filter: drop-shadow(0px 3px 3px 0 rgba(0, 0, 0, 0.1));
-          filter: drop-shadow(0px 3px 3px 0 rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0px 3px 3px 0 rgba(0, 0, 0, 0.1));
 }
 
 .bx--fab__hidden {
@@ -12082,5 +11862,3 @@ span.flatpickr-weekday {
   transition: transform 250ms;
   transform-origin: center;
 }
-
-/*# sourceMappingURL=carbon-components.css.map */

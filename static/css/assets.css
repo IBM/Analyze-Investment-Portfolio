@@ -1,15 +1,12 @@
-
 .bx--graph-header {
   font-weight: 300;
   font-size: 24px;
 }
 
 .bx--graph-header select {
-
   font: inherit;
   color: blue;
   background-color: transparent;
-  /* -webkit-appearance: none; */
   border-radius: 0;
 }
 
@@ -23,23 +20,26 @@
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   pointer-events: none;
   width: 100%;
 }
+
 .tooltip p {
   text-align: center;
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
 }
+
 .tooltip .amount {
   font-size: 29px;
   line-height: 1;
   font-weight: 300;
 }
+
 .tooltip .item {
   font-weight: 400;
   font-size: 14px;

@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, jsonify, json, url_for, request, redirect, Response, flash, abort, make_response, send_file
 import requests
 import io
@@ -10,7 +9,7 @@ import investmentportfolio
 print ('Running Portfolio Analyze')
 app = Flask(__name__)
 
-# On Bluemix, get the port number from the environment variable VCAP_APP_PORT
+# On IBM Cloud, get the port number from the environment variable VCAP_APP_PORT
 # When running this app on the local machine, default the port to 8080
 port = int(os.getenv('VCAP_APP_PORT', 8080))
 host='0.0.0.0'
@@ -24,7 +23,6 @@ if 'VCAP_SERVICES' in os.environ:
             data = json.load(data_file)
         os.environ['VCAP_SERVICES'] = json.dumps(data)
 
-#======================================RUN LOCAL======================================
 # stuff for running locally
 if 'RUN_LOCAL' in os.environ:
     print ('Running locally')
@@ -85,7 +83,7 @@ def portfolio_from_csv():
             portfolios[d[portfolio_col]].append(hldg)
 
     #Send each portfolio and its holdings to the investment portfolio service
-    for key, value in portfolios.items(): 
+    for key, value in portfolios.items():
         if key == 'User Portfolio' or key == 'Sample Portfolio':
             portfolio_type = 'User Portfolio'
         else:
@@ -112,7 +110,7 @@ def portfolio_from_csv():
         except:
             print("Unable to create portfolio holdings for " + str(key) + ".")
     return req
- 
+
 
 #Returns list of 'look through' portfolios
 @app.route('/api/look_through_portfolios',methods=['GET'])
@@ -264,7 +262,8 @@ def portfolio_analyze(portfolio):
     response['search'] = list(set([item['name'] + ' (' + item['TICKER'] + ')' for item in universe]))
 
     #hard-coded benchmarks for now, as it's possible a user would want to make benchmark choices static...
-    benchmarks = ['IVV','HYG','LQD']
+    #benchmarks = ['IVV','HYG','LQD']
+    benchmarks = ['IVV']
     for b in benchmarks:
         response['esg'][b] = {}
 
@@ -343,6 +342,10 @@ def search(portfolio,security):
 
 
 def create_world_json(data):
+
+    if os.path.exists('static/js/geography/world_investment.json'):
+        os.remove('static/js/geography/world_investment.json')
+
     with open('static/js/geography/world_investment_default.json','r') as inFile:
           jsonData = json.load(inFile)
           inFile.close()

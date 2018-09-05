@@ -1,22 +1,18 @@
-
 .treemap-text {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   fill: white;
   font-size: 10px;
 }
 
-
 #sin-treemap {
   height: 200px;
   width: 400px;
-  /* padding-left: 70px;*/
   padding-right: 50px;
   box-sizing: unset;
 }
 
 #tooltip-treemap {
   position: absolute;
-  /* width: 220px;  */
   height: auto;
   padding: 10px;
   background-color: #fff;
@@ -39,7 +35,6 @@
   font-size: 16px;
   line-height: 20px;
 }
-
 
 .sin-exposure {
   margin-left: 5%;

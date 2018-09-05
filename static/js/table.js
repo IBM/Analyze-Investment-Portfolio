@@ -1,9 +1,8 @@
 function compositionTable() {
 
+    //use global variable declared in analysis.js
     var portfolio = compositionData;
 
-    console.log("Table :");
-    console.log(portfolio);
     $('#results > tr').remove();
 
     if(portfolio.length>0){
@@ -16,7 +15,7 @@ function compositionTable() {
       });
       $("#results > thead").append(rowData+"</tr>");
       for (var i = 0; i < portfolio.length; i++) {
-      //for (var i = 0; i < 30; i++) {
+
         rowData='<tr tabindex="0" class="bx--table-row bx--parent-row" data-parent-row>';
         for(var j=0;j<tableCols.length;j++){
 
@@ -24,13 +23,13 @@ function compositionTable() {
           if(typeof value == 'number'){
               value = value.toFixed(2).toLocaleString();
           }
-          //value = isNaN(value)?value:formatNumber(value,5);
           rowData+="<td>"+String(value)+"</td>";
         }
         $("#results > tbody").append(rowData+"</tr>");
 
       }
 
+      //source datatable: https://datatables.net/examples/basic_init/multi_col_sort.html
       $('#results').DataTable( {
           columnDefs: [ {
               targets: [ 0 ],

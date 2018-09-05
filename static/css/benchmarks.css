@@ -1,4 +1,3 @@
-
 .line-groupedbar {
   stroke-width: 2;
   stroke: #FF00FF;
@@ -33,12 +32,13 @@
   pointer-events: none;
   display: none;
 }
+
 .tooltip-groupedbar:after {
   content: '';
   top: 100%;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   position: absolute;
   width: 0;
   height: 0;
