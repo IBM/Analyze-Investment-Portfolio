@@ -27,7 +27,7 @@ function assetAllocationChart() {
 
   var svg = d3.select('#allocation-chart').attr('width', width).attr('height', height).append('g').attr('class', 'group-container').attr('transform', 'translate(' + width / 2 + ', ' + height / 2 + ')');
 
-  var colors = ['#3b1a40', '#473793', '#3c6df0', '#00a68f', '#56D2BB', "green", "yellow", "red", "brown"]
+  var colors = ['#0C35AA', '#4F2794', '#054548', '#1D6CF7', '#6E3AC6', "#179E99", "#71A8FC", "#A875FC", "#31D5D1","#CADFFE","#D0B2FD","#DBFBFB"]
   var color = d3.scaleOrdinal(colors);
 
   var pie = d3.pie().sort(null).value(function(d) {
