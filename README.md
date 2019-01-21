@@ -22,8 +22,8 @@ This code pattern is designed for developers with interest in creating financial
 3. The code pattern queries the user's portfolio, any look-through information on funds held in the user portfolio, and calculates all of the analytics necessary to populate the GUI.
 
 ## Included Components
-+ [Investment Portfolio](https://console.ng.bluemix.net/catalog/services/investment-portfolio) The Investment Portfolio service lets you store, update, and query your investment portfolios and associated holdings using flexible object definitions
-> The Investment Portfolio service is available for free on [IBM Cloud](https://console.bluemix.net)
++ [Investment Portfolio](https://cloud.ibm.com/catalog/services/investment-portfolio) The Investment Portfolio service lets you store, update, and query your investment portfolios and associated holdings using flexible object definitions
+> The Investment Portfolio service is available for free on [IBM Cloud](https://cloud.ibm.com)
 
 ## Featured Technology
 
@@ -31,12 +31,12 @@ This code pattern is designed for developers with interest in creating financial
 * [JQuery](https://jquery.com): jQuery is a cross-platform JavaScript library designed to simplify the client-side
 scripting of HTML.
 * [D3.js](https://d3js.org/): D3 is a JavaScript library for visualizing data with HTML, SVG, and CSS.
-* [Carbon Design System](http://www.carbondesignsystem.com/): Carbon is the design system for IBM Cloud products with a series of individual styles, components, and guidelines used for creating unified UI.
+* [Carbon Design System](https://www.carbondesignsystem.com/): Carbon is the design system for IBM Cloud products with a series of individual styles, components, and guidelines used for creating unified UI.
 
 
 ## Prerequisite
 
-- [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps)
+- [IBM Cloud account](https://cloud.ibm.com/registration/?target=%2Fdashboard%2Fapps)
 
 
 # Steps
@@ -45,9 +45,9 @@ Use the ``Deploy to IBM Cloud`` button **OR** create the services and run ``Run 
 
 # Deploy to IBM Cloud
 
-Create an [IBM Cloud account](https://console.bluemix.net/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button below.
+Create an [IBM Cloud account](https://cloud.ibm.com/registration/?target=%2Fdashboard%2Fapps) and directly deploy the application using the button below.
 
-[![Deploy to IBM Cloud](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/IBM/Analyze-Investment-Portfolio)
+[![Deploy to IBM Cloud](https://cloud.ibm.com/devops/setup/deploy/button.png)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/IBM/Analyze-Investment-Portfolio)
 
 
 # Running the Application Locally
@@ -69,13 +69,13 @@ Follow these steps to setup and run this developer journey. The steps are descri
 
 Clone the `Analyze Investment Portfolio code` locally. In a terminal, run:
 
-  `$ git clone https://github.com/IBM/Analyze-Investment-Portfolio.git`
+  `$ git clone https://github.com/IBM/Analyze-Investment-Portfolio`
 
 ## 2. Create Investment Portfolio service
 
 Create the following services in IBM Cloud. This services is part of `Free` plan.
 
-* [**Investment Portfolio**](https://console.ng.bluemix.net/catalog/services/investment-portfolio)
+* [**Investment Portfolio**](https://cloud.ibm.com/catalog/services/investment-portfolio)
 
 
 ## 3. Configure .env file
@@ -86,7 +86,7 @@ Create a `.env` file in the root directory of your clone of the project reposito
   cp .env.example .env
   ```
 
-> Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://git-for-windows.github.io/) or [Xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy)
+> Most files systems regard files with a "." at the front as hidden files.  If you are on a Windows system, you should be able to use either [GitBash](https://gitforwindows.org/) or [Xcopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/xcopy)
 
 You will need to update the credentials with the IBM Cloud credentials for the services you created in [Step 2](#2-create-investment-portfolio-service).
 
@@ -199,7 +199,7 @@ Edit the `manifest.yml` file in the folder that contains your code and replace w
     buildpack: python_buildpack
   ```
 
-You can push the app to IBM Cloud using [IBM Cloud CLI](https://console.bluemix.net/docs/cli). This will use the services and application name in the `manifest.yml` file.  From your root directory login into IBM Cloud using CLI:
+You can push the app to IBM Cloud using [IBM Cloud CLI](https://cloud.ibm.com/docs/cli). This will use the services and application name in the `manifest.yml` file.  From your root directory login into IBM Cloud using CLI:
 ```
 bx login
 ```
@@ -224,12 +224,12 @@ python InvestmentPortfolio.py
 
 # Learn more
 <ul>
-<li><strong>Finance Code Patterns</strong>: Enjoyed this Code Pattern? Check out our other <a href="https://developer.ibm.com/code/industries/finance/" rel="nofollow">Finance Code Patterns</a>.</li>
-<li><strong>Data Analytics Code Patterns</strong>: Enjoyed this Code Pattern? Check out our other <a href="https://developer.ibm.com/code/technologies/data-science/" rel="nofollow">Data Analytics Code Patterns</a></li>
+<li><strong>Finance Code Patterns</strong>: Enjoyed this Code Pattern? Check out our other <a href="https://developer.ibm.com/industries/finance/" rel="nofollow">Finance Code Patterns</a>.</li>
+<li><strong>Data Analytics Code Patterns</strong>: Enjoyed this Code Pattern? Check out our other <a href="https://developer.ibm.com/technologies/data-science/" rel="nofollow">Data Analytics Code Patterns</a></li>
 </ul>
 
 # License
 
-This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](http://www.apache.org/licenses/LICENSE-2.0.txt).
+This code pattern is licensed under the Apache Software License, Version 2.  Separate third party code objects invoked within this code pattern are licensed by their respective providers pursuant to their own separate licenses. Contributions are subject to the [Developer Certificate of Origin, Version 1.1 (DCO)](https://developercertificate.org/) and the [Apache Software License, Version 2](https://www.apache.org/licenses/LICENSE-2.0.txt).
 
-[Apache Software License (ASL) FAQ](http://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
+[Apache Software License (ASL) FAQ](https://www.apache.org/foundation/license-faq.html#WhatDoesItMEAN)
