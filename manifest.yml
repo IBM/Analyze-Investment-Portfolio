@@ -1,5 +1,5 @@
 declared-services:
-  Investment-Portfolio:
+  aip-investment-portfolio:
     label: fss-portfolio-service
     plan: fss-portfolio-service-free-plan
 applications:
@@ -10,5 +10,5 @@ applications:
   disk_quota: 1024M
   domain: mybluemix.net
   services:
-  - Investment-Portfolio
+  - aip-investment-portfolio
   buildpack: python_buildpack
