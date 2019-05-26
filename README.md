@@ -1,3 +1,7 @@
+# WARNING: This repository is no longer maintained :warning:
+
+> This repository will not be updated. The repository will be kept available in read-only mode.
+
 [![Build Status](https://travis-ci.org/IBM/Analyze-Investment-Portfolio.svg?branch=master)](https://travis-ci.org/IBM/Analyze-Investment-Portfolio)
 
 
